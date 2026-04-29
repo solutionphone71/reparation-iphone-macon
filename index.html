@@ -226,9 +226,11 @@ h1 .gradient{background:linear-gradient(135deg,var(--blue),#e74c3c,#8b1e15);
 .step-n{width:30px;height:30px;background:linear-gradient(135deg,var(--blue),#e74c3c);
   color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;
   font-size:.8rem;font-weight:800;flex-shrink:0}
-.quote-select{width:100%;padding:14px 18px;background:rgba(255,255,255,0.04);
+.quote-select{width:100%;padding:14px 18px;background:#111;
   border:1.5px solid var(--border);color:#fff;font-family:inherit;font-size:.92rem;
-  font-weight:500;border-radius:var(--radius-sm);transition:all .3s;appearance:auto}
+  font-weight:500;border-radius:var(--radius-sm);transition:all .3s;appearance:auto;color-scheme:dark}
+.quote-select option{background:#111;color:#f5f5f7}
+.quote-select optgroup{background:#111;color:var(--blue);font-weight:700}
 .quote-select:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(192,57,43,0.15)}
 .repair-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .ropt{padding:24px;border:1.5px solid var(--border);background:var(--card);border-radius:var(--radius-sm);
