@@ -691,7 +691,7 @@ footer .foot-links a:hover{color:var(--blue)}
         <div style="display:flex;flex-direction:column;gap:10px">
           <a href="https://wa.me/33783921884" class="contact-card"><div class="cc-icon" style="background:rgba(52,199,89,0.1)">💬</div><div><div class="cc-label">WhatsApp</div><div class="cc-value" style="color:var(--green)">07 83 92 18 84</div></div></a>
           <a href="tel:0385330689" class="contact-card"><div class="cc-icon" style="background:rgba(192,57,43,0.1)">📞</div><div><div class="cc-label">Téléphone</div><div class="cc-value" style="color:var(--blue)">03 85 33 06 89</div></div></a>
-          <a href="mailto:solution.phone71@gmail.com" class="contact-card"><div class="cc-icon" style="background:rgba(255,149,0,0.1)">✉️</div><div><div class="cc-label">Email</div><div class="cc-value" style="font-size:.82rem">solution.phone71@gmail.com</div></div></a>
+          <div class="contact-card" style="cursor:default"><div class="cc-icon" style="background:rgba(255,149,0,0.1)">✉️</div><div><div class="cc-label">Email</div><div class="cc-value" style="font-size:.82rem">contact@solution-phone.fr</div></div></div>
           <a href="https://maps.google.com/?q=21+Rue+Gambetta+71000" target="_blank" class="contact-card"><div class="cc-icon" style="background:rgba(255,255,255,0.04)">📍</div><div><div class="cc-label">Adresse</div><div class="cc-value">21 Rue Gambetta, 71000 Mâcon</div></div></a>
         </div>
       </div>
@@ -819,7 +819,7 @@ document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',
 // ═══ DEVIS FORM ═══
 function getDevisData(){var n=document.getElementById('dv-nom').value.trim(),t=document.getElementById('dv-tel').value.trim(),mo=document.getElementById('dv-modele').value.trim(),pa=document.getElementById('dv-panne').value.trim();if(!n||!t||!pa){alert('Merci de remplir les champs obligatoires (*)');return null;}return{nom:n,tel:t,modele:mo,panne:pa};}
 function sendDevisWA(){var d=getDevisData();if(!d)return;var msg='Bonjour Solution Phone !%0ADevis iPhone :%0ANom : '+d.nom+'%0ATél : '+d.tel+(d.modele?'%0AModèle : '+d.modele:'')+'%0APanne : '+d.panne;window.open('https://wa.me/33783921884?text='+msg,'_blank');}
-function sendDevisMail(){var d=getDevisData();if(!d)return;window.open('mailto:solution.phone71@gmail.com?subject='+encodeURIComponent('Devis iPhone - '+d.nom)+'&body='+encodeURIComponent('Bonjour,\nNom : '+d.nom+'\nTél : '+d.tel+(d.modele?'\nModèle : '+d.modele:'')+'\nPanne : '+d.panne));}
+function sendDevisMail(){var d=getDevisData();if(!d)return;var btn=document.querySelector('.form-btns button:last-child');btn.disabled=true;btn.textContent='Envoi…';fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Devis iPhone — '+d.nom,Nom:d.nom,Telephone:d.tel,Modele:d.modele||'Non précisé',Panne:d.panne,_template:'table'})}).then(function(){btn.textContent='✓ Envoyé !';btn.style.background='var(--green)';}).catch(function(){btn.textContent='Email';btn.disabled=false;alert('Erreur d\'envoi. Réessayez ou contactez-nous par WhatsApp.');});}
 
 // ═══ PRICING TABLES ═══
 var ORD=['5S/SE/5C/6/6S/6S+','7/7+/8/8+','X/XS/XS MAX','XR','11','11 Pro Max','12 mini','12/12 PRO','12 Pro Max','13 mini','13','13 Pro','13 Pro Max','14','14 Pro','14 Pro Max','15','15 Pro','15 Pro Max','16','16 Pro','16 Pro Max'];
