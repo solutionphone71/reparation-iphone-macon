@@ -26,8 +26,9 @@
   "address": {"@type": "PostalAddress","streetAddress": "21 Rue Gambetta","addressLocality": "Mâcon","postalCode": "71000","addressCountry": "FR"},
   "geo": {"@type": "GeoCoordinates","latitude": 46.3063,"longitude": 4.8313},
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens": "09:15","closes": "12:15"},
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens": "14:00","closes": "19:00"}
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday"],"opens": "09:15","closes": "12:15"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday"],"opens": "14:00","closes": "19:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens": "09:15","closes": "19:00"}
   ],
   "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.7","reviewCount": "590"},
   "areaServed": ["Mâcon","Charnay-lès-Mâcon","Sancé","Flacé-lès-Mâcon","Saint-Laurent-sur-Saône","Crèches-sur-Saône","Cluny","Tournus"],
@@ -572,7 +573,7 @@ footer .foot-links a:hover{color:var(--blue)}
       <div class="reveal delay-3" style="padding:28px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s">
         <div style="font-size:1.8rem;margin-bottom:12px">⚡</div>
         <h3 style="font-weight:800;font-size:.92rem;margin-bottom:8px;color:var(--text)">Réparé en 1 heure</h3>
-        <p style="font-size:.82rem;color:var(--text2);line-height:1.6">Sans rendez-vous, du lundi au samedi. Déposez votre iPhone, faites vos courses, récupérez-le réparé. C'est aussi simple que ça.</p>
+        <p style="font-size:.82rem;color:var(--text2);line-height:1.6">Sans rendez-vous, du lundi au samedi dès 9h15. Du mardi au samedi, journée continue jusqu'à 19h ! Déposez votre iPhone, faites vos courses, récupérez-le réparé.</p>
       </div>
       <div class="reveal delay-4" style="padding:28px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s">
         <div style="font-size:1.8rem;margin-bottom:12px">🛡️</div>
@@ -706,7 +707,7 @@ footer .foot-links a:hover{color:var(--blue)}
       <div class="fi"><button class="fq">Qu'est-ce que le label QualiRépar ?<span class="arrow">▼</span></button><div class="fa"><div class="fai">Programme d'État : -25€ automatiquement sur votre réparation. Solution Phone est certifié — déduit directement, aucune démarche de votre part.</div></div></div>
       <div class="fi"><button class="fq">Combien de temps dure une réparation ?<span class="arrow">▼</span></button><div class="fa"><div class="fai">1h en moyenne pour écran ou batterie. Cela dépend du modèle et de la pièce. Plus complexe selon la panne.</div></div></div>
       <div class="fi"><button class="fq">Vous réparez tous les modèles iPhone ?<span class="arrow">▼</span></button><div class="fa"><div class="fai">Oui, du iPhone 5S au iPhone 16 Pro Max. Consultez nos tableaux de prix ci-dessus.</div></div></div>
-      <div class="fi"><button class="fq">Où êtes-vous situés à Mâcon ?<span class="arrow">▼</span></button><div class="fa"><div class="fai">21 Rue Gambetta, 71000 Mâcon. Lun-Sam 9h15-12h15 / 14h-19h. Pas besoin de rendez-vous.</div></div></div>
+      <div class="fi"><button class="fq">Où êtes-vous situés à Mâcon ?<span class="arrow">▼</span></button><div class="fa"><div class="fai">21 Rue Gambetta, 71000 Mâcon. Lundi 9h15-12h15 / 14h-19h, mardi au samedi 9h15-19h (journée continue). Sans rendez-vous.</div></div></div>
     </div>
   </div>
 </section>
@@ -794,10 +795,15 @@ function ua(){
   var o=false,msg='';
   if(d===0)msg='Fermé — Réouverture lundi 9h15';
   else if(t<9.25)msg='Fermé — Réouverture à 9h15';
-  else if(t<12.25){o=true;msg='Ouvert — Réparation possible';}
-  else if(t<14)msg='Pause déjeuner — Réouverture 14h';
-  else if(t<19){o=true;msg='Ouvert — Réparation possible';}
-  else msg=d===6?'Fermé — Réouverture lundi':'Fermé — Réouverture demain 9h15';
+  else if(d===1){/* Lundi : pause déjeuner */
+    if(t<12.25){o=true;msg='Ouvert — Réparation possible';}
+    else if(t<14)msg='Pause déjeuner — Réouverture 14h';
+    else if(t<19){o=true;msg='Ouvert — Réparation possible';}
+    else msg='Fermé — Réouverture demain 9h15';
+  }else{/* Mar-Sam : journée continue */
+    if(t<19){o=true;msg='Ouvert — Journée continue jusqu\'à 19h';}
+    else msg=d===6?'Fermé — Réouverture lundi 9h15':'Fermé — Réouverture demain 9h15';
+  }
   if(b)b.className='status '+(o?'op':'cl');
   if(tx)tx.textContent=msg;
 }
