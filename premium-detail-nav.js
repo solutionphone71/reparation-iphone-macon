@@ -1,4 +1,14 @@
 (function(){
+  var trackingUrl='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/evan-brain';
+  var trackingKey='sb_publishable_3Mub3jSj8wUC8mfFtAuhdA_P4Ljnnhb';
+  var trackingToken='';
+  try{trackingToken=sessionStorage.getItem('iphone_detail_tracking_token')||''}catch(e){}
+  function track(event,metadata){
+    fetch(trackingUrl,{method:'POST',headers:{apikey:trackingKey,Authorization:'Bearer '+trackingKey,'Content-Type':'application/json'},body:JSON.stringify({event:event,conversation_token:trackingToken||undefined,event_metadata:metadata||{},context:{page:location.pathname,consent_to_store:false}})})
+      .then(function(response){return response.ok?response.json():null})
+      .then(function(data){if(data&&data.conversation_token){trackingToken=data.conversation_token;try{sessionStorage.setItem('iphone_detail_tracking_token',trackingToken)}catch(e){}}})
+      .catch(function(){});
+  }
   function init(){
     var mainBase=location.hostname==='localhost'?'http://localhost:4175':'https://solution-phone.fr';
     document.querySelectorAll('body>nav').forEach(function(nav){nav.classList.add('sp-detail-legacy')});
@@ -20,6 +30,7 @@
       reality.innerHTML='<img src="evan-comptoir.webp" alt="L’équipe dans la boutique Solution Phone à Mâcon" width="1448" height="1086" loading="lazy"><figcaption><span>La réparation se passe ici</span><strong>21 rue Gambetta · Mâcon</strong><small>Diagnostic et devis validés par l’équipe avant intervention.</small></figcaption>';
       product.insertAdjacentElement('afterend',reality);
     }
+    document.addEventListener('click',function(event){var link=event.target.closest('a[href*="wa.me"]');if(link)track('whatsapp_clicked',{source:'iphone_detail',page:location.pathname})});
     var evanWidget=document.createElement('script');evanWidget.src='evan-cross-widget.js?v=3';document.body.appendChild(evanWidget);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();

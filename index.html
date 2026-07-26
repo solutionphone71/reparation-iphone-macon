@@ -788,10 +788,20 @@ setInterval(function(){cr=(cr+1)%ts;upRv();},5000);
 document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('op');});});
 
 // ═══ DEVIS FORM ═══
+var IPHONE_BRAIN_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/evan-brain';
+var IPHONE_BRAIN_KEY='sb_publishable_3Mub3jSj8wUC8mfFtAuhdA_P4Ljnnhb';
+var iphoneTrackingToken='';
+try{iphoneTrackingToken=sessionStorage.getItem('iphone_tracking_token')||''}catch(e){}
+function trackIphoneEvent(event,metadata){
+  fetch(IPHONE_BRAIN_URL,{method:'POST',headers:{apikey:IPHONE_BRAIN_KEY,Authorization:'Bearer '+IPHONE_BRAIN_KEY,'Content-Type':'application/json'},body:JSON.stringify({event:event,conversation_token:iphoneTrackingToken||undefined,event_metadata:metadata||{},context:{page:location.pathname,consent_to_store:false}})})
+    .then(function(response){return response.ok?response.json():null})
+    .then(function(data){if(data&&data.conversation_token){iphoneTrackingToken=data.conversation_token;try{sessionStorage.setItem('iphone_tracking_token',iphoneTrackingToken)}catch(e){}}})
+    .catch(function(){});
+}
 function formSubmitAccepted(payload){return !!payload&&(payload.success===true||payload.success==='true');}
 function getDevisData(){var n=document.getElementById('dv-nom').value.trim(),t=document.getElementById('dv-tel').value.trim(),em=(document.getElementById('dv-email')||{value:''}).value.trim(),mo=document.getElementById('dv-modele').value.trim(),pa=document.getElementById('dv-panne').value.trim();if(!n||!t||!pa){alert('Merci de remplir les champs obligatoires (*)');return null;}return{nom:n,tel:t,email:em,modele:mo,panne:pa};}
-function sendDevisWA(){var d=getDevisData();if(!d)return;var msg='Bonjour Solution Phone !%0ADevis iPhone :%0ANom : '+d.nom+'%0ATél : '+d.tel+(d.modele?'%0AModèle : '+d.modele:'')+'%0APanne : '+d.panne;window.open('https://wa.me/33783921884?text='+msg,'_blank');}
-function sendDevisMail(){var d=getDevisData();if(!d)return;if(!d.email){alert('Merci d\'indiquer votre email pour recevoir la réponse par mail.');return;}var btn=document.querySelector('.form-btns button:last-child');btn.disabled=true;btn.textContent='Envoi…';fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Devis iPhone — '+d.nom,email:d.email,_replyto:d.email,Nom:d.nom,Telephone:d.tel,Email:d.email,Modele:d.modele||'Non précisé',Panne:d.panne,_template:'table'})}).then(function(response){if(!response.ok)throw new Error('Envoi refusé');return response.json();}).then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');btn.textContent='✓ Envoyé !';btn.style.background='var(--green)';}).catch(function(){btn.textContent='Email';btn.disabled=false;alert('Erreur d\'envoi. Réessayez ou contactez-nous par WhatsApp.');});}
+function sendDevisWA(){var d=getDevisData();if(!d)return;var msg='Bonjour Solution Phone !%0ADevis iPhone :%0ANom : '+d.nom+'%0ATél : '+d.tel+(d.modele?'%0AModèle : '+d.modele:'')+'%0APanne : '+d.panne;trackIphoneEvent('whatsapp_clicked',{source:'secondary_form',model:d.modele||'non_precise'});window.open('https://wa.me/33783921884?text='+msg,'_blank');}
+function sendDevisMail(){var d=getDevisData();if(!d)return;if(!d.email){alert('Merci d\'indiquer votre email pour recevoir la réponse par mail.');return;}var btn=document.querySelector('.form-btns button:last-child');btn.disabled=true;btn.textContent='Envoi…';fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Devis iPhone — '+d.nom,email:d.email,_replyto:d.email,Nom:d.nom,Telephone:d.tel,Email:d.email,Modele:d.modele||'Non précisé',Panne:d.panne,_template:'table'})}).then(function(response){if(!response.ok)throw new Error('Envoi refusé');return response.json();}).then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');btn.textContent='✓ Envoyé !';btn.style.background='var(--green)';trackIphoneEvent('email_clicked',{source:'secondary_form',model:d.modele||'non_precise'});}).catch(function(){btn.textContent='Email';btn.disabled=false;alert('Erreur d\'envoi. Réessayez ou contactez-nous par WhatsApp.');});}
 function sendQuickQuote(event){
   event.preventDefault();
   var form=event.currentTarget,btn=form.querySelector('.quick-submit'),status=document.getElementById('quick-status');
@@ -805,7 +815,7 @@ function sendQuickQuote(event){
   btn.disabled=true;btn.textContent='Envoi en cours…';status.textContent='';status.className='quick-status';
   fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
     .then(function(response){if(!response.ok)throw new Error('Envoi refusé');return response.json();})
-    .then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');form.reset();btn.textContent='Demande envoyée';status.textContent='C’est envoyé. L’équipe vous répond avec le tarif précis.';status.className='quick-status success';})
+    .then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');form.reset();btn.textContent='Demande envoyée';status.textContent='C’est envoyé. L’équipe vous répond avec le tarif précis.';status.className='quick-status success';trackIphoneEvent('email_clicked',{source:'hero_form',model:selectedModel,repair:selectedRepair||'non_precisee'});})
     .catch(function(){btn.disabled=false;btn.textContent='Demander mon devis';status.textContent='L’envoi n’a pas abouti. Utilisez WhatsApp ou appelez le 03 85 33 06 89.';status.className='quick-status error';});
 }
 
@@ -847,6 +857,7 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   var form=document.getElementById('hero-lead-form');
   var formToggle=document.getElementById('toggle-hero-form');
   var labels={ecran:'écran',batterie:'batterie',connecteur:'problème de charge',autre:'autre panne'};
+  var lastTrackedPrice='';
   function normalizePriceModel(value){return String(value||'').toLowerCase().replace(/^iphone\s*/,'').replace(/\s+/g,' ').trim();}
   function rowForModel(type,model){
     var wanted=normalizePriceModel(model),rows=(HERO_PRICE_ROWS&&HERO_PRICE_ROWS[type])||[];
@@ -880,6 +891,7 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     else if(issue==='autre')result.innerHTML='<small>Diagnostic gratuit</small><b>Devis confirmé par l’équipe</b><span>Décrivez la panne par e-mail ou WhatsApp.</span>';
     else if(qualityHtml)result.innerHTML=qualityHtml;
     else result.innerHTML='<small>'+model+' · '+labels[issue]+'</small><b>Prix vérifié par l’équipe</b><span>Ce modèle nécessite une confirmation de la pièce disponible.</span>';
+    if(qualityHtml){var trackingKey=model+'|'+issue;if(trackingKey!==lastTrackedPrice){lastTrackedPrice=trackingKey;trackIphoneEvent('price_shown',{source:'iphone_hero',model:model,repair:issue});}}
     whatsapp.href='https://wa.me/33783921884?text='+encodeURIComponent('Bonjour, je souhaite un devis pour '+model+' · '+labels[issue]+'. Ma panne : ');
   };
   document.querySelectorAll('[data-hero-issue]').forEach(function(button){
@@ -897,6 +909,8 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   window.updateHeroPrice();
 })();
 </script>
+
+<script>document.addEventListener('click',function(event){var link=event.target.closest('a[href*="wa.me"]');if(link)trackIphoneEvent('whatsapp_clicked',{source:link.id||link.className||'iphone_link'})})</script>
 
 <script src="evan-cross-widget.js?v=4"></script>
 <script>document.querySelectorAll('[data-android-site]').forEach(function(link){link.href=location.hostname==='localhost'?'http://localhost:4175/reparation-samsung.html':'https://solution-phone.fr/reparation-samsung.html'})</script>
