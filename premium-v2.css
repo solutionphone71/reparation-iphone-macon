@@ -92,7 +92,6 @@ nav .nav-badge{border-radius:2px;box-shadow:none}.nav-cta{border-radius:2px;back
 .ptw{overflow:auto;border:1px solid rgba(0,0,0,.13)!important;background:#f8f7f4!important}
 .pt{border-collapse:collapse}.pt th{background:#171719!important;color:#fff!important;font-size:.67rem!important;letter-spacing:.04em;text-transform:none}.pt td{border-bottom:1px solid rgba(0,0,0,.1)!important}.pt tbody tr:hover{background:#eeeae5!important}.pt .pv{font-variant-numeric:tabular-nums;font-weight:750;color:#171719!important}
 .console-live{display:inline-flex;align-items:center;white-space:nowrap}
-.legacy-repairs{display:none!important}
 .trust-ledger .section-sub{max-width:650px}
 .trust-ledger .container>div[style*="display:grid"]{grid-template-columns:repeat(3,1fr)!important;gap:0!important;border-top:1px solid rgba(0,0,0,.16);border-left:1px solid rgba(0,0,0,.16)}
 .trust-ledger .container>div[style*="display:grid"]>div{padding:25px!important;border:0!important;border-right:1px solid rgba(0,0,0,.16)!important;border-bottom:1px solid rgba(0,0,0,.16)!important;border-radius:0!important;background:transparent!important}
@@ -113,7 +112,6 @@ nav .nav-badge{border-radius:2px;box-shadow:none}.nav-cta{border-radius:2px;back
 .hero-lead-form textarea{width:100%;min-height:58px;border:1px solid #3a3a3e;border-radius:0;background:#232326;color:#fff;padding:11px;font:600 .72rem/1.35 inherit;outline:none;resize:vertical}.hero-lead-form textarea:focus{border-color:#d92d28}
 
 /* Parcours unique de devis — aucune redirection vers un second calculateur. */
-.legacy-calculator{display:none!important}
 .hero{min-height:auto;padding-bottom:76px}.hero-inner{align-items:center}.price-console{overflow:hidden}
 .hero-live-result{margin-top:15px;min-height:92px;padding:16px 17px;background:#fff;border-left:4px solid #d92d28;display:flex;flex-direction:column;justify-content:center}.hero-live-result small{color:#77777c;font-size:.62rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}.hero-live-result b{font-size:1.3rem;line-height:1.08;margin-top:4px;letter-spacing:-.035em}.hero-live-result span{font-size:.66rem;color:#6e6e73;margin-top:6px;line-height:1.4}
 .hero-quality-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:11px}.hero-quality-list span{margin:0;padding:8px 9px;border:1px solid #deddda;background:#f7f6f3;display:flex;align-items:center;justify-content:space-between;gap:8px}.hero-quality-list i{font-style:normal;color:#55555a;font-size:.61rem;font-weight:720;white-space:nowrap}.hero-quality-list strong{color:#b22126;font-size:.76rem;white-space:nowrap}.hero-live-result em{margin-top:8px;color:#6e6e73;font-size:.58rem;font-style:normal;line-height:1.35}
@@ -126,7 +124,6 @@ nav .nav-badge{border-radius:2px;box-shadow:none}.nav-cta{border-radius:2px;back
 @media(max-width:600px){.hero{padding-top:72px;padding-bottom:42px}.hero-inner{gap:18px}.hero-label{margin-bottom:15px}h1{font-size:2.8rem;margin-bottom:15px}.hero-sub{margin-bottom:15px;line-height:1.42}.hero-proof span:nth-child(n+3){display:none}.price-console{padding:18px}.console-head{margin-bottom:15px}.price-console h2{font-size:1.55rem}.console-intro{margin-bottom:13px}.console-label{margin-top:11px}.console-issues{grid-template-columns:repeat(4,1fr);gap:4px}.console-issue{padding:10px 4px;text-align:center;font-size:.63rem}.hero-live-result{min-height:82px}.console-actions{grid-template-columns:1fr}.hero-lead-form{margin:12px -18px -18px;padding:18px}.iphone-model-groups{display:none}.iphone-lineup-image{height:260px}.trust-ledger .container>div[style*="display:grid"]>div:nth-child(n+4){display:none}.trust-ledger .container>div[style*="display:grid"]{grid-template-columns:1fr!important}}
 
 /* La preuve et la conversion ne se répètent pas : une page courte, un parcours. */
-.stats-section,.trust-ledger,.cta-final{display:none!important}
 
 /* Premier écran mobile : le devis passe avant l'image. La photo réelle reste dans l'atelier. */
 @media(max-width:760px){
