@@ -130,7 +130,7 @@ nav .nav-badge{border-radius:2px;box-shadow:none}.nav-cta{border-radius:2px;back
 
 /* Premier écran mobile : le devis passe avant l'image. La photo réelle reste dans l'atelier. */
 @media(max-width:760px){
-  .hero{padding:70px 0 38px;background:#111!important;color:#fff!important}
+  .hero{padding:18px 0 38px;background:#111!important;color:#fff!important}
   .hero:before{background:#111!important;opacity:1!important}
   .hero-inner{padding-inline:15px;gap:17px;text-align:left!important}
   .hero-text{max-width:none}
@@ -172,7 +172,7 @@ nav .nav-badge{border-radius:2px;box-shadow:none}.nav-cta{border-radius:2px;back
 .hero-text .hero-sub{max-width:530px;color:rgba(255,255,255,.82)}
 @media(max-width:900px){.hero-text{min-height:540px;max-width:none!important;background-position:center}.hero-inner{max-width:760px}}
 @media(max-width:760px){
-  .hero{padding-top:70px!important;background:#0b0b0c!important}
+  .hero{padding-top:18px!important;background:#0b0b0c!important}
   .hero-text{min-height:390px;padding:22px 20px 20px;background-position:58% center;border:0;box-shadow:none}
   .hero-text:before{top:17px;left:20px;font-size:.52rem}
   .hero-text .hero-label{margin-top:48px}
