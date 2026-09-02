@@ -465,7 +465,7 @@ footer .foot-links a:hover{color:var(--blue)}
   .ql2{grid-template-columns:repeat(2,1fr)}
 }
 </style>
-<link rel="stylesheet" href="premium-v2.css?v=iphone-clean-1">
+<link rel="stylesheet" href="premium-v2.css?v=conversion-simple-1">
 </head>
 <body>
 
@@ -547,11 +547,13 @@ footer .foot-links a:hover{color:var(--blue)}
         <div class="console-foot"><span>25 € déduits pour tous</span><a href="https://wa.me/33783921884?text=Bonjour, j’ai une autre panne sur mon iPhone.">Autre panne ?</a></div>
         <form class="hero-lead-form" id="hero-lead-form" onsubmit="sendQuickQuote(event)" hidden>
           <div class="hero-lead-title"><small>Devis personnalisé</small><b>Recevez la réponse par e-mail.</b></div>
+          <p class="quick-context" id="quick-context">Votre modèle et la réparation choisie seront joints automatiquement.</p>
           <div class="hero-lead-fields">
             <label><span>Votre nom</span><input id="quick-name" name="name" autocomplete="name" required placeholder="Votre nom"></label>
             <label><span>Votre e-mail</span><input id="quick-email" name="email" type="email" autocomplete="email" required placeholder="vous@email.fr"></label>
           </div>
           <label class="hero-lead-problem"><span>Décrivez la panne</span><textarea id="quick-details" name="details" rows="2" required placeholder="Écran cassé, lignes vertes, tactile bloqué, batterie qui se décharge…"></textarea></label>
+          <input id="quick-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="quote-honeypot">
           <button class="quick-submit" type="submit">Demander mon devis</button>
           <p class="quick-status" id="quick-status" aria-live="polite"></p>
           <small class="quick-privacy">Réponse directe à votre adresse · aucune inscription</small>
@@ -701,7 +703,7 @@ footer .foot-links a:hover{color:var(--blue)}
         <div style="display:flex;flex-direction:column;gap:10px">
           <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="contact-card" target="_blank" rel="noopener"><div class="cc-icon" style="background:rgba(52,199,89,0.1)">💬</div><div><div class="cc-label">Devis WhatsApp urgent</div><div class="cc-value" style="color:var(--green)">07 83 92 18 84</div></div></a>
           <a href="tel:0385330689" class="contact-card"><div class="cc-icon" style="background:rgba(192,57,43,0.1)">📞</div><div><div class="cc-label">Téléphone</div><div class="cc-value" style="color:var(--blue)">03 85 33 06 89</div></div></a>
-          <a href="mailto:contact@solution-phone.fr" class="contact-card"><div class="cc-icon" style="background:rgba(255,149,0,0.1)">✉️</div><div><div class="cc-label">Email</div><div class="cc-value" style="font-size:.82rem">contact@solution-phone.fr</div></div></a>
+          <a href="#devis-immediat" onclick="focusEmailQuote();return false" class="contact-card"><div class="cc-icon" style="background:rgba(255,149,0,0.1)">✉️</div><div><div class="cc-label">Devis par e-mail</div><div class="cc-value" style="font-size:.82rem">Formulaire rapide</div></div></a>
           <a href="https://maps.google.com/?q=21+Rue+Gambetta+71000" target="_blank" class="contact-card"><div class="cc-icon" style="background:rgba(255,255,255,0.04)">📍</div><div><div class="cc-label">Adresse</div><div class="cc-value">21 Rue Gambetta, 71000 Mâcon</div></div></a>
         </div>
       </div>
@@ -726,9 +728,12 @@ footer .foot-links a:hover{color:var(--blue)}
 </section>
 
 <p class="spq-legal">Réduction de 25 € appliquée par Solution Phone sur la réparation d’un iPhone. Lorsqu’elle est éligible au dispositif, cette réduction correspond au Bonus Réparation QualiRépar ; à défaut, elle est prise en charge commercialement par Solution Phone.</p>
-<footer><div class="foot-inner"><div class="foot-copy">© 2026 Solution Phone — Réparation iPhone Mâcon — QualiRépar</div><div class="foot-links"><a href="https://solution-phone.fr/">Réparation téléphone</a><a href="https://solution-phone.fr/reparation-samsung.html">Samsung &amp; Android</a><a href="https://solution-accessoires.fr/">Smartphones &amp; accessoires</a><a href="mailto:contact@solution-phone.fr">Email</a><a href="https://wa.me/33783921884">WhatsApp</a><a href="tel:0385330689">03 85 33 06 89</a></div></div></footer>
+<footer><div class="foot-inner"><div class="foot-copy">© 2026 Solution Phone — Réparation iPhone Mâcon — QualiRépar</div><div class="foot-links"><a href="https://solution-phone.fr/">Réparation téléphone</a><a href="https://solution-phone.fr/reparation-samsung.html">Samsung &amp; Android</a><a href="https://solution-accessoires.fr/">Smartphones &amp; accessoires</a><a href="#devis-immediat" onclick="focusEmailQuote();return false">Devis e-mail</a><a href="https://wa.me/33783921884">WhatsApp</a><a href="tel:0385330689">03 85 33 06 89</a></div></div></footer>
 
-<a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="wa-float" aria-label="Demander un devis WhatsApp urgent" target="_blank" rel="noopener">💬 Devis WhatsApp urgent</a>
+<div class="conversion-dock" aria-label="Demander un devis">
+  <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" aria-label="Demander un devis WhatsApp urgent" target="_blank" rel="noopener">WhatsApp urgent</a>
+  <button type="button" onclick="focusEmailQuote()">Devis e-mail</button>
+</div>
 
 <script>
 // ═══ LIVE CLOCK ON IPHONE ═══
@@ -806,6 +811,8 @@ document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',
 // ═══ DEVIS FORM ═══
 var IPHONE_BRAIN_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/evan-brain';
 var IPHONE_BRAIN_KEY='sb_publishable_3Mub3jSj8wUC8mfFtAuhdA_P4Ljnnhb';
+var QUOTE_REQUEST_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/quote-request';
+var quoteRequestTokens={hero:null,secondary:null};
 var iphoneTrackingToken='';
 try{iphoneTrackingToken=sessionStorage.getItem('iphone_tracking_token')||''}catch(e){}
 function trackIphoneEvent(event,metadata){
@@ -814,10 +821,24 @@ function trackIphoneEvent(event,metadata){
     .then(function(data){if(data&&data.conversation_token){iphoneTrackingToken=data.conversation_token;try{sessionStorage.setItem('iphone_tracking_token',iphoneTrackingToken)}catch(e){}}})
     .catch(function(){});
 }
-function formSubmitAccepted(payload){return !!payload&&(payload.success===true||payload.success==='true');}
+function quoteErrorMessage(error){
+  if(error&&error.status===429)return 'Plusieurs demandes ont déjà été envoyées récemment. Réessayez dans 15 minutes ou utilisez WhatsApp.';
+  if(error&&error.status>=400&&error.status<500)return 'Vérifiez les informations indiquées puis réessayez.';
+  return 'L’envoi n’a pas abouti. Utilisez WhatsApp ou appelez le 03 85 33 06 89.';
+}
+function sendQuoteRequest(data,slot){
+  var token=quoteRequestTokens[slot]||(quoteRequestTokens[slot]=crypto.randomUUID());
+  return fetch(QUOTE_REQUEST_URL,{method:'POST',headers:{apikey:IPHONE_BRAIN_KEY,Authorization:'Bearer '+IPHONE_BRAIN_KEY,'Content-Type':'application/json'},body:JSON.stringify({name:data.name,email:data.email,phone:data.phone||'',request:data.request,form_type:'main_quote',page:location.pathname,client_token:token,website:data.website||''})})
+    .then(function(response){return response.json().catch(function(){return null;}).then(function(payload){if(response.ok&&payload&&payload.received){quoteRequestTokens[slot]=null;return payload;}var error=new Error(payload&&payload.error||'quote_failed');error.status=response.status;throw error;});});
+}
+function trackQuoteSuccess(reference,source,model,repair){
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'devis_email_envoye',form_type:'main_quote',source:source,reference:reference,model:model||'non_precise',repair:repair||'non_precisee'});
+  trackIphoneEvent('email_sent',{source:source,model:model||'non_precise',repair:repair||'non_precisee',reference:reference});
+}
 function getDevisData(){var n=document.getElementById('dv-nom').value.trim(),t=document.getElementById('dv-tel').value.trim(),em=(document.getElementById('dv-email')||{value:''}).value.trim(),mo=document.getElementById('dv-modele').value.trim(),pa=document.getElementById('dv-panne').value.trim();if(!n||!t||!pa){alert('Merci de remplir les champs obligatoires (*)');return null;}return{nom:n,tel:t,email:em,modele:mo,panne:pa};}
 function sendDevisWA(){var d=getDevisData();if(!d)return;var msg='Bonjour Solution Phone !%0AMa demande de devis iPhone est urgente.%0ANom : '+d.nom+'%0ATél : '+d.tel+(d.modele?'%0AModèle : '+d.modele:'')+'%0APanne : '+d.panne;trackIphoneEvent('whatsapp_clicked',{source:'secondary_form',model:d.modele||'non_precise'});window.open('https://wa.me/33783921884?text='+msg,'_blank');}
-function sendDevisMail(){var d=getDevisData();if(!d)return;if(!d.email){alert('Merci d\'indiquer votre email pour recevoir la réponse par mail.');return;}var btn=document.querySelector('.form-btns button:last-child');btn.disabled=true;btn.textContent='Envoi…';fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Devis iPhone — '+d.nom,email:d.email,_replyto:d.email,Nom:d.nom,Telephone:d.tel,Email:d.email,Modele:d.modele||'Non précisé',Panne:d.panne,_template:'table'})}).then(function(response){if(!response.ok)throw new Error('Envoi refusé');return response.json();}).then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');btn.textContent='✓ Envoyé !';btn.style.background='var(--green)';trackIphoneEvent('email_clicked',{source:'secondary_form',model:d.modele||'non_precise'});}).catch(function(){btn.textContent='Email';btn.disabled=false;alert('Erreur d\'envoi. Réessayez ou contactez-nous par WhatsApp.');});}
+function sendDevisMail(){var d=getDevisData();if(!d)return;if(!d.email){alert('Merci d\'indiquer votre email pour recevoir la réponse par mail.');return;}var btn=document.querySelector('.form-btns button:last-child');btn.disabled=true;btn.textContent='Envoi…';sendQuoteRequest({name:d.nom,email:d.email,phone:d.tel,request:'Devis iPhone · '+(d.modele||'Modèle non précisé')+' · '+d.panne},'secondary').then(function(payload){btn.textContent='✓ Reçu · '+payload.reference;btn.style.background='var(--green)';trackQuoteSuccess(payload.reference,'secondary_form',d.modele,'autre');}).catch(function(error){btn.textContent='Email';btn.disabled=false;alert(quoteErrorMessage(error));});}
 function sendQuickQuote(event){
   event.preventDefault();
   var form=event.currentTarget,btn=form.querySelector('.quick-submit'),status=document.getElementById('quick-status');
@@ -827,12 +848,11 @@ function sendQuickQuote(event){
   var heroModel=(document.getElementById('hero-model')||{}).value||'',heroConsole=document.querySelector('.price-console'),heroRepair=heroConsole?heroConsole.getAttribute('data-selected-issue'):'';
   var selectedModel=heroModel,selectedRepair=heroRepair;
   if(!selectedModel){status.textContent='Choisissez d’abord votre modèle d’iPhone.';status.className='quick-status error';document.getElementById('hero-model').focus();return;}
-  var payload={_subject:'Demande rapide iPhone — '+selectedModel,email:email,_replyto:email,Nom:name,Telephone:phone||'Non renseigné',Email:email,Modele:selectedModel,Reparation:labels[selectedRepair]||'À préciser',Precision:details||'Aucune',_template:'table'};
+  var request='Devis iPhone · '+selectedModel+' · '+(labels[selectedRepair]||'Réparation à préciser')+' · '+(details||'Aucune précision');
   btn.disabled=true;btn.textContent='Envoi en cours…';status.textContent='';status.className='quick-status';
-  fetch('https://formsubmit.co/ajax/contact@solution-phone.fr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
-    .then(function(response){if(!response.ok)throw new Error('Envoi refusé');return response.json();})
-    .then(function(payload){if(!formSubmitAccepted(payload))throw new Error('Envoi refusé');form.reset();btn.textContent='Demande envoyée';status.textContent='C’est envoyé. L’équipe vous répond avec le tarif précis.';status.className='quick-status success';trackIphoneEvent('email_clicked',{source:'hero_form',model:selectedModel,repair:selectedRepair||'non_precisee'});})
-    .catch(function(){btn.disabled=false;btn.textContent='Demander mon devis';status.textContent='L’envoi n’a pas abouti. Utilisez WhatsApp ou appelez le 03 85 33 06 89.';status.className='quick-status error';});
+  sendQuoteRequest({name:name,email:email,phone:phone,request:request,website:document.getElementById('quick-website').value},'hero')
+    .then(function(payload){form.reset();btn.textContent='Demande reçue';status.textContent='Demande reçue ('+payload.reference+'). L’équipe vous répond directement par e-mail.';status.className='quick-status success';trackQuoteSuccess(payload.reference,'hero_form',selectedModel,selectedRepair);})
+    .catch(function(error){btn.disabled=false;btn.textContent='Demander mon devis';status.textContent=quoteErrorMessage(error);status.className='quick-status error';});
 }
 
 // ═══ PRICING TABLES ═══
@@ -920,11 +940,17 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     });
   });
   modelSelect.addEventListener('change',window.updateHeroPrice);
-  formToggle.addEventListener('click',function(){var opening=form.hidden;form.hidden=!opening;formToggle.setAttribute('aria-expanded',String(opening));formToggle.textContent=opening?'Fermer le formulaire':'Recevoir par e-mail';if(opening)setTimeout(function(){document.getElementById('quick-name').focus()},50)});
+  formToggle.addEventListener('click',function(){
+    var model=modelSelect.value;
+    if(!model){result.innerHTML='<small>Une seule étape avant le devis</small><b>Choisissez votre modèle d’iPhone</b><span>Il sera joint automatiquement à votre demande.</span>';modelSelect.focus();return;}
+    var opening=form.hidden;form.hidden=!opening;formToggle.setAttribute('aria-expanded',String(opening));formToggle.textContent=opening?'Fermer le formulaire':'Recevoir par e-mail';
+    if(opening){document.getElementById('quick-context').textContent=model+' · '+labels[issue]+' · joint automatiquement';setTimeout(function(){document.getElementById('quick-name').focus()},50)}
+  });
   var tableToggle=document.getElementById('price-table-toggle'),tariffSection=document.getElementById('tarifs');
   if(tableToggle)tableToggle.addEventListener('click',function(){var opening=!tariffSection.classList.contains('tables-open');tariffSection.classList.toggle('tables-open',opening);tableToggle.setAttribute('aria-expanded',String(opening));tableToggle.textContent=opening?'Masquer les tableaux complets':'Afficher tous les tarifs écran et batterie';});
   window.updateHeroPrice();
 })();
+function focusEmailQuote(){var model=document.getElementById('hero-model'),toggle=document.getElementById('toggle-hero-form');document.getElementById('devis-immediat').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(model&&!model.value){model.focus();return;}if(toggle)toggle.click();},450)}
 </script>
 
 <script>document.addEventListener('click',function(event){var link=event.target.closest('a[href*="wa.me"]');if(link)trackIphoneEvent('whatsapp_clicked',{source:link.id||link.className||'iphone_link'})})</script>
