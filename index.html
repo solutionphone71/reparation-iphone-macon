@@ -892,7 +892,7 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   var whatsapp=document.getElementById('hero-whatsapp');
   var form=document.getElementById('hero-lead-form');
   var formToggle=document.getElementById('toggle-hero-form');
-  var labels={ecran:'écran',batterie:'batterie',connecteur:'problème de charge',autre:'autre panne'};
+  var labels={ecran:'écran',batterie:'batterie',connecteur:'problème de charge',autre:'réparation à préciser'};
   var lastTrackedPrice='';
   function normalizePriceModel(value){return String(value||'').toLowerCase().replace(/^iphone\s*/,'').replace(/\s+/g,' ').trim();}
   function rowForModel(type,model){
@@ -948,7 +948,11 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   });
   var tableToggle=document.getElementById('price-table-toggle'),tariffSection=document.getElementById('tarifs');
   if(tableToggle)tableToggle.addEventListener('click',function(){var opening=!tariffSection.classList.contains('tables-open');tariffSection.classList.toggle('tables-open',opening);tableToggle.setAttribute('aria-expanded',String(opening));tableToggle.textContent=opening?'Masquer les tableaux complets':'Afficher tous les tarifs écran et batterie';});
+  var quoteParams=new URLSearchParams(location.search),requestedModel=quoteParams.get('modele'),requestedIssue=quoteParams.get('panne');
+  if(requestedModel&&Array.from(modelSelect.options).some(function(option){return option.value===requestedModel;}))modelSelect.value=requestedModel;
+  if(requestedIssue&&labels[requestedIssue]){issue=requestedIssue;document.querySelector('.price-console').setAttribute('data-selected-issue',issue);document.querySelectorAll('[data-hero-issue]').forEach(function(item){item.classList.toggle('active',item.getAttribute('data-hero-issue')===issue)});}
   window.updateHeroPrice();
+  if(quoteParams.get('email')==='1'&&modelSelect.value){form.hidden=false;formToggle.setAttribute('aria-expanded','true');formToggle.textContent='Fermer le formulaire';document.getElementById('quick-context').textContent=modelSelect.value+' · '+labels[issue]+' · joint automatiquement';setTimeout(function(){document.getElementById('devis-immediat').scrollIntoView({behavior:'smooth'});document.getElementById('quick-name').focus();},120);}
 })();
 function focusEmailQuote(){var model=document.getElementById('hero-model'),toggle=document.getElementById('toggle-hero-form');document.getElementById('devis-immediat').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(model&&!model.value){model.focus();return;}if(toggle)toggle.click();},450)}
 </script>

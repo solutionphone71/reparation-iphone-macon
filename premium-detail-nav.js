@@ -12,6 +12,10 @@
   function init(){
     var mainBase=location.hostname==='localhost'?'http://localhost:4173':'https://solution-phone.fr';
     var detailModel=(document.querySelector('h1')?.textContent||document.title||'votre iPhone').replace(/\s+/g,' ').trim();
+    var detailFile=(location.pathname.split('/').pop()||'').toLowerCase();
+    var detailModelValue=detailFile.indexOf('iphone-')===0?((document.querySelector('h1 .gradient')||{}).textContent||'').trim():'';
+    var detailIssue=detailFile.indexOf('batterie')>=0?'batterie':detailFile.indexOf('connecteur')>=0?'connecteur':detailFile.indexOf('ecran')>=0?'ecran':'autre';
+    var emailQuoteUrl='index.html?email=1&panne='+encodeURIComponent(detailIssue)+(detailModelValue?'&modele='+encodeURIComponent(detailModelValue):'')+'#devis';
     document.querySelectorAll('body>nav').forEach(function(nav){nav.classList.add('sp-detail-legacy')});
     var header=document.createElement('header');header.className='sp-detail-header';
     header.innerHTML='<div class="sp-detail-inner"><button class="sp-detail-back" type="button" aria-label="Revenir à la page précédente"><span aria-hidden="true">←</span><b>Retour</b></button><a class="sp-detail-brand" href="'+mainBase+'/"><span class="sp-detail-mark">SP</span><span><strong>Solution Phone</strong><small>Atelier indépendant · Mâcon</small></span></a><nav class="sp-detail-links" aria-label="Navigation iPhone"><a href="index.html#devis">iPhone</a><a href="'+mainBase+'/reparation-samsung.html">Android</a><a href="ecran.html">Écran</a><a href="batterie.html">Batterie</a><a href="qualirepar.html">QualiRépar</a><a href="'+mainBase+'/reconditionnes.html">Reconditionnés</a><a href="'+mainBase+'/atelier.html">L’atelier</a></nav><a class="sp-detail-wa" href="https://wa.me/33783921884?text=Bonjour%2C%20je%20souhaite%20un%20devis%20iPhone" target="_blank" rel="noopener">WhatsApp ↗</a><button class="sp-detail-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>';
@@ -22,7 +26,7 @@
     var conversionDock=document.createElement('div');
     conversionDock.className='sp-detail-conversion-dock';
     conversionDock.setAttribute('aria-label','Demander un devis');
-    conversionDock.innerHTML='<a class="sp-detail-dock-wa" href="https://wa.me/33783921884?text='+encodeURIComponent('Bonjour, devis urgent pour '+detailModel)+'" target="_blank" rel="noopener"><span>WhatsApp</span><strong>Devis urgent</strong></a><a class="sp-detail-dock-mail" href="index.html#devis"><span>E-mail</span><strong>Recevoir un devis</strong></a>';
+    conversionDock.innerHTML='<a class="sp-detail-dock-wa" href="https://wa.me/33783921884?text='+encodeURIComponent('Bonjour, devis urgent pour '+detailModel)+'" target="_blank" rel="noopener"><span>WhatsApp</span><strong>Devis urgent</strong></a><a class="sp-detail-dock-mail" href="'+emailQuoteUrl+'"><span>E-mail</span><strong>Recevoir un devis</strong></a>';
     document.body.appendChild(conversionDock);
     var hero=document.querySelector('.hero-inner');
     if(hero){
