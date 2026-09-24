@@ -64,3 +64,17 @@ body .hero .console-actions a,body .hero .console-actions button{border-radius:9
 body .hero .console-actions a{background:var(--ap-blue)!important}
 body .hero .console-actions button{background:#fff!important;color:var(--ap-blue)!important;border:1px solid var(--ap-blue)!important}
 body .hero .console-foot a{color:var(--ap-link)}
+
+/* Choix du modèle en boutons (génération puis modèle exact) */
+.model-picker{display:grid;gap:10px;margin-bottom:6px}
+.model-gens,.model-variants{display:flex;flex-wrap:wrap;gap:8px}
+.model-gen,.model-variant{min-height:44px;padding:0 16px;border:1px solid #d2d2d7;border-radius:980px;background:#fff;color:#1d1d1f;font:600 .9rem/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;cursor:pointer}
+.model-gen:hover,.model-variant:hover{border-color:#86868b}
+.model-gen[aria-pressed="true"],.model-variant[aria-pressed="true"]{border:2px solid #0071e3;padding:0 15px}
+.model-variants{padding:12px;border-radius:14px;background:#f5f5f7}
+.model-variants[hidden]{display:none}
+.model-help summary{min-height:36px;display:flex;align-items:center;color:#0066cc;font-size:.85rem;cursor:pointer;list-style:none}
+.model-help summary::-webkit-details-marker{display:none}
+.model-help p{margin:0 0 6px;font-size:.85rem;color:#6e6e73}
+.model-list-label{opacity:.7}
+body .hero .hero-text .hero-sub strong{color:#1d1d1f}

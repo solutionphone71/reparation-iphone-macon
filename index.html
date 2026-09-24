@@ -509,7 +509,7 @@ footer .foot-links a:hover{color:var(--blue)}
     <div class="hero-text">
       <p class="apple-eyebrow">Réparateur labellisé QualiRépar</p>
       <h1 class="offer-title"><span class="offer-amount">−25&nbsp;€.</span><span class="offer-line">Sur votre réparation iPhone.</span></h1>
-      <p class="hero-sub">Déduits tout de suite de la facture. Pour tout le monde.</p>
+      <p class="hero-sub">Déduits tout de suite de la facture. Pour tout le monde.<br><strong>Réparé en moins d’une heure</strong> si la pièce est en stock.</p>
       <div class="hero-btns">
         <a href="#hero-model" class="btn-primary">Obtenir mon tarif</a>
         <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-outline" target="_blank" rel="noopener">Devis WhatsApp</a>
@@ -524,7 +524,13 @@ footer .foot-links a:hover{color:var(--blue)}
         </div>
         <h2>Combien coûte la réparation&nbsp;?</h2>
         <p class="console-intro">Sélectionnez votre iPhone et la réparation. Les tarifs viennent directement de l’atelier.</p>
-        <label class="console-label" for="hero-model">Votre modèle</label>
+        <span class="console-label" id="model-picker-label">Votre iPhone</span>
+        <div class="model-picker" aria-labelledby="model-picker-label">
+          <div class="model-gens" role="group" aria-label="Génération d’iPhone"></div>
+          <div class="model-variants" role="group" aria-label="Modèle exact" hidden></div>
+          <details class="model-help"><summary>Comment connaître mon modèle&nbsp;?</summary><p>Sur l’iPhone : <b>Réglages › Général › Informations</b>. Le nom du modèle est affiché en haut.</p></details>
+        </div>
+        <label class="console-label model-list-label" for="hero-model">Ou dans la liste</label>
         <select class="console-select" id="hero-model">
           <option value="">Choisissez votre iPhone</option>
           <option>iPhone 17 Pro Max</option><option>iPhone 17 Pro</option><option>iPhone 17</option><option>iPhone Air</option><option>iPhone 17e</option>
@@ -975,6 +981,23 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   if(requestedIssue&&labels[requestedIssue]){issue=requestedIssue;document.querySelector('.price-console').setAttribute('data-selected-issue',issue);document.querySelectorAll('[data-hero-issue]').forEach(function(item){item.classList.toggle('active',item.getAttribute('data-hero-issue')===issue)});}
   window.updateHeroPrice();
   if(quoteParams.get('email')==='1'&&modelSelect.value){form.hidden=false;formToggle.setAttribute('aria-expanded','true');formToggle.textContent='Fermer le formulaire';document.getElementById('quick-context').textContent=modelSelect.value+' · '+labels[issue]+' · joint automatiquement';setTimeout(function(){document.getElementById('devis-immediat').scrollIntoView({behavior:'smooth'});document.getElementById('quick-name').focus();},120);}
+})();
+(function(){
+  var select=document.getElementById('hero-model'),gens=document.querySelector('.model-gens'),variants=document.querySelector('.model-variants');
+  if(!select||!gens)return;
+  function groupOf(label){var m=label.replace(/^iPhone\s*/,'');if(/^Air/.test(m))return '17';if(/^(X|XR|XS)/.test(m))return 'X';if(/^SE/.test(m))return 'SE';if(/^[678]\b|^[678]\//.test(m))return 'Anciens';return m.split(/\s|\//)[0];}
+  var order=[],groups={};
+  Array.prototype.forEach.call(select.options,function(o){if(!o.value)return;var g=groupOf(o.textContent.trim());if(!groups[g]){groups[g]=[];order.push(g);}groups[g].push(o);});
+  function button(text,cls){var b=document.createElement('button');b.type='button';b.className=cls;b.textContent=text;return b;}
+  function showVariants(g){
+    variants.replaceChildren();variants.hidden=false;
+    gens.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.gen===g));});
+    groups[g].forEach(function(o){var b=button(o.textContent.trim().replace(/^iPhone\s*/,''),'model-variant');b.dataset.value=o.value;b.setAttribute('aria-pressed',String(select.value===o.value));b.addEventListener('click',function(){select.value=o.value;select.dispatchEvent(new Event('change'));sync();});variants.appendChild(b);});
+    if(groups[g].length===1&&select.value!==groups[g][0].value){select.value=groups[g][0].value;select.dispatchEvent(new Event('change'));sync();}
+  }
+  order.forEach(function(g){var b=button({X:'iPhone X / XR / XS',SE:'iPhone SE',Anciens:'iPhone 6 à 8'}[g]||'iPhone '+g,'model-gen');b.dataset.gen=g;b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){showVariants(g);});gens.appendChild(b);});
+  function sync(){var o=select.options[select.selectedIndex];if(!o||!o.value)return;var g=groupOf(o.textContent.trim());if(variants.hidden||!variants.querySelector('[data-value]')||groupOf(variants.querySelector('[data-value]').textContent)!==g)showVariants(g);variants.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.value===select.value));});}
+  select.addEventListener('change',sync);sync();
 })();
 function focusEmailQuote(){var model=document.getElementById('hero-model'),toggle=document.getElementById('toggle-hero-form');document.getElementById('devis-immediat').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(model&&!model.value){model.focus();return;}if(toggle)toggle.click();},450)}
 </script>
