@@ -79,3 +79,4 @@ body .hero .hero-btns a,.offer-cta{border-radius:999px!important}
 body .hero h1.offer-title,body .hero h1.offer-title .offer-line{color:var(--offer-plum)!important;-webkit-text-fill-color:currentColor}
 body .hero h1.offer-title .offer-amount{color:var(--offer-red)!important}
 body .hero h1.offer-title .offer-now{color:#6b3b48!important}
+body .hero .hero-proof{gap:7px;border:0!important;padding-top:0!important}body .hero .hero-proof span{border-radius:999px!important;padding:7px 12px!important}
