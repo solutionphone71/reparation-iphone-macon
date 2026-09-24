@@ -507,15 +507,14 @@ footer .foot-links a:hover{color:var(--blue)}
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-label"><span class="lbl-dot"></span> Réparateur labellisé QualiRépar · Mâcon</div>
-      <h1 class="offer-title"><span class="offer-amount">−25&nbsp;€</span><span class="offer-line">sur votre réparation iPhone.</span><span class="offer-now">Tout de suite, pour tout le monde.</span></h1>
-      <p class="hero-sub"><strong>Déduits directement de votre facture, sans dossier à remplir.</strong> Choisissez votre iPhone : le prix affiché est déjà réduit de 25&nbsp;€, pièce et main-d’œuvre comprises.</p>
+      <p class="apple-eyebrow">Réparateur labellisé QualiRépar</p>
+      <h1 class="offer-title"><span class="offer-amount">−25&nbsp;€.</span><span class="offer-line">Sur votre réparation iPhone.</span></h1>
+      <p class="hero-sub">Déduits tout de suite de la facture. Pour tout le monde.</p>
       <div class="hero-btns">
-        <a href="#hero-model" class="btn-primary">Voir mon prix −25&nbsp;€</a>
-        <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-outline" target="_blank" rel="noopener">Devis WhatsApp urgent</a>
+        <a href="#hero-model" class="btn-primary">Obtenir mon tarif</a>
+        <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-outline" target="_blank" rel="noopener">Devis WhatsApp</a>
       </div>
-      <a class="price-match-badge" href="#prix-garanti"><b>Prix le plus bas garanti</b><span>Moins cher ailleurs&nbsp;? On vous rembourse la différence.</span></a>
-      <div class="hero-proof"><span>Depuis 2014 à Mâcon</span><span>Diagnostic gratuit</span><span>Garantie 6 mois</span><span>Prix annoncé avant réparation</span></div>
+      <p class="hero-proof"><a href="#prix-garanti">Prix le plus bas garanti ›</a></p>
     </div>
     <div class="hero-visual">
       <div class="price-console" id="devis" data-selected-issue="ecran" style="scroll-margin-top:150px">
@@ -566,34 +565,23 @@ footer .foot-links a:hover{color:var(--blue)}
   </div>
 </section>
 
-<!-- OFFRE -25 € ET PRIX LE PLUS BAS GARANTI -->
-<section class="offer-band" aria-labelledby="offer-steps-title">
-  <div class="offer-wrap">
-    <div class="offer-steps">
-      <p class="offer-kicker">Comment ça marche</p>
-      <h2 id="offer-steps-title">Vos 25&nbsp;€ en trois étapes.</h2>
-      <ol>
-        <li><b>1</b><span><strong>Je choisis mon iPhone</strong>et la réparation dans le calculateur.</span></li>
-        <li><b>2</b><span><strong>Je vois mon prix −25&nbsp;€</strong>déjà déduits, pièce et main-d’œuvre comprises.</span></li>
-        <li><b>3</b><span><strong>Je réserve sur WhatsApp</strong>ou je passe à l’atelier, 21 rue Gambetta à Mâcon.</span></li>
-      </ol>
-      <a class="offer-cta" href="#hero-model">Voir mon prix</a>
-    </div>
-    <div class="price-match" id="prix-garanti">
-      <p class="offer-kicker">Prix le plus bas garanti</p>
-      <h2>Moins cher ailleurs&nbsp;?<br><span>On vous rembourse la différence.</span></h2>
-      <p>Montrez-nous un devis moins cher pour la même réparation&nbsp;: avant la réparation, on s’aligne. Jusqu’à 14&nbsp;jours après, on vous rembourse la différence.</p>
-      <details>
-        <summary>Voir les conditions</summary>
-        <ul>
-          <li>Même modèle d’iPhone, même réparation et même qualité de pièce (par exemple écran compatible contre écran compatible, ou écran d’origine contre écran d’origine).</li>
-          <li>Devis écrit et daté d’un réparateur professionnel disposant d’une boutique à moins de 30&nbsp;km de Mâcon. Les sites internet et les réparations par envoi postal sont exclus.</li>
-          <li>Devis présenté avant la réparation&nbsp;: nous alignons notre prix. Devis présenté dans les 14&nbsp;jours qui suivent la réparation&nbsp;: nous remboursons la différence.</li>
-          <li>La comparaison se fait sur le prix final payé par le client, bonus et réductions déduits des deux côtés, pièce disponible au même moment.</li>
-          <li>Hors promotions ponctuelles, déstockages et offres réservées à certains clients.</li>
-        </ul>
-      </details>
-    </div>
+<!-- PRIX LE PLUS BAS GARANTI -->
+<section class="price-guarantee" id="prix-garanti" aria-labelledby="prix-garanti-title">
+  <p class="apple-eyebrow">Prix le plus bas garanti</p>
+  <h2 id="prix-garanti-title">Moins cher ailleurs&nbsp;?<br>On vous rembourse la différence.</h2>
+  <p class="price-guarantee-sub">Avant la réparation, on s’aligne. Jusqu’à 14&nbsp;jours après, on rembourse l’écart.</p>
+  <div class="price-guarantee-links">
+    <a class="btn-primary" href="#devis-immediat">Obtenir mon tarif</a>
+    <details class="price-guarantee-terms">
+      <summary>Voir les conditions ›</summary>
+      <ul>
+        <li>Même modèle d’iPhone, même réparation et même qualité de pièce (écran compatible contre écran compatible, écran d’origine contre écran d’origine).</li>
+        <li>Devis écrit et daté d’un réparateur professionnel disposant d’une boutique à moins de 30&nbsp;km de Mâcon. Sites internet et réparations par envoi postal exclus.</li>
+        <li>Devis présenté avant la réparation&nbsp;: nous alignons notre prix. Dans les 14&nbsp;jours qui suivent&nbsp;: nous remboursons la différence.</li>
+        <li>Comparaison sur le prix final payé, bonus et réductions déduits des deux côtés, pièce disponible au même moment.</li>
+        <li>Hors promotions ponctuelles, déstockages et offres réservées à certains clients.</li>
+      </ul>
+    </details>
   </div>
 </section>
 
