@@ -511,10 +511,10 @@ footer .foot-links a:hover{color:var(--blue)}
       <h1 class="offer-title"><span class="offer-amount">−25&nbsp;€.</span><span class="offer-line">Sur votre réparation iPhone.</span></h1>
       <p class="hero-sub">Déduits tout de suite de la facture. Pour tout le monde.<br><strong>Réparé en moins d’une heure</strong> si la pièce est en stock.</p>
       <div class="hero-btns">
-        <a href="#hero-model" class="btn-primary">Obtenir mon tarif</a>
-        <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-outline" target="_blank" rel="noopener">Devis WhatsApp</a>
+        <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-primary" data-wa-sync target="_blank" rel="noopener">Devis WhatsApp immédiat</a>
+        <button type="button" class="btn-outline" onclick="focusEmailQuote()">Devis par e-mail</button>
       </div>
-      <p class="hero-proof"><a href="#prix-garanti">Prix le plus bas garanti ›</a></p>
+      <p class="hero-proof"><a href="#devis">Voir mon prix ›</a><a href="#prix-garanti">Prix le plus bas garanti ›</a></p>
     </div>
     <div class="hero-visual">
       <div class="price-console" id="devis" data-selected-issue="ecran" style="scroll-margin-top:150px">
@@ -549,8 +549,8 @@ footer .foot-links a:hover{color:var(--blue)}
         <div class="console-issues"><button class="console-issue active" type="button" data-hero-issue="ecran">Écran</button><button class="console-issue" type="button" data-hero-issue="batterie">Batterie</button><button class="console-issue" type="button" data-hero-issue="connecteur">Charge</button><button class="console-issue" type="button" data-hero-issue="autre">Autre panne</button></div>
         <div class="hero-live-result" id="hero-live-result" aria-live="polite"><small>Votre tarif apparaîtra ici</small><b>Choisissez votre modèle</b></div>
         <div class="console-actions">
-          <a id="hero-whatsapp" href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" target="_blank" rel="noopener">Devis WhatsApp urgent</a>
-          <button id="toggle-hero-form" type="button" aria-expanded="false">Recevoir par e-mail</button>
+          <a id="hero-whatsapp" href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" target="_blank" rel="noopener">Devis WhatsApp immédiat</a>
+          <button id="toggle-hero-form" type="button" aria-expanded="false">Devis par e-mail</button>
         </div>
         <div class="console-foot"><span>25 € déjà déduits · prix le plus bas garanti</span><a href="https://wa.me/33783921884?text=Bonjour, j’ai une autre panne sur mon iPhone.">Autre panne ?</a></div>
         <form class="hero-lead-form" id="hero-lead-form" onsubmit="sendQuickQuote(event)" hidden>
@@ -577,7 +577,7 @@ footer .foot-links a:hover{color:var(--blue)}
   <h2 id="prix-garanti-title">Moins cher ailleurs&nbsp;?<br>On vous rembourse la différence.</h2>
   <p class="price-guarantee-sub">Avant la réparation, on s’aligne. Jusqu’à 14&nbsp;jours après, on rembourse l’écart.</p>
   <div class="price-guarantee-links">
-    <a class="btn-primary" href="#devis-immediat">Obtenir mon tarif</a>
+    <a class="btn-primary" href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" data-wa-sync target="_blank" rel="noopener">Devis WhatsApp immédiat</a>
     <details class="price-guarantee-terms">
       <summary>Voir les conditions ›</summary>
       <ul>
@@ -759,8 +759,8 @@ footer .foot-links a:hover{color:var(--blue)}
 <footer><div class="foot-inner"><div class="foot-copy">© 2026 Solution Phone — Réparation iPhone Mâcon — QualiRépar</div><div class="foot-links"><a href="https://solution-phone.fr/">Réparation téléphone</a><a href="https://solution-phone.fr/reparation-samsung.html">Samsung &amp; Android</a><a href="https://solution-accessoires.fr/">Smartphones &amp; accessoires</a><a href="#devis-immediat" onclick="focusEmailQuote();return false">Devis e-mail</a><a href="https://wa.me/33783921884">WhatsApp</a><a href="tel:0385330689">03 85 33 06 89</a></div></div></footer>
 
 <div class="conversion-dock" aria-label="Demander un devis">
-  <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" aria-label="Demander un devis WhatsApp urgent" target="_blank" rel="noopener">WhatsApp urgent</a>
-  <button type="button" onclick="focusEmailQuote()">Devis e-mail</button>
+  <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" data-wa-sync aria-label="Devis WhatsApp immédiat" target="_blank" rel="noopener">Devis WhatsApp</a>
+  <button type="button" onclick="focusEmailQuote()">Devis par e-mail</button>
 </div>
 
 <script>
@@ -877,7 +877,7 @@ function sendQuickQuote(event){
   var heroModel=(document.getElementById('hero-model')||{}).value||'',heroConsole=document.querySelector('.price-console'),heroRepair=heroConsole?heroConsole.getAttribute('data-selected-issue'):'';
   var selectedModel=heroModel,selectedRepair=heroRepair;
   if(!selectedModel){status.textContent='Choisissez d’abord votre modèle d’iPhone.';status.className='quick-status error';document.getElementById('hero-model').focus();return;}
-  var request='Devis iPhone · '+selectedModel+' · '+(labels[selectedRepair]||'Réparation à préciser')+' · '+(details||'Aucune précision');
+  var request='Devis iPhone · '+selectedModel+' · '+(labels[selectedRepair]||'Réparation à préciser')+(window.heroQuoteChoice?' ·'+window.heroQuoteChoice:'')+' · '+(details||'Aucune précision');
   btn.disabled=true;btn.textContent='Envoi en cours…';status.textContent='';status.className='quick-status';
   sendQuoteRequest({name:name,email:email,phone:phone,request:request,website:document.getElementById('quick-website').value},'hero')
     .then(function(payload){btn.textContent='Demande reçue';status.textContent='Demande reçue ('+payload.reference+'). L’équipe vous répond directement par e-mail.';status.className='quick-status success';try{form.reset()}catch(error){}try{trackQuoteSuccess(payload.reference,'hero_form',selectedModel,selectedRepair)}catch(error){}},function(error){btn.disabled=false;btn.textContent='Demander mon devis';status.textContent=quoteErrorMessage(error);status.className='quick-status error';});
@@ -921,7 +921,7 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
   var form=document.getElementById('hero-lead-form');
   var formToggle=document.getElementById('toggle-hero-form');
   var labels={ecran:'écran',batterie:'batterie',connecteur:'problème de charge',autre:'réparation à préciser'};
-  var lastTrackedPrice='';
+  var lastTrackedPrice='',selectedQuality='',selectedPrice=0;
   function normalizePriceModel(value){return String(value||'').toLowerCase().replace(/^iphone\s*/,'').replace(/\s+/g,' ').trim();}
   function rowForModel(type,model){
     var wanted=normalizePriceModel(model),rows=(HERO_PRICE_ROWS&&HERO_PRICE_ROWS[type])||[];
@@ -945,7 +945,7 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     var available=options.filter(function(item){return item[1]>0;}).length;
     var heading='Votre prix, 25 € déjà déduits';
     var explainer=type==='ecran'?'<details class="hero-quality-explainer"><summary>Quelle différence entre les qualités ?</summary><div><p><b>Compatible</b><span>Le choix économique pour un usage courant.</span></p><p><b>LTPS Prime</b><span>Un écran LCD premium, lumineux et réactif.</span></p><p><b>Soft OLED</b><span>Une dalle OLED souple, avec des noirs profonds et un rendu proche de l’origine.</span></p><p><b>ReLife</b><span>Une dalle Apple d’origine reconditionnée avec une vitre neuve.</span></p></div></details>':'';
-    return '<small>'+model+' · '+labels[type]+'</small><b>'+heading+'</b><div class="hero-quality-list">'+options.map(function(item){return '<span'+(item[1]>0?'':' class="unavailable"')+'><i>'+item[0]+'</i>'+(item[1]>0?'<s title="Tarif sans les 25 €">'+(item[1]+25)+' €</s>':'')+'<strong>'+(item[1]>0?item[1]+' €':'Non proposé')+'</strong></span>';}).join('')+'</div>'+explainer+'<em>Prix barré : tarif sans les 25 €. Pièce et main-d’œuvre comprises · disponibilité confirmée avant intervention.</em>';
+    return '<small>'+model+' · '+labels[type]+'</small><b>'+heading+'</b><div class="hero-quality-list">'+options.map(function(item){return item[1]>0?'<button type="button" class="quality-choice" data-quality="'+item[0]+'" data-price="'+item[1]+'" aria-pressed="'+(selectedQuality===item[0])+'"><i>'+item[0]+'</i><s title="Tarif sans les 25 €">'+(item[1]+25)+' €</s><strong>'+item[1]+' €</strong></button>':'<span class="unavailable"><i>'+item[0]+'</i><strong>Non proposé</strong></span>';}).join('')+'</div>'+explainer+'<em>Touchez une qualité pour l’ajouter à votre devis. Prix barré : tarif sans les 25 €. Pièce et main-d’œuvre comprises · disponibilité confirmée avant intervention.</em>';
   }
   window.updateHeroPrice=function(){
     var model=modelSelect.value;
@@ -956,23 +956,32 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     else if(qualityHtml)result.innerHTML=qualityHtml;
     else result.innerHTML='<small>'+model+' · '+labels[issue]+'</small><b>Prix vérifié par l’équipe</b><span>Ce modèle nécessite une confirmation de la pièce disponible.</span>';
     if(qualityHtml){var trackingKey=model+'|'+issue;if(trackingKey!==lastTrackedPrice){lastTrackedPrice=trackingKey;trackIphoneEvent('price_shown',{source:'iphone_hero',model:model,repair:issue});}}
-    whatsapp.textContent='Devis WhatsApp urgent';
-    whatsapp.href='https://wa.me/33783921884?text='+encodeURIComponent('Bonjour, ma demande de devis iPhone est urgente. '+model+' · '+labels[issue]+'. Ma panne : ');
+    var choice=selectedQuality&&qualityHtml?' Qualité choisie : '+selectedQuality+' · '+selectedPrice+' € (25 € déjà déduits).':'';
+    whatsapp.textContent='Devis WhatsApp immédiat';
+    whatsapp.href='https://wa.me/33783921884?text='+encodeURIComponent('Bonjour, je souhaite un devis immédiat. '+model+' · '+labels[issue]+'.'+choice+' Ma panne : ');
+    document.querySelectorAll('[data-wa-sync]').forEach(function(link){link.href=whatsapp.href;});
+    window.heroQuoteChoice=choice;
   };
+  result.addEventListener('click',function(event){
+    var b=event.target.closest('.quality-choice');if(!b)return;
+    selectedQuality=b.getAttribute('data-quality');selectedPrice=Number(b.getAttribute('data-price'));
+    window.updateHeroPrice();
+    var again=result.querySelector('.quality-choice[aria-pressed="true"]');if(again)again.focus();
+  });
   document.querySelectorAll('[data-hero-issue]').forEach(function(button){
     button.addEventListener('click',function(){
-      issue=button.getAttribute('data-hero-issue');
+      issue=button.getAttribute('data-hero-issue');selectedQuality='';
       document.querySelector('.price-console').setAttribute('data-selected-issue',issue);
       document.querySelectorAll('[data-hero-issue]').forEach(function(item){item.classList.toggle('active',item===button)});
       window.updateHeroPrice();
     });
   });
-  modelSelect.addEventListener('change',window.updateHeroPrice);
+  modelSelect.addEventListener('change',function(){selectedQuality='';window.updateHeroPrice();});
   formToggle.addEventListener('click',function(){
     var model=modelSelect.value;
     if(!model){result.innerHTML='<small>Une seule étape avant le devis</small><b>Choisissez votre modèle d’iPhone</b><span>Il sera joint automatiquement à votre demande.</span>';modelSelect.focus();return;}
-    var opening=form.hidden;form.hidden=!opening;formToggle.setAttribute('aria-expanded',String(opening));formToggle.textContent=opening?'Fermer le formulaire':'Recevoir par e-mail';
-    if(opening){document.getElementById('quick-context').textContent=model+' · '+labels[issue]+' · joint automatiquement';setTimeout(function(){document.getElementById('quick-name').focus()},50)}
+    var opening=form.hidden;form.hidden=!opening;formToggle.setAttribute('aria-expanded',String(opening));formToggle.textContent=opening?'Fermer le formulaire':'Devis par e-mail';
+    if(opening){document.getElementById('quick-context').textContent=model+' · '+labels[issue]+(window.heroQuoteChoice||'')+' · joint automatiquement';setTimeout(function(){document.getElementById('quick-name').focus()},50)}
   });
   var tableToggle=document.getElementById('price-table-toggle'),tariffSection=document.getElementById('tarifs');
   if(tableToggle)tableToggle.addEventListener('click',function(){var opening=!tariffSection.classList.contains('tables-open');tariffSection.classList.toggle('tables-open',opening);tableToggle.setAttribute('aria-expanded',String(opening));tableToggle.textContent=opening?'Masquer les tableaux complets':'Afficher tous les tarifs écran et batterie';});

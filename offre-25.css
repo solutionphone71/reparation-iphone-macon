@@ -78,3 +78,13 @@ body .hero .console-foot a{color:var(--ap-link)}
 .model-help p{margin:0 0 6px;font-size:.85rem;color:#6e6e73}
 .model-list-label{opacity:.7}
 body .hero .hero-text .hero-sub strong{color:#1d1d1f}
+
+/* Qualités cliquables : la qualité choisie part dans le devis */
+body .hero .hero-quality-list .quality-choice{margin:0;padding:9px 10px;border:1px solid #e5e5ea;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;font:inherit;text-align:left;min-height:44px}
+body .hero .hero-quality-list .quality-choice:hover{border-color:#86868b}
+body .hero .hero-quality-list .quality-choice[aria-pressed="true"]{border:2px solid #0071e3;padding:8px 9px}
+body .hero .hero-quality-list .quality-choice i{font-style:normal;color:#55555a;font-size:.66rem;font-weight:700;white-space:nowrap}
+body .hero .hero-quality-list .quality-choice s{margin-left:auto}
+body .hero .hero-quality-list .quality-choice strong{color:#1d1d1f;font-size:.8rem}
+body .hero .hero-proof{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+body .hero .hero-btns button.btn-outline{font:inherit;font-size:1rem;cursor:pointer}
