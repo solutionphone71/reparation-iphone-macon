@@ -466,6 +466,7 @@ footer .foot-links a:hover{color:var(--blue)}
 }
 </style>
 <link rel="stylesheet" href="premium-v2.css?v=conversion-simple-3">
+<link rel="stylesheet" href="offre-25.css?v=1">
 </head>
 <body>
 
@@ -488,6 +489,7 @@ footer .foot-links a:hover{color:var(--blue)}
     <a href="qualirepar.html">QualiRépar</a>
     <a href="#reviews">Avis</a>
     <a href="#contact">Nous trouver</a>
+    <a class="nav-boutique" href="https://solution-phone.fr/accessoires.html">Boutique</a>
   </div>
   <div style="display:flex;align-items:center;gap:16px">
     <div class="nav-phone">03 85 33 06 89</div>
@@ -505,13 +507,14 @@ footer .foot-links a:hover{color:var(--blue)}
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-label"><span class="lbl-dot"></span> −25 € déduits · Pour tout le monde</div>
-      <h1>Réparation iPhone <br><span class="gradient">à Mâcon.</span></h1>
-      <p class="hero-sub"><strong>Votre diagnostic sans rendez-vous à Mâcon.</strong> Obtenez le prix de votre écran ou de votre batterie avant de venir ; le délai est confirmé avec la disponibilité de la pièce.</p>
+      <div class="hero-label"><span class="lbl-dot"></span> Réparateur labellisé QualiRépar · Mâcon</div>
+      <h1 class="offer-title"><span class="offer-amount">−25&nbsp;€</span><span class="offer-line">sur votre réparation iPhone.</span><span class="offer-now">Tout de suite, pour tout le monde.</span></h1>
+      <p class="hero-sub"><strong>Déduits directement de votre facture, sans dossier à remplir.</strong> Choisissez votre iPhone : le prix affiché est déjà réduit de 25&nbsp;€, pièce et main-d’œuvre comprises.</p>
       <div class="hero-btns">
-        <a href="#hero-model" class="btn-primary">Obtenir mon tarif</a>
+        <a href="#hero-model" class="btn-primary">Voir mon prix −25&nbsp;€</a>
         <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" class="btn-outline" target="_blank" rel="noopener">Devis WhatsApp urgent</a>
       </div>
+      <a class="price-match-badge" href="#prix-garanti"><b>Prix le plus bas garanti</b><span>Moins cher ailleurs&nbsp;? On vous rembourse la différence.</span></a>
       <div class="hero-proof"><span>Depuis 2014 à Mâcon</span><span>Diagnostic gratuit</span><span>Garantie 6 mois</span><span>Prix annoncé avant réparation</span></div>
     </div>
     <div class="hero-visual">
@@ -544,7 +547,7 @@ footer .foot-links a:hover{color:var(--blue)}
           <a id="hero-whatsapp" href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" target="_blank" rel="noopener">Devis WhatsApp urgent</a>
           <button id="toggle-hero-form" type="button" aria-expanded="false">Recevoir par e-mail</button>
         </div>
-        <div class="console-foot"><span>25 € déduits pour tous</span><a href="https://wa.me/33783921884?text=Bonjour, j’ai une autre panne sur mon iPhone.">Autre panne ?</a></div>
+        <div class="console-foot"><span>25 € déjà déduits · prix le plus bas garanti</span><a href="https://wa.me/33783921884?text=Bonjour, j’ai une autre panne sur mon iPhone.">Autre panne ?</a></div>
         <form class="hero-lead-form" id="hero-lead-form" onsubmit="sendQuickQuote(event)" hidden>
           <div class="hero-lead-title"><small>Devis personnalisé</small><b>Recevez la réponse par e-mail.</b></div>
           <p class="quick-context" id="quick-context">Votre modèle et la réparation choisie seront joints automatiquement.</p>
@@ -559,6 +562,37 @@ footer .foot-links a:hover{color:var(--blue)}
           <small class="quick-privacy">Réponse directe à votre adresse · aucune inscription</small>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRE -25 € ET PRIX LE PLUS BAS GARANTI -->
+<section class="offer-band" aria-labelledby="offer-steps-title">
+  <div class="offer-wrap">
+    <div class="offer-steps">
+      <p class="offer-kicker">Comment ça marche</p>
+      <h2 id="offer-steps-title">Vos 25&nbsp;€ en trois étapes.</h2>
+      <ol>
+        <li><b>1</b><span><strong>Je choisis mon iPhone</strong>et la réparation dans le calculateur.</span></li>
+        <li><b>2</b><span><strong>Je vois mon prix −25&nbsp;€</strong>déjà déduits, pièce et main-d’œuvre comprises.</span></li>
+        <li><b>3</b><span><strong>Je réserve sur WhatsApp</strong>ou je passe à l’atelier, 21 rue Gambetta à Mâcon.</span></li>
+      </ol>
+      <a class="offer-cta" href="#hero-model">Voir mon prix</a>
+    </div>
+    <div class="price-match" id="prix-garanti">
+      <p class="offer-kicker">Prix le plus bas garanti</p>
+      <h2>Moins cher ailleurs&nbsp;?<br><span>On vous rembourse la différence.</span></h2>
+      <p>Montrez-nous un devis moins cher pour la même réparation&nbsp;: avant la réparation, on s’aligne. Jusqu’à 14&nbsp;jours après, on vous rembourse la différence.</p>
+      <details>
+        <summary>Voir les conditions</summary>
+        <ul>
+          <li>Même modèle d’iPhone, même réparation et même qualité de pièce (par exemple écran compatible contre écran compatible, ou écran d’origine contre écran d’origine).</li>
+          <li>Devis écrit et daté d’un réparateur professionnel disposant d’une boutique à moins de 30&nbsp;km de Mâcon. Les sites internet et les réparations par envoi postal sont exclus.</li>
+          <li>Devis présenté avant la réparation&nbsp;: nous alignons notre prix. Devis présenté dans les 14&nbsp;jours qui suivent la réparation&nbsp;: nous remboursons la différence.</li>
+          <li>La comparaison se fait sur le prix final payé par le client, bonus et réductions déduits des deux côtés, pièce disponible au même moment.</li>
+          <li>Hors promotions ponctuelles, déstockages et offres réservées à certains clients.</li>
+        </ul>
+      </details>
     </div>
   </div>
 </section>
@@ -915,9 +949,9 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     var row=rowForModel(type,model),options=qualityOptions(type,row);
     if(!row||!options.some(function(item){return item[1]>0;}))return '';
     var available=options.filter(function(item){return item[1]>0;}).length;
-    var heading=type==='ecran'?'4 niveaux d’écran · '+available+' tarif'+(available>1?'s':'')+' disponible'+(available>1?'s':''):available+' choix disponibles';
+    var heading='Votre prix, 25 € déjà déduits';
     var explainer=type==='ecran'?'<details class="hero-quality-explainer"><summary>Quelle différence entre les qualités ?</summary><div><p><b>Compatible</b><span>Le choix économique pour un usage courant.</span></p><p><b>LTPS Prime</b><span>Un écran LCD premium, lumineux et réactif.</span></p><p><b>Soft OLED</b><span>Une dalle OLED souple, avec des noirs profonds et un rendu proche de l’origine.</span></p><p><b>ReLife</b><span>Une dalle Apple d’origine reconditionnée avec une vitre neuve.</span></p></div></details>':'';
-    return '<small>'+model+' · '+labels[type]+'</small><b>'+heading+'</b><div class="hero-quality-list">'+options.map(function(item){return '<span'+(item[1]>0?'':' class="unavailable"')+'><i>'+item[0]+'</i><strong>'+(item[1]>0?item[1]+' €':'Non proposé')+'</strong></span>';}).join('')+'</div>'+explainer+'<em>Pièce et main-d’œuvre comprises · disponibilité confirmée avant intervention.</em>';
+    return '<small>'+model+' · '+labels[type]+'</small><b>'+heading+'</b><div class="hero-quality-list">'+options.map(function(item){return '<span'+(item[1]>0?'':' class="unavailable"')+'><i>'+item[0]+'</i>'+(item[1]>0?'<s title="Tarif sans les 25 €">'+(item[1]+25)+' €</s>':'')+'<strong>'+(item[1]>0?item[1]+' €':'Non proposé')+'</strong></span>';}).join('')+'</div>'+explainer+'<em>Prix barré : tarif sans les 25 €. Pièce et main-d’œuvre comprises · disponibilité confirmée avant intervention.</em>';
   }
   window.updateHeroPrice=function(){
     var model=modelSelect.value;

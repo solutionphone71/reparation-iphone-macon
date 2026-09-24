@@ -1,0 +1,81 @@
+/* Offre −25 € QualiRépar et prix le plus bas garanti.
+   Reprend le style « affiche » de la Boutique solution-phone.fr :
+   fonds pastel, gros chiffres, boutons arrondis, rouge #e30613. */
+:root{--offer-red:#e30613;--offer-red-dark:#b8050f;--offer-peach:#f4ded6;--offer-plum:#421827;--offer-blue:#e8edf6;--offer-navy:#172b4b}
+
+/* Menu : bouton Boutique en relief, identique au site principal */
+nav .nav-links a.nav-boutique{display:inline-flex;align-items:center;padding:8px 15px;border:1px solid #f06870;border-bottom-color:#ae1722;border-radius:10px;background:linear-gradient(155deg,#ed3847 0%,#cc1424 60%,#ae101d 100%);color:#fff!important;font-weight:750;box-shadow:0 3px 0 #800c17,0 6px 10px #a10d2026,inset 0 1px 0 #ffffff55;transition:transform .16s,box-shadow .16s}
+nav .nav-links a.nav-boutique:hover{transform:translateY(-2px);box-shadow:0 5px 0 #800c17,0 9px 14px #a10d2033,inset 0 1px 0 #ffffff55}
+nav .nav-links a.nav-boutique:focus-visible{outline:3px solid #222;outline-offset:4px}
+
+/* Haut de page : affiche pêche au lieu du fond noir */
+body .hero{background:var(--offer-peach);color:var(--offer-plum);min-height:auto;padding:104px 0 72px}
+body .hero:before{content:"";position:absolute;inset:auto -10% -45% auto;width:min(70vw,760px);aspect-ratio:1;border-radius:50%;background:#ffffff4d;z-index:-1;opacity:1}
+body .hero:after,body .hero .hero-grid{display:none}
+body .hero .hero-label{display:inline-flex;align-items:center;gap:9px;padding:6px 14px 6px 6px;margin-bottom:22px;border:0;border-radius:999px;background:#fff;color:var(--offer-plum);font-size:.72rem;font-weight:750;letter-spacing:.02em;box-shadow:0 8px 24px #4218271a}
+body .hero .hero-label .lbl-dot{display:block;width:30px;height:30px;border-radius:7px;background:#fff url('qualirepar-label-officiel.jpg') center/contain no-repeat;animation:none}
+body .hero h1.offer-title{display:flex;flex-direction:column;gap:6px;margin:0 0 22px;color:var(--offer-plum);font-weight:800;letter-spacing:-.05em;line-height:1}
+.offer-title .offer-amount{display:block;color:var(--offer-red);font-size:clamp(5.2rem,13vw,10.5rem);line-height:.84;letter-spacing:-.075em;font-weight:900}
+.offer-title .offer-line{font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:1.02}
+.offer-title .offer-now{font-size:clamp(1.05rem,1.6vw,1.35rem);font-weight:600;letter-spacing:-.02em;color:#6b3b48}
+body .hero .hero-sub{color:#5d3441;max-width:560px}
+body .hero .hero-sub strong{color:var(--offer-plum)}
+body .hero .hero-btns .btn-primary{background:var(--offer-red);color:#fff;border-radius:999px;box-shadow:0 10px 24px #e3061333}
+body .hero .hero-btns .btn-primary:hover{background:var(--offer-red-dark)}
+body .hero .hero-btns .btn-outline{background:var(--offer-plum);border-color:var(--offer-plum);color:#fff;border-radius:999px}
+body .hero .hero-proof span{border:1px solid #42182726;background:#ffffff8c;color:var(--offer-plum);backdrop-filter:none}
+
+/* Retire l’ancien cadre photo sombre derrière le texte */
+body .hero{background:var(--offer-peach)!important}
+body .hero .hero-text{min-height:0;padding:0;background:none;border:0;box-shadow:none;justify-content:flex-start;overflow:visible}
+body .hero .hero-text:before{display:none}
+body .hero .hero-text h1{text-shadow:none;max-width:none}
+body .hero .hero-text .hero-sub{color:#5d3441}
+@media(max-width:760px){body .hero{padding-top:26px!important;background:var(--offer-peach)!important}body .hero .hero-text{min-height:0;padding:0}body .hero .hero-text .hero-label{margin-top:0}body .hero .hero-text .hero-sub{color:#5d3441}}
+
+/* Badge prix garanti sous les boutons */
+.price-match-badge{display:inline-grid;gap:2px;margin-top:20px;padding:12px 18px 12px 52px;border-radius:16px;background:#fff;color:var(--offer-navy);text-decoration:none;position:relative;box-shadow:0 8px 24px #1a2b4b14;max-width:100%}
+.price-match-badge:before{content:"✓";position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--offer-navy);color:#fff;font-weight:800;font-size:14px}
+.price-match-badge b{font-size:.95rem;letter-spacing:-.02em}
+.price-match-badge span{font-size:.8rem;color:#4a5670}
+.price-match-badge:hover{transform:translateY(-1px)}
+
+/* Prix barré dans le calculateur */
+.hero-quality-list span s{display:block;color:#9a9aa0;font-size:.62rem;font-weight:650;text-decoration-thickness:1.5px;text-decoration-color:#e30613}
+.hero-quality-list span strong{color:var(--offer-red)}
+
+/* Bande trois étapes + prix garanti */
+.offer-band{padding:clamp(48px,7vw,88px) 0;background:#fff}
+.offer-wrap{max-width:1260px;margin:0 auto;padding:0 clamp(17px,4vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.offer-steps,.price-match{border-radius:18px;padding:clamp(26px,4vw,44px)}
+.offer-steps{background:#f5f5f7;color:#1d1d1f}
+.price-match{background:var(--offer-blue);color:var(--offer-navy)}
+.offer-kicker{margin:0 0 14px;font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;opacity:.75}
+.offer-band h2{margin:0 0 20px;font-size:clamp(1.8rem,3.2vw,2.7rem);line-height:1.04;letter-spacing:-.05em;font-weight:800}
+.price-match h2 span{color:var(--offer-red)}
+.offer-steps ol{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.offer-steps li{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:14px;padding:13px 14px;border-radius:14px;background:#fff}
+.offer-steps li b{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--offer-red);color:#fff;font-weight:800}
+.offer-steps li span{font-size:.9rem;color:#515154;line-height:1.4}
+.offer-steps li strong{display:block;color:#1d1d1f;font-size:1rem}
+.offer-cta{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;background:#1d1d1f;color:#fff;font-weight:750;font-size:.9rem}
+.offer-cta:hover{background:var(--offer-red)}
+.price-match>p{margin:0 0 18px;font-size:1rem;line-height:1.55;color:#34425e}
+.price-match details{border-top:1px solid #172b4b26;padding-top:14px}
+.price-match summary{cursor:pointer;font-weight:750;font-size:.9rem;min-height:44px;display:flex;align-items:center}
+.price-match ul{margin:8px 0 0;padding-left:18px;display:grid;gap:8px;font-size:.82rem;line-height:1.5;color:#34425e}
+
+@media(max-width:900px){.offer-wrap{grid-template-columns:1fr}}
+@media(max-width:600px){
+  body .hero{padding:26px 0 44px}
+  .offer-title .offer-amount{font-size:clamp(4.6rem,27vw,6.4rem)}
+  .offer-title .offer-line{font-size:1.75rem}
+  .price-match-badge{display:grid;width:100%;box-sizing:border-box}
+  nav .nav-links a.nav-boutique{padding:8px 13px}
+}
+@media(prefers-reduced-motion:reduce){nav .nav-links a.nav-boutique,.price-match-badge{transition:none;transform:none}}
+body .hero .hero-text .hero-label{align-self:flex-start}
+body .hero .hero-btns a,.offer-cta{border-radius:999px!important}
+body .hero h1.offer-title,body .hero h1.offer-title .offer-line{color:var(--offer-plum)!important;-webkit-text-fill-color:currentColor}
+body .hero h1.offer-title .offer-amount{color:var(--offer-red)!important}
+body .hero h1.offer-title .offer-now{color:#6b3b48!important}
