@@ -760,6 +760,7 @@ footer .foot-links a:hover{color:var(--blue)}
 
 <div class="conversion-dock" aria-label="Demander un devis">
   <a href="https://wa.me/33783921884?text=Bonjour%2C%20ma%20demande%20de%20devis%20iPhone%20est%20urgente.%20Mon%20mod%C3%A8le%20et%20ma%20panne%20%3A%20" data-wa-sync aria-label="Devis WhatsApp immédiat" target="_blank" rel="noopener">Devis WhatsApp</a>
+  <a class="dock-call" href="tel:0385330689" aria-label="Appeler Solution Phone au 03 85 33 06 89">Appeler</a>
   <button type="button" onclick="focusEmailQuote()">Devis par e-mail</button>
 </div>
 
@@ -1012,6 +1013,7 @@ function focusEmailQuote(){var model=document.getElementById('hero-model'),toggl
 </script>
 
 <script>document.addEventListener('click',function(event){var link=event.target.closest('a[href*="wa.me"]');if(link)trackIphoneEvent('whatsapp_clicked',{source:link.id||link.className||'iphone_link'})})</script>
+<script>document.addEventListener('click',function(event){var link=event.target.closest('a[href^="tel:"]');if(link)trackIphoneEvent('phone_clicked',{source:link.className||'iphone_link'})})</script>
 
 <script src="evan-cross-widget.js?v=4"></script>
 <script src="qualirepar-priority.js?v=1"></script>
