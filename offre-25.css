@@ -123,3 +123,4 @@ body .hero .hero-proof a,body .hero .console-foot a{display:inline-flex;align-it
 .model-gen:focus-visible,.model-variant:focus-visible,.quality-choice:focus-visible,body .hero .hero-btns a:focus-visible,body .hero .hero-btns button:focus-visible,.price-guarantee a:focus-visible,.price-guarantee summary:focus-visible,.conversion-dock a:focus-visible,.conversion-dock button:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
 /* Vert WhatsApp plus foncé : texte blanc lisible (contraste 4,5 minimum) */
 .conversion-dock a[href*="wa.me"],body .hero .console-actions a#hero-whatsapp{background:#0f7a3d!important;color:#fff!important}
+nav .nav-cta{border-radius:980px!important;background:#0071e3!important;border-color:#0071e3!important;color:#fff!important;font-weight:500}nav .nav-cta:hover{background:#0077ed!important}
