@@ -88,3 +88,4 @@ body .hero .hero-quality-list .quality-choice s{margin-left:auto}
 body .hero .hero-quality-list .quality-choice strong{color:#1d1d1f;font-size:.8rem}
 body .hero .hero-proof{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
 body .hero .hero-btns button.btn-outline{font:inherit;font-size:1rem;cursor:pointer}
+body .hero .hero-btns button.btn-outline{border-radius:980px!important;min-height:44px;padding:0 22px;background:transparent;border:1px solid #0071e3;color:#0071e3}body .hero .hero-btns button.btn-outline:hover{background:#0071e3;color:#fff}
