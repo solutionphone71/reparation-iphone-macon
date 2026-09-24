@@ -124,3 +124,10 @@ body .hero .hero-proof a,body .hero .console-foot a{display:inline-flex;align-it
 /* Vert WhatsApp plus foncé : texte blanc lisible (contraste 4,5 minimum) */
 .conversion-dock a[href*="wa.me"],body .hero .console-actions a#hero-whatsapp{background:#0f7a3d!important;color:#fff!important}
 nav .nav-cta{border-radius:980px!important;background:#0071e3!important;border-color:#0071e3!important;color:#fff!important;font-weight:500}nav .nav-cta:hover{background:#0077ed!important}
+
+/* Note Google mise en avant */
+.google-rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;min-height:44px;padding:6px 16px;border-radius:980px;background:#fff;color:#1d1d1f;box-shadow:0 4px 18px rgba(0,0,0,.06);font-size:.95rem;text-decoration:none}
+.google-rating-stars{color:#f5b100;letter-spacing:1px}.google-rating b{font-weight:700}.google-rating span:last-child{color:#0066cc}
+.google-rating:hover span:last-child{text-decoration:underline}.google-rating:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+#reviews .section-h{font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:-.045em}
+.google-rating{flex-wrap:nowrap;white-space:nowrap}
