@@ -12,11 +12,11 @@
 .sp-trust h3{margin:48px 0 14px;font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:-.03em}
 .sp-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;text-align:left}
 .sp-services a{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;min-height:44px;padding:18px 20px;border:1px solid #d2d2d7;border-radius:16px;background:#fff;color:#1d1d1f;text-decoration:none}
-.sp-services a:hover{border-color:#86868b}
+.sp-services a:hover{border-color:#6b6b70}
 .sp-services b{font-size:1rem}.sp-services span{grid-column:1;color:#6e6e73;font-size:.85rem}
 .sp-services strong{grid-column:2;grid-row:1/span 2;font-size:1.15rem;white-space:nowrap}
 .sp-services em{grid-column:1/-1;margin-top:4px;color:#0066cc;font-style:normal;font-size:.85rem}
-.sp-trust a:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+.sp-trust a:focus-visible{outline:3px solid #0066cc;outline-offset:3px}
 @media(max-width:900px){.sp-trust-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.sp-trust-grid{grid-template-columns:1fr}}
 html.tariff-embed .sp-trust,html.evan-embed .sp-trust{display:none!important}

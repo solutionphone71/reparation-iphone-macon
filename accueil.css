@@ -1,0 +1,16 @@
+/* Corrections de l'accueil (accessibilité, WhatsApp vert, contenu visible sans JS). Chargé en dernier. */
+/* Boutons WhatsApp : même vert que sur les autres sites */
+.hero-btns a[data-wa-sync],.price-guarantee-links a[data-wa-sync],#hero-whatsapp,.conversion-dock a[data-wa-sync],.btn-wa-green{background:#0f7a3d!important;border-color:#0f7a3d!important;color:#fff!important}
+.hero-btns a[data-wa-sync]:hover,.price-guarantee-links a[data-wa-sync]:hover,#hero-whatsapp:hover,.conversion-dock a[data-wa-sync]:hover,.btn-wa-green:hover{background:#0b6331!important}
+/* Contenu visible sans JavaScript et sans animation si l'utilisateur le demande */
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;transition:none!important}}
+/* Focus visible */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #0066cc!important;outline-offset:2px}
+/* Champs de formulaire lisibles (évite le zoom automatique sur iPhone) */
+input,select,textarea{font-size:16px!important}
+.form-group label,.hero-lead-fields label span,.hero-lead-problem span{font-size:.85rem}
+.rgpd-note,.quick-privacy{display:block;margin-top:10px;font-size:.78rem!important;line-height:1.5;color:#5f5f66!important;text-align:left}
+.rgpd-note a,.quick-privacy a{color:#0066cc!important;text-decoration:underline}
+.price-guarantee-sub small{display:block;margin-top:8px;font-size:.82rem;line-height:1.5;opacity:.85}
+.foot-copy a{color:inherit;text-decoration:underline}
+.foot-copy a{display:inline-block;padding:8px 0}

@@ -1,6 +1,6 @@
 /* −25 € QualiRépar et prix le plus bas garanti, mise en page inspirée d’apple.fr :
    fond #f5f5f7, texte centré, grand titre, boutons bleus en pilule, liens « › ». */
-:root{--ap-bg:#f5f5f7;--ap-ink:#1d1d1f;--ap-muted:#6e6e73;--ap-blue:#0071e3;--ap-blue-hover:#0077ed;--ap-link:#0066cc;--ap-red:#e30613}
+:root{--ap-bg:#f5f5f7;--ap-ink:#1d1d1f;--ap-muted:#6e6e73;--ap-blue:#0066cc;--ap-blue-hover:#0077ed;--ap-link:#0066cc;--ap-red:#e30613}
 
 /* Menu : même bouton Boutique que solution-phone.fr */
 nav .nav-links a.nav-boutique{display:inline-flex;align-items:center;padding:8px 15px;border:1px solid #f06870;border-bottom-color:#ae1722;border-radius:10px;background:linear-gradient(155deg,#ed3847 0%,#cc1424 60%,#ae101d 100%);color:#fff!important;font-weight:750;box-shadow:0 3px 0 #800c17,0 6px 10px #a10d2026,inset 0 1px 0 #ffffff55;transition:transform .16s,box-shadow .16s}
@@ -69,8 +69,8 @@ body .hero .console-foot a{color:var(--ap-link)}
 .model-picker{display:grid;gap:10px;margin-bottom:6px}
 .model-gens,.model-variants{display:flex;flex-wrap:wrap;gap:8px}
 .model-gen,.model-variant{min-height:44px;padding:0 16px;border:1px solid #d2d2d7;border-radius:980px;background:#fff;color:#1d1d1f;font:600 .9rem/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;cursor:pointer}
-.model-gen:hover,.model-variant:hover{border-color:#86868b}
-.model-gen[aria-pressed="true"],.model-variant[aria-pressed="true"]{border:2px solid #0071e3;padding:0 15px}
+.model-gen:hover,.model-variant:hover{border-color:#6b6b70}
+.model-gen[aria-pressed="true"],.model-variant[aria-pressed="true"]{border:2px solid #0066cc;padding:0 15px}
 .model-variants{padding:12px;border-radius:14px;background:#f5f5f7}
 .model-variants[hidden]{display:none}
 .model-help summary{min-height:36px;display:flex;align-items:center;color:#0066cc;font-size:.85rem;cursor:pointer;list-style:none}
@@ -81,14 +81,14 @@ body .hero .hero-text .hero-sub strong{color:#1d1d1f}
 
 /* Qualités cliquables : la qualité choisie part dans le devis */
 body .hero .hero-quality-list .quality-choice{margin:0;padding:9px 10px;border:1px solid #e5e5ea;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;font:inherit;text-align:left;min-height:44px}
-body .hero .hero-quality-list .quality-choice:hover{border-color:#86868b}
-body .hero .hero-quality-list .quality-choice[aria-pressed="true"]{border:2px solid #0071e3;padding:8px 9px}
+body .hero .hero-quality-list .quality-choice:hover{border-color:#6b6b70}
+body .hero .hero-quality-list .quality-choice[aria-pressed="true"]{border:2px solid #0066cc;padding:8px 9px}
 body .hero .hero-quality-list .quality-choice i{font-style:normal;color:#55555a;font-size:.66rem;font-weight:700;white-space:nowrap}
 body .hero .hero-quality-list .quality-choice s{margin-left:auto}
 body .hero .hero-quality-list .quality-choice strong{color:#1d1d1f;font-size:.8rem}
 body .hero .hero-proof{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
 body .hero .hero-btns button.btn-outline{font:inherit;font-size:1rem;cursor:pointer}
-body .hero .hero-btns button.btn-outline{border-radius:980px!important;min-height:44px;padding:0 22px;background:transparent;border:1px solid #0071e3;color:#0071e3}body .hero .hero-btns button.btn-outline:hover{background:#0071e3;color:#fff}
+body .hero .hero-btns button.btn-outline{border-radius:980px!important;min-height:44px;padding:0 22px;background:transparent;border:1px solid #0066cc;color:#0066cc}body .hero .hero-btns button.btn-outline:hover{background:#0066cc;color:#fff}
 
 /* Boutons fixés en bas : WhatsApp, Appeler, e-mail */
 .conversion-dock{grid-template-columns:1.2fr .8fr 1fr!important}
@@ -120,15 +120,15 @@ body .hero .hero-quality-list .bonus-calc{margin-left:auto;color:#6e6e73;font-si
 /* Cibles tactiles d’au moins 44 px */
 body .hero .hero-proof a,body .hero .console-foot a{display:inline-flex;align-items:center;min-height:44px}
 /* Contour visible au clavier */
-.model-gen:focus-visible,.model-variant:focus-visible,.quality-choice:focus-visible,body .hero .hero-btns a:focus-visible,body .hero .hero-btns button:focus-visible,.price-guarantee a:focus-visible,.price-guarantee summary:focus-visible,.conversion-dock a:focus-visible,.conversion-dock button:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+.model-gen:focus-visible,.model-variant:focus-visible,.quality-choice:focus-visible,body .hero .hero-btns a:focus-visible,body .hero .hero-btns button:focus-visible,.price-guarantee a:focus-visible,.price-guarantee summary:focus-visible,.conversion-dock a:focus-visible,.conversion-dock button:focus-visible{outline:3px solid #0066cc;outline-offset:3px}
 /* Vert WhatsApp plus foncé : texte blanc lisible (contraste 4,5 minimum) */
 .conversion-dock a[href*="wa.me"],body .hero .console-actions a#hero-whatsapp{background:#0f7a3d!important;color:#fff!important}
-nav .nav-cta{border-radius:980px!important;background:#0071e3!important;border-color:#0071e3!important;color:#fff!important;font-weight:500}nav .nav-cta:hover{background:#0077ed!important}
+nav .nav-cta{border-radius:980px!important;background:#0066cc!important;border-color:#0066cc!important;color:#fff!important;font-weight:500}nav .nav-cta:hover{background:#0077ed!important}
 
 /* Note Google mise en avant */
 .google-rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;min-height:44px;padding:6px 16px;border-radius:980px;background:#fff;color:#1d1d1f;box-shadow:0 4px 18px rgba(0,0,0,.06);font-size:.95rem;text-decoration:none}
 .google-rating-stars{color:#f5b100;letter-spacing:1px}.google-rating b{font-weight:700}.google-rating span:last-child{color:#0066cc}
-.google-rating:hover span:last-child{text-decoration:underline}.google-rating:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+.google-rating:hover span:last-child{text-decoration:underline}.google-rating:focus-visible{outline:3px solid #0066cc;outline-offset:3px}
 #reviews .section-h{font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:-.045em}
 .google-rating{flex-wrap:nowrap;white-space:nowrap}
 

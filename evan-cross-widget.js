@@ -13,7 +13,7 @@
     .sp-sebastien-avatar{display:block;width:40px;height:40px;border-radius:50%;background:url("sebastien-avatar-anime-v1-240.jpg") left top/200% 200% no-repeat}
     .sp-sebastien-panel{display:none;position:absolute;left:0;bottom:62px;width:min(360px,calc(100vw - 32px));overflow:hidden;border:1px solid #d8d8dc;border-radius:20px;background:#f5f5f7;box-shadow:0 24px 65px rgba(0,0,0,.22)}
     .sp-sebastien-mini.open .sp-sebastien-panel{display:block}
-    .sp-sebastien-head{display:flex;align-items:center;padding:13px 15px;background:#171719;color:#fff}.sp-sebastien-head b{font-size:13px}.sp-sebastien-close,.sp-sebastien-back{border:0;background:transparent;color:#fff;font-size:21px;cursor:pointer}.sp-sebastien-close{margin-left:auto}.sp-sebastien-back{display:none;margin-left:auto}
+    .sp-sebastien-head{display:flex;align-items:center;padding:13px 15px;background:#171719;color:#fff}.sp-sebastien-head b{font-size:13px}.sp-sebastien-head small{display:block;font-size:11px;font-weight:500;color:#d2d2d7}.sp-sebastien-close,.sp-sebastien-back{border:0;background:transparent;color:#fff;font-size:21px;cursor:pointer}.sp-sebastien-close{margin-left:auto}.sp-sebastien-back{display:none;margin-left:auto}
     .sp-sebastien-start{padding:18px}.sp-sebastien-start>b{display:block;font-size:19px;line-height:1.12;margin-bottom:12px}.sp-sebastien-panel button[data-q]{display:block;width:100%;border:0;border-top:1px solid #d4d4d7;background:transparent;padding:11px 2px;text-align:left;font-size:12px;font-weight:650;cursor:pointer}
     .sp-sebastien-form{display:grid;grid-template-columns:1fr 44px;border:1px solid #171719;border-radius:12px;overflow:hidden;background:#fff;margin-top:10px}.sp-sebastien-form input{min-width:0;border:0;padding:12px;outline:0}.sp-sebastien-form button{border:0;background:#d92d28;color:#fff;font-size:18px}
     .sp-sebastien-frame{display:none;height:min(650px,calc(100vh - 160px))}.sp-sebastien-frame iframe{display:block;width:100%;height:100%;border:0}.sp-sebastien-mini.conversation .sp-sebastien-panel{width:min(440px,calc(100vw - 32px))}.sp-sebastien-mini.conversation .sp-sebastien-start{display:none}.sp-sebastien-mini.conversation .sp-sebastien-frame,.sp-sebastien-mini.conversation .sp-sebastien-back{display:block}.sp-sebastien-mini.conversation .sp-sebastien-close{margin-left:0}
@@ -21,7 +21,7 @@
   document.head.appendChild(style);
   var root=document.createElement('aside');
   root.className='sp-sebastien-mini';
-  root.innerHTML='<div class="sp-sebastien-panel"><div class="sp-sebastien-head"><b>Sébastien · Solution Phone</b><button class="sp-sebastien-back" aria-label="Poser une autre question">←</button><button class="sp-sebastien-close" aria-label="Fermer">×</button></div><div class="sp-sebastien-start"><b>Une question sur votre iPhone ?</b><button data-topic="screen">Tarif de l’écran</button><button data-topic="battery">Tarif de la batterie</button><button data-topic="quality">Choisir la qualité d’écran</button><form class="sp-sebastien-form"><input aria-label="Question à l’assistant de Sébastien" placeholder="Votre question…"><button aria-label="Envoyer">→</button></form></div><div class="sp-sebastien-frame"></div></div><button class="sp-sebastien-launch" aria-expanded="false"><span class="sp-sebastien-avatar" aria-hidden="true"></span><span>Demandez à Sébastien</span></button>';
+  root.innerHTML='<div class="sp-sebastien-panel"><div class="sp-sebastien-head"><b>Sébastien · Solution Phone<small>Assistant IA · réponses automatiques</small></b><button class="sp-sebastien-back" aria-label="Poser une autre question">←</button><button class="sp-sebastien-close" aria-label="Fermer">×</button></div><div class="sp-sebastien-start"><b>Une question sur votre iPhone ?</b><button data-topic="screen">Tarif de l’écran</button><button data-topic="battery">Tarif de la batterie</button><button data-topic="quality">Choisir la qualité d’écran</button><form class="sp-sebastien-form"><input aria-label="Question à l’assistant de Sébastien" placeholder="Votre question…"><button aria-label="Envoyer">→</button></form></div><div class="sp-sebastien-frame"></div></div><button class="sp-sebastien-launch" aria-expanded="false"><span class="sp-sebastien-avatar" aria-hidden="true"></span><span>Assistant IA</span></button>';
   document.body.appendChild(root);
   var frameBox=root.querySelector('.sp-sebastien-frame');
   function ask(q){if(!q)return;root.classList.add('conversation','open');frameBox.innerHTML='<iframe title="Conversation avec l’assistant de Sébastien" src="'+mainBase+'/concept-evan.html?embed=1&q='+encodeURIComponent(q)+'&from=iphone"></iframe>'}
@@ -33,7 +33,7 @@
   }
   function reset(){root.classList.remove('conversation');frameBox.innerHTML=''}
   var launch=root.querySelector('.sp-sebastien-launch');
-  launch.setAttribute('aria-label','Demandez à Sébastien');
+  launch.setAttribute('aria-label','Ouvrir l’assistant IA de Solution Phone (réponses automatiques)');
   launch.addEventListener('click',function(){var open=root.classList.toggle('open');launch.setAttribute('aria-expanded',String(open))});
   root.querySelector('.sp-sebastien-close').addEventListener('click',function(){root.classList.remove('open');launch.setAttribute('aria-expanded','false')});
   root.querySelector('.sp-sebastien-back').addEventListener('click',reset);
