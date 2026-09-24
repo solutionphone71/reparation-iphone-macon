@@ -10,19 +10,12 @@
       .catch(function(){});
   }
   function init(){
-    var mainBase=location.hostname==='localhost'?'http://localhost:4173':'https://solution-phone.fr';
     var detailModel=(document.querySelector('h1')?.textContent||document.title||'votre iPhone').replace(/\s+/g,' ').trim();
     var detailFile=(location.pathname.split('/').pop()||'').toLowerCase();
     var detailModelValue=detailFile.indexOf('iphone-')===0?((document.querySelector('h1 .gradient')||{}).textContent||'').trim():'';
     var detailIssue=detailFile.indexOf('batterie')>=0?'batterie':detailFile.indexOf('connecteur')>=0?'connecteur':detailFile.indexOf('ecran')>=0?'ecran':'autre';
     var emailQuoteUrl='index.html?email=1&panne='+encodeURIComponent(detailIssue)+(detailModelValue?'&modele='+encodeURIComponent(detailModelValue):'')+'#devis';
-    document.querySelectorAll('body>nav').forEach(function(nav){nav.classList.add('sp-detail-legacy')});
-    var header=document.createElement('header');header.className='sp-detail-header';
-    header.innerHTML='<div class="sp-detail-inner"><button class="sp-detail-back" type="button" aria-label="Revenir à la page précédente"><span aria-hidden="true">←</span><b>Retour</b></button><a class="sp-detail-brand" href="'+mainBase+'/"><span class="sp-detail-mark">SP</span><span><strong>Solution Phone</strong><small>Atelier indépendant · Mâcon</small></span></a><nav class="sp-detail-links" aria-label="Navigation iPhone"><a href="index.html#devis">iPhone</a><a href="'+mainBase+'/reparation-samsung.html">Android</a><a href="ecran.html">Écran</a><a href="batterie.html">Batterie</a><a href="qualirepar.html">QualiRépar</a><a href="'+mainBase+'/reconditionnes.html">Reconditionnés</a><a href="'+mainBase+'/atelier.html">L’atelier</a></nav><a class="sp-detail-wa" href="https://wa.me/33783921884?text=Bonjour%2C%20je%20souhaite%20un%20devis%20iPhone" target="_blank" rel="noopener">WhatsApp ↗</a><button class="sp-detail-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>';
-    document.body.insertBefore(header,document.body.firstChild);
-    header.querySelector('.sp-detail-back').addEventListener('click',function(){if(history.length>1)history.back();else location.href=mainBase+'/'});
-    var panel=document.createElement('nav');panel.className='sp-detail-panel';panel.setAttribute('aria-label','Menu mobile');panel.innerHTML='<a href="'+mainBase+'/">Accueil & devis</a><a href="index.html#devis">Réparation iPhone</a><a href="'+mainBase+'/reparation-samsung.html">Réparation Android</a><a href="ecran.html">Réparation écran</a><a href="batterie.html">Remplacement batterie</a><a href="qualirepar.html">QualiRépar</a><a href="'+mainBase+'/reconditionnes.html">Smartphones reconditionnés</a><a href="'+mainBase+'/atelier.html">Atelier & contact</a><a href="https://wa.me/33783921884" target="_blank" rel="noopener">WhatsApp direct</a>';header.insertAdjacentElement('afterend',panel);
-    var button=header.querySelector('.sp-detail-menu');button.addEventListener('click',function(){var open=panel.classList.toggle('open');button.setAttribute('aria-expanded',String(open));button.textContent=open?'×':'☰'});panel.addEventListener('click',function(e){if(e.target.closest('a')){panel.classList.remove('open');button.setAttribute('aria-expanded','false');button.textContent='☰'}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');button.setAttribute('aria-expanded','false');button.textContent='☰'}});
+    /* L'en-tête et le menu sont fournis par menu-commun.js (menu commun des 3 sites). */
     var conversionDock=document.createElement('div');
     conversionDock.className='sp-detail-conversion-dock';
     conversionDock.setAttribute('aria-label','Demander un devis');
