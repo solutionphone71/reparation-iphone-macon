@@ -47,6 +47,8 @@ h1{margin:0 0 16px;font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;letter-spac
 .block li{margin-bottom:6px}
 .block strong{color:var(--ink)}
 .block a{color:var(--focus)}
+.block a.btn{color:var(--ink)}
+.block a.btn-main,.block a.btn-wa{color:#fff}
 
 /* Prix */
 .prix-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
