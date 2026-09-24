@@ -1,0 +1,281 @@
+{
+ "_lisez_moi": "Pages réparations générées avec le même gabarit que les pages modèles. Après modification : python3 scripts/generer-pages-modeles.py",
+ "pages": [
+  {
+   "slug": "ecran",
+   "fil": "Écran iPhone",
+   "panne": "ecran",
+   "wa": "devis écran iPhone",
+   "titre": "Réparation écran iPhone à Mâcon | Solution Phone",
+   "meta": "Écran d’iPhone cassé à Mâcon : quatre qualités expliquées, prix finaux affichés, 25 € déjà déduits, généralement en moins d’une heure si la pièce est en stock.",
+   "eyebrow": "Écran iPhone",
+   "h1": "Réparation écran iPhone à Mâcon",
+   "intro": "Écran fissuré, taches, lignes ou tactile qui ne répond plus ? L’équipe vérifie votre iPhone, vous présente les qualités d’écran disponibles et vous annonce le prix final avant l’intervention.",
+   "sections": [
+    {
+     "h2": "Réparer l’écran plutôt que changer d’iPhone",
+     "contenu": [
+      "Quand un iPhone glisse des mains, c’est souvent l’écran qui prend. La vitre se fissure, le tactile devient capricieux ou l’affichage ne s’allume plus. Au <strong>21 rue Gambetta à Mâcon</strong>, l’équipe vérifie le modèle, l’état du châssis et l’affichage avant de vous proposer les qualités de pièce disponibles.",
+      "Vous ne choisissez pas seulement entre « réparé » et « pas réparé » : vous choisissez la qualité d’écran qui correspond à votre usage et à votre budget. Un écran économique suffit pour un téléphone d’appoint ; un écran Apple d’origine reconditionné convient à ceux qui veulent retrouver exactement le rendu d’origine."
+     ]
+    },
+    {
+     "h2": "Quatre qualités d’écran, expliquées simplement",
+     "contenu": [
+      [
+       "<strong>Compatible</strong> : le choix économique pour un usage courant.",
+       "<strong>LTPS Prime</strong> : un écran LCD haut de gamme, lumineux et réactif.",
+       "<strong>Soft OLED</strong> : un écran OLED souple, avec des noirs profonds et un rendu proche de l’origine.",
+       "<strong>ReLife</strong> : un écran Apple d’origine reconditionné."
+      ],
+      "Toutes les qualités ne sont pas proposées pour tous les modèles. Sur les iPhone équipés d’origine d’un écran LCD (iPhone 8, SE, XR et 11), la qualité Soft OLED ne s’applique pas. Sur les modèles dont l’écran monte à 120 Hz, l’équipe vous précise ce que conserve chaque qualité avant que vous choisissiez.",
+      "Les prix finaux de chaque qualité, 25 € déjà déduits, sont affichés sur la page de votre modèle ci-dessous et dans le calculateur de l’accueil."
+     ]
+    },
+    {
+     "h2": "Ce que comprend la réparation",
+     "contenu": [
+      "Démontage soigneux, transfert du bouton principal (Touch ID) ou des capteurs situés en haut de l’écran (Face ID) selon le modèle, pose du nouvel écran, puis contrôle de l’affichage, du tactile, de la luminosité et des capteurs. Pièce et main-d’œuvre sont comprises dans le prix final annoncé."
+     ]
+    }
+   ],
+   "grille_titre": "Écran : choisissez votre modèle",
+   "prefixe": "Écran"
+  },
+  {
+   "slug": "batterie",
+   "fil": "Batterie iPhone",
+   "panne": "batterie",
+   "wa": "devis batterie iPhone",
+   "titre": "Remplacement batterie iPhone à Mâcon | Solution Phone",
+   "meta": "Batterie d’iPhone usée à Mâcon : trois qualités expliquées, prix finaux affichés, 25 € déjà déduits, généralement en moins d’une heure si la pièce est en stock.",
+   "eyebrow": "Batterie iPhone",
+   "h1": "Remplacement batterie iPhone à Mâcon",
+   "intro": "Votre iPhone ne tient plus la journée, chauffe ou s’éteint d’un coup ? L’équipe contrôle l’état de la batterie, vous présente les qualités disponibles et vous annonce le prix final avant l’intervention.",
+   "sections": [
+    {
+     "h2": "Quand faut-il changer la batterie ?",
+     "contenu": [
+      "Apple considère qu’une batterie est usée lorsque sa capacité maximale passe sous 80 %. Vous pouvez la consulter dans <strong>Réglages › Batterie</strong>, rubrique État de la batterie.",
+      "D’autres signes ne trompent pas : l’iPhone s’éteint à 20 %, chauffe pendant la charge, ralentit, ou la jauge saute brusquement de 40 % à 10 %. En dessous de 80 %, ou avec ces symptômes, un remplacement change nettement le quotidien."
+     ]
+    },
+    {
+     "h2": "Trois qualités de batterie",
+     "contenu": [
+      [
+       "<strong>Compatible</strong> : la solution économique.",
+       "<strong>Compatible reconnue par l’iPhone</strong> : une batterie compatible conçue pour être reconnue par l’iPhone. L’équipe vous précise avant l’intervention ce qui s’affichera dans Réglages › Batterie.",
+       "<strong>Originale Apple</strong> : une batterie d’origine Apple, selon la disponibilité pour votre modèle."
+      ],
+      "Les prix finaux de chaque qualité, 25 € déjà déduits, sont affichés sur la page de votre modèle et dans le calculateur de l’accueil."
+     ]
+    },
+    {
+     "h2": "Le remplacement, étape par étape",
+     "contenu": [
+      "L’équipe vérifie d’abord l’état général de l’iPhone. Une batterie gonflée demande des précautions particulières : si l’écran se soulève ou si le dos bombe, ne rechargez plus l’iPhone et apportez-le rapidement.",
+      "L’ancienne batterie est retirée, le logement nettoyé, la nouvelle batterie installée, puis la charge et le fonctionnement sont contrôlés."
+     ]
+    }
+   ],
+   "grille_titre": "Batterie : choisissez votre modèle",
+   "prefixe": "Batterie"
+  },
+  {
+   "slug": "connecteur-charge",
+   "fil": "Connecteur de charge",
+   "panne": "connecteur",
+   "wa": "mon iPhone charge mal",
+   "titre": "Connecteur de charge iPhone à Mâcon | Solution Phone",
+   "meta": "iPhone qui charge mal à Mâcon ? Nettoyage du connecteur à 10 €, remplacement du port Lightning ou USB-C sur devis, prix final annoncé avant l’intervention.",
+   "eyebrow": "Charge et connecteur",
+   "h1": "Réparation connecteur de charge iPhone à Mâcon",
+   "intro": "Câble qui doit être tenu « juste comme il faut », charge lente ou iPhone qui ne charge plus ? L’équipe contrôle d’abord le port, le câble et la batterie avant de proposer une réparation.",
+   "sections": [
+    {
+     "h2": "Les signes d’un connecteur fatigué",
+     "contenu": [
+      "Le connecteur de charge est branché et débranché des milliers de fois. Les signes arrivent progressivement : le câble doit être positionné d’une certaine façon, la charge se coupe, puis plus rien ne passe.",
+      "Avant de remplacer quoi que ce soit, l’équipe vérifie si le problème vient simplement de peluches tassées au fond du port. C’est fréquent : un <strong>nettoyage du connecteur à 10 €</strong> suffit souvent. Le connecteur n’est remplacé que si les contrôles montrent qu’il est réellement défaillant."
+     ]
+    },
+    {
+     "h2": "Lightning ou USB-C",
+     "contenu": [
+      "Depuis l’iPhone 15, Apple est passé à l’USB-C. Les modèles précédents, jusqu’à l’iPhone 14, utilisent le port Lightning. L’atelier répare les deux.",
+      "Selon le modèle, la nappe du connecteur regroupe aussi d’autres éléments, comme le micro principal. Si votre interlocuteur vous entend mal en appel, la même pièce peut être en cause : l’équipe le vérifie pendant le diagnostic."
+     ]
+    },
+    {
+     "h2": "Une réparation minutieuse",
+     "contenu": [
+      "Le remplacement du connecteur demande un démontage plus poussé qu’un changement d’écran ou de batterie. Le prix final dépend du modèle et vous est annoncé avant l’intervention. À la fin, l’équipe contrôle la charge, le transfert de données et le micro."
+     ]
+    }
+   ],
+   "grille_titre": "Connecteur de charge : choisissez votre modèle",
+   "prefixe": "Connecteur"
+  },
+  {
+   "slug": "face-id",
+   "fil": "Face ID",
+   "panne": "autre",
+   "wa": "Face ID ne fonctionne plus",
+   "filtre": "face-id",
+   "titre": "Réparation Face ID iPhone à Mâcon | Solution Phone",
+   "meta": "Face ID ne fonctionne plus sur votre iPhone ? Diagnostic à Mâcon, explication honnête de ce qui est réparable et prix final annoncé avant l’intervention.",
+   "eyebrow": "Face ID",
+   "h1": "Réparation Face ID iPhone à Mâcon",
+   "intro": "Le message « Face ID non disponible » peut apparaître après une chute, un dégât des eaux ou une réparation mal faite. L’équipe diagnostique la panne et vous dit franchement ce qui peut être réparé.",
+   "sections": [
+    {
+     "h2": "Comment fonctionne Face ID ?",
+     "contenu": [
+      "Face ID repose sur un ensemble de capteurs appelé TrueDepth, placé dans l’encoche ou dans la Dynamic Island selon le modèle. Il projette plus de 30 000 points invisibles sur votre visage pour en mesurer le relief, puis compare le résultat à celui enregistré.",
+      "Le module comprend notamment un projecteur de points, un émetteur infrarouge et une caméra infrarouge. Si l’un d’eux est abîmé, Face ID cesse de fonctionner."
+     ]
+    },
+    {
+     "h2": "Les causes les plus fréquentes",
+     "contenu": [
+      [
+       "<strong>Un choc sur le haut de l’écran</strong> : parfois l’écran semble intact, mais Face ID ne répond plus.",
+       "<strong>Un contact avec un liquide</strong> : l’oxydation des connecteurs est une cause fréquente, surtout si l’iPhone a déjà été ouvert ou si sa vitre arrière est fissurée.",
+       "<strong>Un changement d’écran mal réalisé</strong> : les capteurs situés en haut de l’écran doivent être transférés avec soin. L’équipe contrôle Face ID après chaque changement d’écran."
+      ]
+     ]
+    },
+    {
+     "h2": "Ce qui est réparable, et ce qui ne l’est pas",
+     "contenu": [
+      "Une nappe endommagée ou un faux contact se répare souvent. En revanche, certains éléments de Face ID sont liés à la carte mère de l’iPhone : toutes les pannes ne sont pas réparables. L’équipe vous le dit honnêtement après le diagnostic, avec le prix final, avant toute intervention."
+     ]
+    }
+   ],
+   "grille_titre": "Face ID : choisissez votre modèle",
+   "prefixe": "Face ID"
+  },
+  {
+   "slug": "vitre-arriere",
+   "fil": "Vitre arrière",
+   "panne": "autre",
+   "wa": "devis vitre arrière iPhone",
+   "titre": "Vitre arrière iPhone cassée à Mâcon | Solution Phone",
+   "meta": "Vitre arrière d’iPhone cassée à Mâcon : méthode adaptée à votre modèle, prix final annoncé avant l’intervention, 25 € déjà déduits.",
+   "eyebrow": "Vitre arrière",
+   "h1": "Vitre arrière iPhone cassée à Mâcon",
+   "intro": "Depuis l’iPhone 8, le dos des iPhone est en verre pour permettre la recharge sans fil. Il se fissure facilement : l’équipe vous propose la méthode adaptée à votre modèle et vous annonce le prix final.",
+   "sections": [
+    {
+     "h2": "Pourquoi réparer un dos fissuré ?",
+     "contenu": [
+      "Au-delà de l’aspect, une vitre arrière fissurée peut blesser les doigts, laisser entrer poussière et humidité, et perturber la recharge sans fil. Mieux vaut la faire remplacer avant que les fissures ne s’étendent."
+     ]
+    },
+    {
+     "h2": "Deux méthodes, selon le modèle",
+     "contenu": [
+      [
+       "<strong>Remplacement du châssis complet</strong> : les composants de l’iPhone sont transférés dans un châssis neuf dont la vitre arrière est intacte. C’est la méthode habituelle sur beaucoup de modèles.",
+       "<strong>Remplacement de la vitre seule</strong> : possible sur certains modèles, par exemple l’iPhone 14 et 14 Plus, dont la conception facilite ce démontage, ou à l’aide d’un décollage au laser selon le modèle."
+      ],
+      "L’équipe vous indique la méthode adaptée à votre iPhone, son prix final et le délai avant toute intervention."
+     ]
+    },
+    {
+     "h2": "Recharge sans fil et étanchéité",
+     "contenu": [
+      "Après le remplacement, la recharge sans fil (MagSafe sur les modèles concernés) est testée avant de vous rendre l’iPhone. Un joint neuf est posé, mais aucun réparateur ne peut garantir le niveau d’étanchéité d’origine après ouverture de l’appareil."
+     ]
+    }
+   ],
+   "grille_titre": "Vitre arrière : choisissez votre modèle",
+   "prefixe": "Vitre arrière"
+  },
+  {
+   "slug": "desoxydation",
+   "fil": "Désoxydation",
+   "panne": "autre",
+   "wa": "mon iPhone est tombé dans l’eau",
+   "titre": "Désoxydation iPhone à Mâcon | Solution Phone",
+   "meta": "iPhone tombé dans l’eau à Mâcon ? Éteignez-le, ne le chargez pas et apportez-le vite. Diagnostic, désoxydation et avis honnête sur la récupération des données.",
+   "eyebrow": "Dégât des eaux",
+   "h1": "Désoxydation iPhone à Mâcon",
+   "intro": "Toilettes, piscine, verre renversé… Un iPhone mouillé doit être pris en charge rapidement : plus vous agissez tôt, plus les chances de le sauver sont grandes.",
+   "sections": [
+    {
+     "h2": "Les bons réflexes",
+     "contenu": [
+      [
+       "<strong>Éteignez l’iPhone</strong> et ne le rallumez pas pour « vérifier ».",
+       "<strong>Ne le chargez pas</strong> : le courant accélère la corrosion.",
+       "<strong>Oubliez le riz</strong> : il n’arrête pas l’oxydation à l’intérieur et peut laisser des résidus dans le connecteur.",
+       "<strong>Apportez-le vite</strong> au 21 rue Gambetta, sans rendez-vous."
+      ],
+      "Quand un liquide entre dans l’iPhone, les composants de la carte mère commencent à s’oxyder. Seul un nettoyage en atelier permet de traiter les zones touchées."
+     ]
+    },
+    {
+     "h2": "Notre méthode",
+     "contenu": [
+      "L’iPhone est ouvert et démonté pour accéder aux zones touchées. Les traces d’oxydation sont nettoyées avec des produits adaptés, puis chaque connecteur est inspecté. Après séchage complet et remontage, l’équipe teste l’écran, le tactile, la charge, le son, les appareils photo et les capteurs."
+     ]
+    },
+    {
+     "h2": "En toute transparence",
+     "contenu": [
+      "Aucun réparateur ne peut garantir le résultat d’une désoxydation. Il dépend du liquide (l’eau salée et les boissons sucrées sont plus agressives que l’eau douce), du temps écoulé et du fait que l’iPhone ait été rallumé ou non. Après ouverture, l’équipe vous dit honnêtement ce qui est possible, y compris pour récupérer vos données, et vous annonce le prix final avant d’aller plus loin."
+     ]
+    }
+   ],
+   "grille_titre": "Désoxydation : choisissez votre modèle",
+   "prefixe": "Désoxydation"
+  },
+  {
+   "slug": "qualirepar",
+   "fil": "QualiRépar",
+   "panne": "ecran",
+   "wa": "je voudrais un devis de réparation",
+   "titre": "QualiRépar : 25 € déjà déduits à Mâcon | Solution Phone",
+   "meta": "Solution Phone, réparateur labellisé QualiRépar à Mâcon : 25 € déjà déduits de nos tarifs de réparation de smartphone, sans dossier ni remboursement à attendre.",
+   "eyebrow": "Réparateur labellisé QualiRépar",
+   "h1": "QualiRépar : 25 € déjà déduits de votre réparation",
+   "intro": "Réparateur labellisé QualiRépar. 25 € déjà déduits de nos tarifs de réparation de smartphone : grâce au Bonus Réparation QualiRépar quand la réparation est éligible, offerts par Solution Phone sinon.",
+   "sections": [
+    {
+     "h2": "Qu’est-ce que QualiRépar ?",
+     "contenu": [
+      "QualiRépar est le label qui identifie les réparateurs autorisés à appliquer le <strong>Bonus Réparation</strong>. Ce dispositif, prévu par la loi anti-gaspillage (loi AGEC), encourage à réparer plutôt qu’à remplacer.",
+      "Le Bonus Réparation est financé par les éco-organismes agréés, comme ecosystem et Ecologic. Il vient réduire directement le prix payé par le client."
+     ]
+    },
+    {
+     "h2": "Comment ça marche chez Solution Phone ?",
+     "contenu": [
+      [
+       "<strong>Aucun dossier à remplir</strong>, aucun remboursement à attendre.",
+       "<strong>Les 25 € sont déjà déduits</strong> des prix affichés sur ce site : ce sont des prix finaux.",
+       "Quand votre réparation est éligible au Bonus Réparation, c’est lui qui finance ces 25 €.",
+       "Quand elle ne l’est pas, Solution Phone vous offre les 25 € : vous payez le même prix final."
+      ]
+     ]
+    },
+    {
+     "h2": "Quelles réparations sont éligibles au Bonus ?",
+     "contenu": [
+      "Les conditions d’éligibilité sont fixées par le dispositif (type d’appareil, nature de la panne, réparation réalisée par un réparateur labellisé). L’équipe les vérifie pour vous et s’occupe des démarches. Dans tous les cas, nos tarifs de réparation de smartphone intègrent déjà les 25 €."
+     ]
+    },
+    {
+     "h2": "Pourquoi réparer ?",
+     "contenu": [
+      "Réparer un iPhone coûte bien moins cher qu’en racheter un et évite de fabriquer un nouvel appareil. Avec un écran ou une batterie neufs, beaucoup d’iPhone repartent pour plusieurs années."
+     ]
+    }
+   ],
+   "grille_titre": "Réparation par modèle d’iPhone",
+   "prefixe": "Réparation"
+  }
+ ]
+}

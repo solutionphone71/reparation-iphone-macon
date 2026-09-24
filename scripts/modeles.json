@@ -1,0 +1,349 @@
+{
+ "_lisez_moi": "Données des pages modèles. select = valeur EXACTE du menu du calculateur de l'accueil (index.html, #hero-model). ligne_ecran / ligne_batterie = nom EXACT de la ligne dans la base public-catalog (null = pas de prix dans la base : la page affiche « Prix confirmé par l'équipe »). lcd = true si l'écran d'origine est un LCD (la qualité Soft OLED n'est alors jamais affichée). Ne publier aucune caractéristique technique non vérifiée. Après modification : python3 scripts/generer-pages-modeles.py",
+ "modeles": [
+  {
+   "slug": "iphone-17-pro-max", "nom": "iPhone 17 Pro Max", "annee": "2025",
+   "select": "iPhone 17 Pro Max", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran fissuré, dos cassé ou batterie qui faiblit sur votre iPhone 17 Pro Max ? L’équipe Solution Phone vérifie la pièce disponible et vous annonce le prix final avant toute intervention.",
+   "presentation": "Sorti en septembre 2025, l’iPhone 17 Pro Max est le grand modèle de la gamme Pro, avec un écran de 6,9 pouces, un boîtier en aluminium et un large plateau photo au dos. Il utilise le port USB-C, la Dynamic Island et la Commande de l’appareil photo. C’est un appareil coûteux : une réparation soignée permet de le garder longtemps.",
+   "ecran": "Pour un modèle aussi récent, les pièces détachées sont moins nombreuses et leur disponibilité varie. L’équipe vous indique la qualité d’écran disponible, son prix final et le délai avant de commencer. Si votre iPhone est encore couvert par la garantie Apple ou une assurance, pensez à vérifier vos droits avant une réparation indépendante.",
+   "batterie": "Sur un iPhone de moins de deux ans, une batterie qui se vide vite n’est pas toujours usée : une application ou un réglage peut être en cause. L’équipe vérifie l’état de la batterie avant de conseiller un remplacement.",
+   "autres": "Vitre arrière, module photo, port USB-C, Face ID ou dégât des eaux : chaque panne commence par un diagnostic en boutique, puis un devis avec le prix final. Rien n’est fait sans votre accord.",
+   "proches": ["iphone-17-pro", "iphone-air", "iphone-16-pro-max", "iphone-17"]
+  },
+  {
+   "slug": "iphone-17-pro", "nom": "iPhone 17 Pro", "annee": "2025",
+   "select": "iPhone 17 Pro", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Votre iPhone 17 Pro a l’écran cassé, le dos fêlé ou un souci de charge ? Solution Phone vérifie la pièce disponible à Mâcon et vous annonce le prix final avant l’intervention.",
+   "presentation": "L’iPhone 17 Pro, sorti en septembre 2025, abandonne le titane pour un boîtier en aluminium et adopte un plateau photo qui occupe toute la largeur du dos. Il garde un écran de 6,3 pouces, la Dynamic Island, la Commande de l’appareil photo et le port USB-C.",
+   "ecran": "Les pièces pour les modèles de 2025 sont encore peu nombreuses. L’équipe vérifie ce qui est disponible pour votre iPhone 17 Pro et vous présente le prix final et le délai avant toute intervention. Si l’appareil est encore sous garantie Apple ou assuré, vérifiez d’abord vos droits.",
+   "batterie": "Une autonomie en baisse sur un iPhone récent a souvent une autre cause qu’une batterie usée. L’équipe contrôle l’état de la batterie et vous dit honnêtement si un remplacement est utile.",
+   "autres": "Dos, appareil photo, port USB-C, Face ID ou oxydation : l’équipe diagnostique la panne en boutique et vous remet un devis clair. Aucune intervention ne commence sans votre accord.",
+   "proches": ["iphone-17-pro-max", "iphone-17", "iphone-16-pro", "iphone-air"]
+  },
+  {
+   "slug": "iphone-air", "nom": "iPhone Air", "annee": "2025",
+   "select": "iPhone Air", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran fissuré ou souci de charge sur votre iPhone Air ? L’équipe Solution Phone vérifie la pièce disponible à Mâcon et vous annonce le prix final avant d’intervenir.",
+   "presentation": "Présenté en septembre 2025, l’iPhone Air mise sur la finesse : un boîtier très fin, un écran de 6,5 pouces, un seul appareil photo au dos et le port USB-C. Cette finesse le rend agréable au quotidien, mais demande beaucoup de précautions au démontage.",
+   "ecran": "Les pièces de ce modèle récent sont encore rares et leur prix varie. L’équipe vous indique la solution disponible, le prix final et le délai avant toute intervention. Si votre iPhone Air est encore sous garantie Apple ou assuré, vérifiez d’abord vos droits.",
+   "batterie": "Si l’autonomie vous semble faible, l’équipe commence par contrôler l’état de la batterie et les réglages avant de proposer un remplacement.",
+   "autres": "Port USB-C, appareil photo, Face ID ou dégât des eaux : chaque intervention débute par un diagnostic et un devis avec le prix final.",
+   "proches": ["iphone-17", "iphone-17-pro", "iphone-17-pro-max", "iphone-17e"]
+  },
+  {
+   "slug": "iphone-17", "nom": "iPhone 17", "annee": "2025",
+   "select": "iPhone 17", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, batterie ou charge capricieuse sur votre iPhone 17 ? Solution Phone vérifie la pièce disponible à Mâcon et vous annonce le prix final avant l’intervention.",
+   "presentation": "Sorti en septembre 2025, l’iPhone 17 passe à un écran de 6,3 pouces avec un rafraîchissement jusqu’à 120 Hz et l’affichage toujours activé, jusque-là réservés aux modèles Pro. Il conserve la Dynamic Island, la Commande de l’appareil photo et le port USB-C.",
+   "ecran": "Pour ce modèle récent, les pièces d’écran sont encore peu nombreuses. L’équipe vous présente la solution disponible, ce qu’elle conserve (fluidité, luminosité), son prix final et le délai. Si l’appareil est sous garantie Apple ou assuré, pensez à vérifier vos droits.",
+   "batterie": "Sur un iPhone de moins de deux ans, une autonomie décevante vient souvent d’un réglage ou d’une application. L’équipe vérifie avant de proposer un remplacement.",
+   "autres": "Port USB-C, appareil photo, vitre arrière, Face ID : diagnostic en boutique, devis avec le prix final, et aucune intervention sans votre accord.",
+   "proches": ["iphone-air", "iphone-17-pro", "iphone-17e", "iphone-16"]
+  },
+  {
+   "slug": "iphone-17e", "nom": "iPhone 17e", "annee": "génération 17",
+   "select": "iPhone 17e", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Un problème d’écran, de batterie ou de charge sur votre iPhone 17e ? L’équipe Solution Phone vérifie la pièce disponible à Mâcon et vous annonce le prix final avant l’intervention.",
+   "presentation": "L’iPhone 17e est la version la plus accessible de la génération iPhone 17. Comme toute la gamme récente, il se recharge par un port USB-C. C’est un modèle récent : les pièces détachées arrivent progressivement chez les réparateurs indépendants.",
+   "ecran": "L’équipe vérifie la pièce d’écran disponible pour votre iPhone 17e et vous annonce le prix final et le délai avant de commencer. Si votre téléphone est encore sous garantie Apple ou assuré, vérifiez d’abord vos droits.",
+   "batterie": "Si l’autonomie baisse, l’équipe contrôle l’état de la batterie et les réglages avant de proposer un remplacement, pour ne pas changer une pièce inutilement.",
+   "autres": "Port USB-C, appareil photo, haut-parleur ou dégât des eaux : chaque panne est diagnostiquée en boutique avant un devis clair.",
+   "proches": ["iphone-17", "iphone-16e", "iphone-air"]
+  },
+  {
+   "slug": "iphone-16-pro-max", "nom": "iPhone 16 Pro Max", "annee": "2024",
+   "select": "iPhone 16 Pro Max", "ligne_ecran": null, "ligne_batterie": "16 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou batterie qui faiblit sur votre iPhone 16 Pro Max ? Solution Phone le répare à Mâcon, avec le prix final annoncé avant l’intervention.",
+   "presentation": "Sorti en 2024, l’iPhone 16 Pro Max est doté d’un écran de 6,9 pouces aux bordures très fines, d’un cadre en titane, de la puce A18 Pro et de la Commande de l’appareil photo, un bouton sur la tranche pour prendre des photos rapidement. Il utilise le port USB-C.",
+   "ecran": "Sa grande dalle OLED est exposée aux chutes. Le prix de l’écran de ce modèle est confirmé par l’équipe selon la pièce disponible : elle vous explique ce que conserve chaque qualité proposée avant que vous choisissiez.",
+   "batterie": "Le remplacement de batterie est proposé en qualité compatible ou originale Apple ; les prix sont affichés ci-dessus. Si l’autonomie baisse, l’équipe vérifie d’abord l’état de la batterie.",
+   "autres": "Vitre arrière, module photo, port USB-C, Face ID ou Commande de l’appareil photo : diagnostic en boutique et devis avec le prix final avant toute intervention.",
+   "proches": ["iphone-16-pro", "iphone-16-plus", "iphone-17-pro-max", "iphone-15-pro-max"]
+  },
+  {
+   "slug": "iphone-16-pro", "nom": "iPhone 16 Pro", "annee": "2024",
+   "select": "iPhone 16 Pro", "ligne_ecran": null, "ligne_batterie": "16 Pro", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, batterie usée ou port USB-C qui charge mal sur votre iPhone 16 Pro ? Solution Phone le répare à Mâcon, prix final annoncé avant l’intervention.",
+   "presentation": "L’iPhone 16 Pro, sorti en 2024, grandit légèrement avec un écran de 6,3 pouces aux bordures plus fines. Il associe un cadre en titane, la puce A18 Pro, un triple appareil photo, le bouton Action et la Commande de l’appareil photo.",
+   "ecran": "Son écran OLED intègre la Dynamic Island et un rafraîchissement jusqu’à 120 Hz. Le prix de l’écran est confirmé par l’équipe selon la pièce disponible, avec une explication claire de ce que conserve chaque qualité.",
+   "batterie": "Deux qualités de batterie sont proposées, compatible ou originale Apple, aux prix affichés ci-dessus. L’équipe contrôle l’état de la batterie avant de conseiller un changement.",
+   "autres": "Vitre arrière, appareil photo, Face ID et port USB-C font partie des réparations courantes, toujours après diagnostic et devis.",
+   "proches": ["iphone-16-pro-max", "iphone-16", "iphone-17-pro", "iphone-15-pro"]
+  },
+  {
+   "slug": "iphone-16-plus", "nom": "iPhone 16 Plus", "annee": "2024",
+   "select": "iPhone 16 Plus", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou batterie fatiguée sur votre iPhone 16 Plus ? Solution Phone le répare à Mâcon, avec un prix final confirmé par l’équipe avant l’intervention.",
+   "presentation": "Sorti en 2024, l’iPhone 16 Plus reprend l’iPhone 16 dans un format de 6,7 pouces : Dynamic Island, bouton Action, Commande de l’appareil photo et port USB-C, avec une autonomie confortable.",
+   "ecran": "Sa grande dalle OLED est plus exposée en cas de chute. Les qualités disponibles et leur prix final sont confirmés par l’équipe selon la pièce en stock.",
+   "batterie": "Quand l’autonomie baisse nettement, l’équipe vérifie l’état de la batterie et vous indique la qualité disponible et son prix final.",
+   "autres": "Port USB-C, vitre arrière, appareil photo et Face ID sont pris en charge après diagnostic en boutique et devis.",
+   "proches": ["iphone-16", "iphone-16-pro-max", "iphone-15-plus", "iphone-16e"]
+  },
+  {
+   "slug": "iphone-16", "nom": "iPhone 16", "annee": "2024",
+   "select": "iPhone 16", "ligne_ecran": "16", "ligne_batterie": "16", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, batterie fatiguée ou port USB-C défaillant : Solution Phone répare votre iPhone 16 à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 16, sorti en 2024, apporte le bouton Action et la Commande de l’appareil photo, un bouton sur la tranche pour photographier rapidement. Ses deux objectifs sont désormais alignés verticalement, et il garde l’écran OLED de 6,1 pouces avec Dynamic Island.",
+   "ecran": "Plusieurs qualités d’écran peuvent être proposées selon les pièces disponibles, du compatible économique à l’écran Apple d’origine reconditionné. Tactile, affichage et Face ID sont contrôlés avant de vous rendre l’iPhone.",
+   "batterie": "Le remplacement est proposé en qualité compatible ou originale Apple. Si l’autonomie baisse, l’équipe vérifie d’abord l’état de la batterie pour ne pas changer une pièce inutilement.",
+   "autres": "Le port USB-C s’encrasse avec les poussières de poche : un nettoyage (10 €) suffit parfois. Vitre arrière, appareil photo, Commande de l’appareil photo et Face ID sont aussi réparés après diagnostic.",
+   "proches": ["iphone-16-plus", "iphone-16e", "iphone-16-pro", "iphone-15"]
+  },
+  {
+   "slug": "iphone-16e", "nom": "iPhone 16e", "annee": "2025",
+   "select": "iPhone 16e", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé ou batterie qui ne tient plus sur votre iPhone 16e ? Solution Phone vérifie la pièce disponible à Mâcon et vous annonce le prix final avant l’intervention.",
+   "presentation": "Présenté début 2025, l’iPhone 16e est la version la plus accessible de la gamme 16 : écran OLED de 6,1 pouces avec encoche et Face ID, un seul appareil photo au dos, bouton Action et port USB-C.",
+   "ecran": "L’équipe vérifie la pièce d’écran disponible pour ce modèle et vous annonce le prix final et le délai. Tactile, affichage et Face ID sont contrôlés après la pose.",
+   "batterie": "Si l’autonomie baisse, l’équipe contrôle l’état de la batterie avant de proposer un remplacement et vous annonce le prix final.",
+   "autres": "Port USB-C, appareil photo, haut-parleur, Face ID ou dégât des eaux : chaque panne est diagnostiquée en boutique avant le devis.",
+   "proches": ["iphone-16", "iphone-17e", "iphone-15"]
+  },
+  {
+   "slug": "iphone-15-pro-max", "nom": "iPhone 15 Pro Max", "annee": "2023",
+   "select": "iPhone 15 Pro Max", "ligne_ecran": "15 Pro Max", "ligne_batterie": "15 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou dos en verre cassé sur votre iPhone 15 Pro Max ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "Sorti en 2023, l’iPhone 15 Pro Max associe un cadre en titane, un écran de 6,7 pouces, le bouton Action et un téléobjectif offrant un zoom optique 5x. Comme les autres iPhone récents, son dos est en verre : une chute sur le dos peut le fissurer.",
+   "ecran": "Sa dalle OLED intègre la Dynamic Island et un rafraîchissement jusqu’à 120 Hz. Avant l’intervention, l’équipe vous explique ce que conserve chaque qualité (compatible, Soft OLED ou écran Apple d’origine reconditionné), notamment la fluidité.",
+   "batterie": "Même avec une grande batterie, l’autonomie diminue au fil des recharges. Trois qualités peuvent être proposées, aux prix finaux affichés ci-dessus.",
+   "autres": "Vitre arrière, module photo avec téléobjectif, Face ID et port USB-C : diagnostic en boutique et devis avec le prix final avant toute intervention.",
+   "proches": ["iphone-15-pro", "iphone-15-plus", "iphone-16-pro-max", "iphone-14-pro-max"]
+  },
+  {
+   "slug": "iphone-15-pro", "nom": "iPhone 15 Pro", "annee": "2023",
+   "select": "iPhone 15 Pro", "ligne_ecran": "15 Pro", "ligne_batterie": "15 Pro", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, batterie usée ou dos fêlé : Solution Phone répare votre iPhone 15 Pro à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 15 Pro, sorti en 2023, est le premier iPhone avec un cadre en titane et le bouton Action, qui remplace le bouton de mode silencieux. Il utilise la puce A17 Pro, un écran de 6,1 pouces et le port USB-C.",
+   "ecran": "Son écran OLED intègre la Dynamic Island, l’affichage toujours activé et un rafraîchissement jusqu’à 120 Hz. L’équipe vous précise ce que conserve chaque qualité avant que vous choisissiez.",
+   "batterie": "Trois qualités de batterie peuvent être proposées selon la disponibilité : compatible, compatible reconnue par l’iPhone ou originale Apple.",
+   "autres": "Le dos en verre mat, le module photo, Face ID et le port USB-C font partie des réparations courantes. Le prix final est toujours annoncé avant de commencer.",
+   "proches": ["iphone-15", "iphone-15-pro-max", "iphone-16-pro", "iphone-14-pro"]
+  },
+  {
+   "slug": "iphone-15-plus", "nom": "iPhone 15 Plus", "annee": "2023",
+   "select": "iPhone 15 Plus", "ligne_ecran": null, "ligne_batterie": null, "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran cassé ou batterie fatiguée sur votre iPhone 15 Plus ? Solution Phone le répare à Mâcon, avec un prix final confirmé par l’équipe avant l’intervention.",
+   "presentation": "Sorti en 2023, l’iPhone 15 Plus reprend l’iPhone 15 dans un format de 6,7 pouces : Dynamic Island, appareil photo principal de 48 mégapixels, port USB-C et une autonomie très confortable.",
+   "ecran": "Sa grande dalle OLED est exposée aux chutes. Les qualités disponibles et leur prix final sont confirmés par l’équipe selon la pièce en stock.",
+   "batterie": "Quand la batterie vieillit, l’autonomie baisse même sur un grand modèle. L’équipe vous indique la qualité disponible et son prix final au moment du devis.",
+   "autres": "Port USB-C, vitre arrière, appareil photo et Face ID sont pris en charge après diagnostic en boutique.",
+   "proches": ["iphone-15", "iphone-15-pro-max", "iphone-14-plus", "iphone-16-plus"]
+  },
+  {
+   "slug": "iphone-15", "nom": "iPhone 15", "annee": "2023",
+   "select": "iPhone 15", "ligne_ecran": "15", "ligne_batterie": "15", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran fissuré, batterie usée ou port USB-C qui charge mal : Solution Phone répare votre iPhone 15 à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 15, sorti en 2023, est le premier iPhone de la gamme standard avec la Dynamic Island et un appareil photo principal de 48 mégapixels. C’est aussi la génération qui passe du port Lightning à l’USB-C. Son dos est en verre teinté dans la masse.",
+   "ecran": "Son écran OLED de 6,1 pouces intègre la Dynamic Island. Vous choisissez entre écran compatible, dalle OLED souple ou écran Apple d’origine reconditionné. Tactile, affichage et Face ID sont vérifiés avant restitution.",
+   "batterie": "Après quelques années, la batterie perd de sa capacité. Trois qualités peuvent être proposées, dont la batterie originale Apple.",
+   "autres": "Le port USB-C s’encrasse comme un port Lightning : un nettoyage (10 €) suffit parfois. Vitre arrière, appareil photo et Face ID sont aussi réparés après diagnostic.",
+   "proches": ["iphone-15-plus", "iphone-15-pro", "iphone-14", "iphone-16"]
+  },
+  {
+   "slug": "iphone-14-pro-max", "nom": "iPhone 14 Pro Max", "annee": "2022",
+   "select": "iPhone 14 Pro Max", "ligne_ecran": "14 Pro Max", "ligne_batterie": "14 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran cassé ou autonomie en baisse sur votre iPhone 14 Pro Max ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "Sorti en 2022, l’iPhone 14 Pro Max reprend la Dynamic Island, l’appareil photo principal de 48 mégapixels et l’affichage toujours activé du 14 Pro dans un format de 6,7 pouces. Il se recharge encore par un port Lightning.",
+   "ecran": "Sa grande dalle OLED est la plus exposée en cas de chute. L’équipe vous explique avant l’intervention les différences entre écran compatible, dalle OLED souple et écran Apple d’origine reconditionné, notamment sur la fluidité à 120 Hz.",
+   "batterie": "Avec l’affichage toujours activé et un usage intensif, la batterie vieillit. Quand l’iPhone ne tient plus la journée, le remplacement lui rend son autonomie.",
+   "autres": "Face ID, module photo, connecteur Lightning et vitre arrière sont pris en charge après diagnostic, avec le prix final annoncé avant de commencer.",
+   "proches": ["iphone-14-pro", "iphone-14-plus", "iphone-15-pro-max", "iphone-13-pro-max"]
+  },
+  {
+   "slug": "iphone-14-pro", "nom": "iPhone 14 Pro", "annee": "2022",
+   "select": "iPhone 14 Pro", "ligne_ecran": "14 Pro", "ligne_batterie": "14 Pro", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, lignes à l’affichage ou batterie usée : Solution Phone répare votre iPhone 14 Pro à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 14 Pro, sorti en 2022, a remplacé l’encoche par la Dynamic Island, une zone interactive en haut de l’écran. Il a aussi apporté un appareil photo principal de 48 mégapixels, l’affichage toujours activé et la puce A16 Bionic, tout en conservant le port Lightning.",
+   "ecran": "Son écran OLED de 6,1 pouces monte jusqu’à 120 Hz. Selon la qualité choisie, la fluidité ou l’affichage toujours activé peuvent différer de l’origine : l’équipe vous le précise avant l’intervention. L’écran Apple d’origine reconditionné (ReLife) garde le rendu d’origine.",
+   "batterie": "L’affichage toujours activé sollicite la batterie en continu ; après quelques années, l’autonomie baisse. Le remplacement redonne une journée complète.",
+   "autres": "Module photo 48 Mpx, Face ID, connecteur Lightning et vitre arrière : chaque réparation commence par un diagnostic et un prix final annoncé.",
+   "proches": ["iphone-14", "iphone-14-pro-max", "iphone-15-pro", "iphone-13-pro"]
+  },
+  {
+   "slug": "iphone-14-plus", "nom": "iPhone 14 Plus", "annee": "2022",
+   "select": "iPhone 14 Plus", "ligne_ecran": null, "ligne_batterie": "14 plus", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou batterie usée sur votre iPhone 14 Plus ? Solution Phone le répare à Mâcon, avec le prix final annoncé avant l’intervention.",
+   "presentation": "Sorti en 2022, l’iPhone 14 Plus reprend l’iPhone 14 dans un format plus grand, avec un écran OLED de 6,7 pouces, sans le prix des modèles Pro. Il remplace le format mini dans la gamme et se distingue par une très bonne autonomie.",
+   "ecran": "Sa grande dalle est plus exposée aux chutes. Les qualités d’écran disponibles et leur prix final sont confirmés par l’équipe au moment du devis, selon la pièce en stock.",
+   "batterie": "Sa grande batterie finit elle aussi par s’user. Le remplacement lui redonne son autonomie ; les prix finaux par qualité sont affichés ci-dessus.",
+   "autres": "Comme l’iPhone 14, le 14 Plus bénéficie d’une architecture qui facilite le remplacement de la vitre arrière. Connecteur Lightning, appareil photo et Face ID sont aussi pris en charge après diagnostic.",
+   "proches": ["iphone-14", "iphone-14-pro-max", "iphone-15-plus"]
+  },
+  {
+   "slug": "iphone-14", "nom": "iPhone 14", "annee": "2022",
+   "select": "iPhone 14", "ligne_ecran": "14", "ligne_batterie": "14", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé, batterie fatiguée ou vitre arrière fêlée : Solution Phone répare votre iPhone 14 à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 14, sorti en 2022, conserve le format de 6,1 pouces et l’encoche de l’iPhone 13, avec un appareil photo amélioré et la détection des accidents, qui peut alerter les secours après un choc violent en voiture. Il utilise encore le port Lightning.",
+   "ecran": "Son écran OLED de 6,1 pouces se remplace par un écran compatible, une dalle OLED souple ou un écran Apple d’origine reconditionné. Tactile, affichage, luminosité et Face ID sont contrôlés avant restitution.",
+   "batterie": "Trois qualités de batterie peuvent être proposées : compatible, compatible reconnue par l’iPhone ou originale Apple, aux prix finaux affichés ci-dessus.",
+   "autres": "Apple a revu l’intérieur de l’iPhone 14 : la vitre arrière se remplace plus facilement que sur l’iPhone 13. Connecteur Lightning, appareil photo et Face ID sont aussi réparés après diagnostic.",
+   "proches": ["iphone-14-plus", "iphone-14-pro", "iphone-13", "iphone-15"]
+  },
+  {
+   "slug": "iphone-13-pro-max", "nom": "iPhone 13 Pro Max", "annee": "2021",
+   "select": "iPhone 13 Pro Max", "ligne_ecran": "13 Pro Max", "ligne_batterie": "13 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou batterie usée sur votre iPhone 13 Pro Max ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "Sorti en 2021, l’iPhone 13 Pro Max associe un écran ProMotion de 6,7 pouces, le triple appareil photo de la gamme Pro et une autonomie remarquable pour l’époque. Beaucoup d’utilisateurs le gardent encore comme téléphone principal.",
+   "ecran": "Comme sur le 13 Pro, la fluidité jusqu’à 120 Hz dépend de la qualité d’écran choisie. L’équipe vous explique avant l’intervention ce que conserve chaque option : écran compatible, dalle OLED souple ou écran Apple d’origine reconditionné.",
+   "batterie": "Même endurante, sa batterie finit par s’user. Si l’état de la batterie passe sous 80 % dans Réglages › Batterie, le remplacement redonne une autonomie proche de l’origine.",
+   "autres": "Module photo, Face ID, connecteur Lightning et vitre arrière sont pris en charge après diagnostic, avec le prix final annoncé avant l’intervention.",
+   "proches": ["iphone-13-pro", "iphone-13", "iphone-14-pro-max", "iphone-12-pro-max"]
+  },
+  {
+   "slug": "iphone-13-pro", "nom": "iPhone 13 Pro", "annee": "2021",
+   "select": "iPhone 13 Pro", "ligne_ecran": "13 Pro", "ligne_batterie": "13 Pro", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran ProMotion fissuré ou batterie fatiguée sur votre iPhone 13 Pro ? Solution Phone le répare à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 13 Pro, sorti en 2021, est le premier iPhone doté de l’écran ProMotion, qui adapte son rafraîchissement jusqu’à 120 Hz pour un défilement plus fluide. Il embarque un triple appareil photo avec mode Macro, un scanner LiDAR et la puce A15 Bionic.",
+   "ecran": "La fluidité à 120 Hz dépend de la pièce utilisée : l’écran Apple d’origine reconditionné (ReLife) la conserve, tandis que certaines pièces compatibles fonctionnent à une fréquence plus basse. Avant l’intervention, l’équipe vous dit clairement ce que garde chaque qualité.",
+   "batterie": "Au bout de quelques années, l’autonomie baisse nettement. Le remplacement redonne une journée complète ; la batterie originale Apple peut être proposée selon la disponibilité.",
+   "autres": "Triple module photo, scanner LiDAR, Face ID, connecteur Lightning et vitre arrière : chaque réparation commence par un diagnostic et un prix final annoncé.",
+   "proches": ["iphone-13", "iphone-13-pro-max", "iphone-14-pro", "iphone-12-pro"]
+  },
+  {
+   "slug": "iphone-13", "nom": "iPhone 13", "annee": "2021",
+   "select": "iPhone 13", "ligne_ecran": "13", "ligne_batterie": "13", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran OLED fissuré, batterie fatiguée ou appareil photo flou : Solution Phone répare votre iPhone 13 à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "Sorti en 2021, l’iPhone 13 reprend le design à bords plats de l’iPhone 12 avec une encoche plus petite, une meilleure autonomie, la puce A15 Bionic et le mode Cinématique pour la vidéo. Encore très performant aujourd’hui, c’est un modèle que nos clients préfèrent souvent réparer plutôt que remplacer.",
+   "ecran": "Son écran OLED de 6,1 pouces peut être remplacé par un écran compatible, une dalle OLED souple (Soft OLED) ou un écran Apple d’origine reconditionné (ReLife). L’équipe utilise toujours la pièce prévue pour votre modèle exact et contrôle Face ID après la pose.",
+   "batterie": "Après quelques années, la batterie perd de sa capacité. Trois qualités peuvent être proposées : compatible, compatible reconnue par l’iPhone ou originale Apple.",
+   "autres": "Le double appareil photo en diagonale, Face ID, le connecteur Lightning et la vitre arrière sont aussi pris en charge. L’équipe vérifie la panne et annonce le prix final avant de commencer.",
+   "proches": ["iphone-13-mini", "iphone-13-pro", "iphone-13-pro-max", "iphone-12", "iphone-14"]
+  },
+  {
+   "slug": "iphone-13-mini", "nom": "iPhone 13 mini", "annee": "2021",
+   "select": "iPhone 13 mini", "ligne_ecran": "13 mini", "ligne_batterie": "13 mini", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran cassé ou batterie à bout de souffle sur votre iPhone 13 mini ? Solution Phone le répare à Mâcon, généralement en moins d’une heure si la pièce est en stock.",
+   "presentation": "L’iPhone 13 mini, sorti en 2021, est le dernier iPhone « mini » : un écran OLED de 5,4 pouces, la puce A15 Bionic, un double appareil photo en diagonale et une meilleure autonomie que le 12 mini. Son format compact en fait un modèle recherché, qui vaut la peine d’être réparé.",
+   "ecran": "La façade Ceramic Shield protège la dalle, mais un petit téléphone glisse facilement de la poche. Vous choisissez entre écran compatible, OLED souple ou écran Apple d’origine reconditionné. Le démontage d’un format aussi compact demande de la minutie.",
+   "batterie": "Même améliorée, l’autonomie du 13 mini reste limitée par la taille de sa batterie. Quand elle vieillit, un remplacement change nettement le quotidien.",
+   "autres": "Connecteur Lightning, vitre arrière, appareil photo, Face ID et désoxydation sont aussi réalisés en boutique, toujours avec le prix final annoncé avant l’intervention.",
+   "proches": ["iphone-12-mini", "iphone-13", "iphone-13-pro"]
+  },
+  {
+   "slug": "iphone-12-pro-max", "nom": "iPhone 12 Pro Max", "annee": "2020",
+   "select": "iPhone 12 Pro Max", "ligne_ecran": "12 Pro Max", "ligne_batterie": "12 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran cassé ou batterie fatiguée sur votre iPhone 12 Pro Max ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "L’iPhone 12 Pro Max, sorti en 2020, est le plus grand modèle de la gamme 12 avec son écran OLED de 6,7 pouces. C’est le premier iPhone à stabiliser l’image en déplaçant le capteur photo principal, et il embarque aussi le scanner LiDAR et la recharge MagSafe.",
+   "ecran": "Sa grande dalle OLED est protégée par la façade Ceramic Shield, mais reste exposée aux chutes. Selon votre budget : écran compatible, OLED souple ou écran Apple d’origine reconditionné, avec un contrôle du tactile et de l’affichage avant restitution.",
+   "batterie": "Sa batterie offre une bonne autonomie quand elle est neuve ; avec l’âge, les recharges deviennent plus fréquentes. Le remplacement lui redonne son endurance.",
+   "autres": "Module photo, Face ID, connecteur Lightning et vitre arrière : l’équipe diagnostique la panne et annonce le prix final avant toute intervention.",
+   "proches": ["iphone-12-pro", "iphone-12", "iphone-13-pro-max", "iphone-11-pro-max"]
+  },
+  {
+   "slug": "iphone-12-pro", "nom": "iPhone 12 Pro", "annee": "2020",
+   "select": "iPhone 12/12 Pro", "ligne_ecran": "12/12 PRO", "ligne_batterie": "12/12 PRO", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran fissuré, batterie usée ou appareil photo en panne : Solution Phone répare votre iPhone 12 Pro à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 12 Pro, sorti en 2020, associe des bords plats en acier inoxydable, un écran OLED de 6,1 pouces, un triple appareil photo et un scanner LiDAR qui aide la mise au point en faible lumière. La 5G et la recharge MagSafe sont aussi de la partie.",
+   "ecran": "Son écran a les mêmes dimensions que celui de l’iPhone 12, et notre base atelier affiche le même tarif pour les deux. Vous choisissez entre écran compatible, dalle OLED souple ou écran Apple d’origine reconditionné, selon le rendu souhaité.",
+   "batterie": "Au bout de quelques années, la batterie ne tient plus la journée. Le remplacement redonne l’autonomie attendue ; la batterie originale Apple peut être proposée selon la disponibilité.",
+   "autres": "Le module photo et le scanner LiDAR sont exposés en cas de chute sur le dos. Face ID, connecteur Lightning et vitre arrière sont aussi pris en charge, avec le prix final annoncé avant l’intervention.",
+   "proches": ["iphone-12", "iphone-12-pro-max", "iphone-13-pro", "iphone-11-pro"]
+  },
+  {
+   "slug": "iphone-12", "nom": "iPhone 12", "annee": "2020",
+   "select": "iPhone 12/12 Pro", "ligne_ecran": "12/12 PRO", "ligne_batterie": "12/12 PRO", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran OLED cassé, batterie fatiguée ou charge capricieuse : Solution Phone répare votre iPhone 12 à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "Sorti en octobre 2020, l’iPhone 12 a inauguré les bords plats en aluminium, la 5G et la recharge MagSafe par un anneau magnétique au dos. C’est aussi le premier iPhone de la gamme standard équipé d’un écran OLED de 6,1 pouces, protégé par la façade Ceramic Shield.",
+   "ecran": "Les bords plats encaissent moins bien les chocs, et un écran OLED fissuré laisse vite apparaître des lignes ou des taches. Les options Soft OLED et ReLife préservent mieux le rendu d’origine ; l’écran compatible reste la solution la plus économique. L’iPhone 12 et le 12 Pro ont le même tarif d’écran dans notre base.",
+   "batterie": "Après quelques années, la batterie perd de sa capacité et l’iPhone peut ralentir ou s’éteindre plus tôt. Trois qualités peuvent être proposées, dont la batterie originale Apple.",
+   "autres": "Le port Lightning, la vitre arrière (avec l’aimant MagSafe à repositionner correctement), l’appareil photo et Face ID font partie des réparations courantes, toujours sur devis préalable.",
+   "proches": ["iphone-12-mini", "iphone-12-pro", "iphone-12-pro-max", "iphone-13"]
+  },
+  {
+   "slug": "iphone-12-mini", "nom": "iPhone 12 mini", "annee": "2020",
+   "select": "iPhone 12 mini", "ligne_ecran": "12 mini", "ligne_batterie": "12 mini", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran fissuré ou autonomie en baisse sur votre iPhone 12 mini ? Solution Phone le répare à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "L’iPhone 12 mini, sorti en 2020, glisse dans un format très compact un écran OLED de 5,4 pouces, la 5G, la recharge MagSafe et les bords plats de la gamme 12. C’est le choix de ceux qui veulent un iPhone facile à tenir d’une main.",
+   "ecran": "Sa dalle OLED est protégée par la façade Ceramic Shield, mais une chute sur un sol dur peut quand même la fissurer. Sa petite taille demande un démontage minutieux. Vous choisissez entre écran compatible, dalle OLED souple ou écran Apple d’origine reconditionné.",
+   "batterie": "L’autonomie a toujours été son point faible : avec quelques années, la batterie peut devenir vraiment limite. Un remplacement redonne une journée d’utilisation plus sereine.",
+   "autres": "Connecteur Lightning, vitre arrière, appareil photo et Face ID sont aussi pris en charge, avec un diagnostic et un prix final annoncés avant l’intervention.",
+   "proches": ["iphone-12", "iphone-13-mini", "iphone-12-pro"]
+  },
+  {
+   "slug": "iphone-11-pro-max", "nom": "iPhone 11 Pro Max", "annee": "2019",
+   "select": "iPhone 11 Pro Max", "ligne_ecran": "11 Pro Max", "ligne_batterie": "11 Pro Max", "lcd": false, "biometrie": "Face ID",
+   "intro": "Grand écran fissuré ou batterie usée sur votre iPhone 11 Pro Max ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "Sorti en 2019, l’iPhone 11 Pro Max reprend le triple appareil photo du 11 Pro avec un écran OLED de 6,5 pouces, le même format d’écran que l’iPhone XS Max. Son autonomie, parmi les meilleures de sa génération, en a fait un modèle très apprécié.",
+   "ecran": "Sa grande dalle OLED est plus exposée aux chutes. Selon votre budget : écran compatible, OLED souple (Soft OLED) pour un rendu proche de l’origine, ou écran Apple d’origine reconditionné (ReLife).",
+   "batterie": "Même une grosse batterie s’use : après quelques années, l’autonomie baisse et l’iPhone peut s’éteindre par temps froid. Le remplacement lui rend une journée complète d’utilisation.",
+   "autres": "Triple appareil photo, Face ID, connecteur Lightning et vitre arrière : l’équipe diagnostique la panne et vous annonce le prix final avant de commencer.",
+   "proches": ["iphone-11-pro", "iphone-11", "iphone-xs-max", "iphone-12-pro-max"]
+  },
+  {
+   "slug": "iphone-11-pro", "nom": "iPhone 11 Pro", "annee": "2019",
+   "select": "iPhone 11 Pro", "ligne_ecran": null, "ligne_batterie": "11 Pro", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran OLED fissuré ou batterie qui ne tient plus : Solution Phone répare votre iPhone 11 Pro à Mâcon, avec le prix final annoncé avant l’intervention.",
+   "presentation": "L’iPhone 11 Pro, sorti en 2019, est le premier iPhone doté d’un triple appareil photo (grand-angle, ultra grand-angle et téléobjectif). Il associe un écran OLED de 5,8 pouces, un cadre en acier inoxydable et un dos en verre mat. Son format compact séduit encore beaucoup d’utilisateurs.",
+   "ecran": "Son écran OLED peut être remplacé par une pièce compatible, une dalle OLED souple ou un écran Apple d’origine reconditionné, selon la disponibilité. Le prix de l’écran de ce modèle est confirmé par l’équipe au moment du devis.",
+   "batterie": "La batterie peut perdre une part importante de sa capacité après quelques années d’usage intensif. Le remplacement redonne une autonomie normale ; les prix finaux sont affichés ci-dessus.",
+   "autres": "Le triple module photo, Face ID, le connecteur Lightning et la vitre arrière font partie des réparations courantes. Pour chaque panne, l’équipe vérifie la pièce disponible et annonce le prix final avant de commencer.",
+   "proches": ["iphone-11", "iphone-11-pro-max", "iphone-x-xs", "iphone-12-pro"]
+  },
+  {
+   "slug": "iphone-11", "nom": "iPhone 11", "annee": "2019",
+   "select": "iPhone 11", "ligne_ecran": "11", "ligne_batterie": "11", "lcd": true, "biometrie": "Face ID",
+   "intro": "Votre iPhone 11 a l’écran cassé ou ne tient plus la charge ? Solution Phone le répare à Mâcon, avec plusieurs qualités de pièce et les prix finaux affichés ci-dessous.",
+   "presentation": "Lancé en septembre 2019, l’iPhone 11 a connu un grand succès grâce à son double appareil photo (grand-angle et ultra grand-angle), son mode Nuit et un prix plus accessible que les modèles Pro. On en voit encore beaucoup en boutique à Mâcon, et il reste un bon téléphone pour un usage quotidien.",
+   "ecran": "L’iPhone 11 est équipé d’un écran LCD Liquid Retina de 6,1 pouces, et non d’un écran OLED comme les 11 Pro. Les qualités proposées sont donc les écrans compatibles, le LCD haut de gamme LTPS Prime et l’écran Apple d’origine reconditionné (ReLife). Les pièces sont généralement disponibles et abordables.",
+   "batterie": "Après plusieurs années, la batterie perd de sa capacité : l’iPhone s’éteint plus tôt ou chauffe en charge. Vérifiez son état dans Réglages › Batterie : sous 80 %, un remplacement est conseillé.",
+   "autres": "Le port Lightning accumule poussière et peluches : un nettoyage (10 €) suffit parfois. Sinon, l’équipe remplace le connecteur. Appareil photo, vitre arrière, Face ID ou haut-parleur sont aussi diagnostiqués avant toute intervention. Avec un écran et une batterie neufs, un iPhone 11 peut encore servir plusieurs années.",
+   "proches": ["iphone-11-pro", "iphone-11-pro-max", "iphone-xr", "iphone-12"]
+  },
+  {
+   "slug": "iphone-xs-max", "nom": "iPhone XS Max", "annee": "2018",
+   "select": "iPhone XS Max", "ligne_ecran": "X/XS/XS MAX", "ligne_batterie": "X/XS/XS MAX", "lcd": false, "biometrie": "Face ID",
+   "intro": "Le grand écran de votre iPhone XS Max est fissuré ou sa batterie faiblit ? Solution Phone le répare à Mâcon, avec les prix finaux affichés et 25 € déjà déduits.",
+   "presentation": "Présenté en 2018 avec l’iPhone XS, l’iPhone XS Max est le premier iPhone doté d’un écran de 6,5 pouces. Il reprend Face ID, l’écran OLED et le double appareil photo du XS dans un format plus grand. C’est un modèle apprécié pour son grand écran, qu’on voit encore souvent en boutique.",
+   "ecran": "Sa grande dalle OLED est plus exposée aux chutes. Vous choisissez la qualité selon votre budget : écran compatible économique, OLED souple (Soft OLED) ou écran Apple d’origine reconditionné (ReLife). Les capteurs situés en haut de l’écran sont transférés sur la nouvelle pièce, puis Face ID et le tactile sont contrôlés.",
+   "batterie": "Avec l’âge, la batterie du XS Max tient moins bien la charge, surtout avec un écran aussi grand. Un remplacement redonne une autonomie normale.",
+   "autres": "Connecteur Lightning, vitre arrière, appareil photo, micro ou haut-parleur : chaque panne est diagnostiquée avant la réparation, avec le prix final annoncé à l’avance.",
+   "note_prix": "Notre base atelier regroupe l’iPhone X, le XS et le XS Max sur une même ligne de tarifs.",
+   "proches": ["iphone-x-xs", "iphone-xr", "iphone-11-pro-max"]
+  },
+  {
+   "slug": "iphone-xr", "nom": "iPhone XR", "annee": "2018",
+   "select": "iPhone XR", "ligne_ecran": "XR", "ligne_batterie": "XR", "lcd": true, "biometrie": "Face ID",
+   "intro": "Écran cassé, tactile qui ne répond plus ou batterie fatiguée : Solution Phone répare votre iPhone XR à Mâcon, avec les prix finaux affichés ci-dessous.",
+   "presentation": "Sorti fin 2018, l’iPhone XR a rendu Face ID et l’écran bord à bord plus accessibles. Il associe un écran LCD Liquid Retina de 6,1 pouces, un seul appareil photo au dos et un cadre en aluminium. Vendu en grand nombre, il reste l’un des iPhone les plus présents dans les ateliers de réparation.",
+   "ecran": "Comme l’écran d’origine est un LCD, les qualités proposées sont les écrans compatibles, le LCD haut de gamme LTPS Prime et, selon la disponibilité, un écran Apple d’origine reconditionné. Les capteurs de Face ID situés en haut de l’écran sont transférés et contrôlés.",
+   "batterie": "L’iPhone XR est connu pour sa bonne autonomie ; quand elle chute nettement, c’est souvent la batterie qui a vieilli. Un remplacement lui rend une autonomie proche de l’origine.",
+   "autres": "Connecteur Lightning, vitre arrière, appareil photo, haut-parleur : diagnostic en boutique et prix final annoncé avant l’intervention.",
+   "proches": ["iphone-11", "iphone-x-xs", "iphone-xs-max"]
+  },
+  {
+   "slug": "iphone-x-xs", "nom": "iPhone X et XS", "annee": "2017 et 2018",
+   "select": "iPhone X/XS", "ligne_ecran": "X/XS/XS MAX", "ligne_batterie": "X/XS/XS MAX", "lcd": false, "biometrie": "Face ID",
+   "intro": "Écran OLED fissuré, lignes à l’affichage ou batterie usée : Solution Phone répare votre iPhone X ou XS à Mâcon, avec plusieurs qualités d’écran et les prix finaux affichés.",
+   "presentation": "L’iPhone X, sorti en 2017, a inauguré l’écran bord à bord sans bouton principal, Face ID et le premier écran OLED sur iPhone. L’iPhone XS lui a succédé en 2018 dans le même format de 5,8 pouces, avec une puce plus rapide. Beaucoup sont encore en service, souvent avec un écran ou une batterie à remplacer.",
+   "ecran": "L’écran OLED d’origine offre des noirs profonds. Selon votre budget, vous pouvez choisir un écran compatible économique, une dalle OLED souple (Soft OLED) plus proche de l’origine, ou un écran Apple d’origine reconditionné. Les capteurs situés en haut de l’écran sont transférés avec soin, puis Face ID est contrôlé.",
+   "batterie": "La batterie de ces modèles a souvent plusieurs années. Si l’iPhone s’éteint à 20 % ou si l’état de la batterie affiché dans Réglages › Batterie est sous 80 %, un remplacement est recommandé.",
+   "autres": "Connecteur Lightning, vitre arrière, appareil photo, haut-parleur, Face ID : l’équipe établit un diagnostic et vous annonce le prix final avant toute intervention.",
+   "note_prix": "Notre base atelier regroupe l’iPhone X, le XS et le XS Max sur une même ligne de tarifs.",
+   "proches": ["iphone-xs-max", "iphone-xr", "iphone-11-pro"]
+  },
+  {
+   "slug": "iphone-se", "nom": "iPhone SE (2020 et 2022)", "nom_titre": "iPhone SE (2020 et 2022)", "annee": "2020 et 2022",
+   "select": "iPhone SE 2", "ligne_ecran": null, "ligne_batterie": null, "lcd": true, "biometrie": "Touch ID",
+   "intro": "Votre iPhone SE de 2020 ou de 2022 a l’écran cassé ou une batterie fatiguée ? L’équipe Solution Phone vérifie la pièce disponible et vous annonce le prix final avant toute intervention.",
+   "presentation": "L’iPhone SE de deuxième génération (2020) et celui de troisième génération (2022) reprennent le format compact de l’iPhone 8 : écran de 4,7 pouces, bouton principal avec Touch ID et port Lightning. Le modèle 2022 se distingue par une puce plus récente et la 5G. Pour savoir lequel vous avez, regardez dans Réglages › Général › Informations. L’iPhone SE de 2016, plus petit, est un autre modèle.",
+   "ecran": "L’écran d’origine est un LCD. Lors du remplacement, le bouton principal d’origine est conservé et remonté sur le nouvel écran, car Touch ID est lié à la carte mère de l’iPhone. Les qualités disponibles et leur prix final vous sont confirmés par l’équipe avant l’intervention.",
+   "batterie": "Petit boîtier, petite batterie : l’iPhone SE est souvent le premier à manquer d’autonomie. Si l’iPhone s’éteint avant la fin de la journée ou si l’état de la batterie (Réglages › Batterie) passe sous 80 %, le remplacement lui redonne une vraie seconde vie.",
+   "autres": "Connecteur Lightning, vitre arrière, haut-parleur, micro ou appareil photo : l’équipe diagnostique la panne en boutique et vous propose la réparation adaptée, avec le prix final annoncé avant de commencer.",
+   "note_prix": "Dans le calculateur de l’accueil, choisissez « SE 2 » pour le modèle 2020 et « SE 3 » pour le modèle 2022.",
+   "proches": ["iphone-8", "iphone-xr", "iphone-11"]
+  },
+  {
+   "slug": "iphone-8", "nom": "iPhone 8 et 8 Plus", "annee": "2017",
+   "select": "iPhone 8/8+", "ligne_ecran": "7/7+/8/8+", "ligne_batterie": "7/7+/8/8+", "lcd": true, "biometrie": "Touch ID",
+   "intro": "Écran fissuré, batterie qui ne tient plus la journée ou bouton principal capricieux : Solution Phone répare votre iPhone 8 ou 8 Plus à Mâcon, avec les prix finaux affichés.",
+   "presentation": "Sortis en 2017, l’iPhone 8 (écran de 4,7 pouces) et l’iPhone 8 Plus (5,5 pouces) sont les derniers iPhone numérotés à garder le bouton principal avec Touch ID sous l’écran. Leur dos en verre a permis l’arrivée de la recharge sans fil. Simples et robustes, ils méritent souvent une réparation, par exemple comme téléphone d’appoint ou pour un enfant.",
+   "ecran": "Les deux modèles utilisent un écran LCD. Lors du remplacement, le bouton principal d’origine est remonté sur le nouvel écran : Touch ID est lié à la carte mère et ne fonctionnerait pas avec un autre bouton. L’équipe vérifie donc son bon fonctionnement avant et après l’intervention.",
+   "batterie": "Après plusieurs années, la batterie d’un iPhone 8 perd de sa capacité : extinctions à 20 %, autonomie d’une demi-journée, ralentissements. Vérifiez son état dans Réglages › Batterie : en dessous de 80 %, un remplacement est conseillé.",
+   "autres": "Connecteur Lightning qui charge mal, vitre arrière fêlée, haut-parleur ou micro faible : ces pannes se traitent aussi en boutique. Un simple nettoyage du connecteur (10 €) suffit parfois à régler un problème de charge.",
+   "note_prix": "Notre base atelier regroupe l’iPhone 7, 7 Plus, 8 et 8 Plus sur une même ligne de tarifs.",
+   "proches": ["iphone-se", "iphone-x-xs", "iphone-xr"]
+  }
+ ]
+}
