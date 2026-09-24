@@ -1081,7 +1081,8 @@ document.querySelector('.hero').addEventListener('mousemove',function(e){
     var p=(row&&row.prix||[]).map(function(value){return Number(value)||0;});
     if(type==='ecran'){
       var compatible=[p[0],p[1]].filter(function(value){return value>0;}).sort(function(a,b){return a-b;})[0]||0;
-      return [['Compatible',compatible],['LTPS Prime',p[2]],['Soft OLED',p[3]],['ReLife',p[4]]];
+      var lcd=/^(xr|11|se\b|se |6|7|8)/.test(normalizePriceModel(modelSelect.value))&&!/^11 pro/.test(normalizePriceModel(modelSelect.value)); // écrans LCD : pas d’OLED
+      return [['Compatible',compatible],['LTPS Prime',p[2]],['Soft OLED',lcd?0:p[3]],['ReLife',p[4]]];
     }
     return [['Compatible',p[0]],['Reconnue par l’iPhone',p[1]],['Originale Apple',p[2]]].filter(function(item){return item[1]>0;});
   }
