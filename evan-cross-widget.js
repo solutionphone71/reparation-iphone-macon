@@ -10,7 +10,7 @@
   style.textContent=`
     .sp-sebastien-mini{position:fixed;left:16px;bottom:16px;z-index:2147483000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     .sp-sebastien-launch{display:flex;align-items:center;gap:9px;border:1px solid #d8d8dc;border-radius:999px;background:#fff;color:#171719;padding:7px 14px 7px 7px;box-shadow:0 14px 34px rgba(0,0,0,.16);font-weight:750;cursor:pointer}
-    .sp-sebastien-avatar{display:block;width:40px;height:40px;border-radius:50%;background:url("sebastien-avatar-anime-v1.jpg") left top/200% 200% no-repeat}
+    .sp-sebastien-avatar{display:block;width:40px;height:40px;border-radius:50%;background:url("sebastien-avatar-anime-v1-240.jpg") left top/200% 200% no-repeat}
     .sp-sebastien-panel{display:none;position:absolute;left:0;bottom:62px;width:min(360px,calc(100vw - 32px));overflow:hidden;border:1px solid #d8d8dc;border-radius:20px;background:#f5f5f7;box-shadow:0 24px 65px rgba(0,0,0,.22)}
     .sp-sebastien-mini.open .sp-sebastien-panel{display:block}
     .sp-sebastien-head{display:flex;align-items:center;padding:13px 15px;background:#171719;color:#fff}.sp-sebastien-head b{font-size:13px}.sp-sebastien-close,.sp-sebastien-back{border:0;background:transparent;color:#fff;font-size:21px;cursor:pointer}.sp-sebastien-close{margin-left:auto}.sp-sebastien-back{display:none;margin-left:auto}

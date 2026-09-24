@@ -97,3 +97,29 @@ body .hero .hero-btns button.btn-outline{border-radius:980px!important;min-heigh
 .conversion-dock{grid-template-columns:1fr 1.15fr 1fr!important}
 .conversion-dock a.dock-call{white-space:nowrap;padding:0 10px}
 @media(max-width:600px){.conversion-dock a.dock-call .dock-call-label{display:none}.conversion-dock a,.conversion-dock button{padding:0 8px!important}}
+
+/* ===== Corrections après audit ===== */
+/* Le bandeau bleu répète le titre et masque le menu : retiré sur l’accueil (la mention légale reste en bas de page) */
+.spq-bonus-bar{display:none!important}
+/* Liste déroulante gardée pour les liens et l’accessibilité, remplacée à l’écran par les boutons */
+.visually-hidden,#hero-model{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
+/* Calcul du bonus affiché sans prix barré */
+body .hero .hero-quality-list .bonus-calc{margin-left:auto;color:#6e6e73;font-size:.62rem;font-weight:600;white-space:nowrap}
+/* Ordinateur : le calculateur revient à côté du titre */
+@media(min-width:1000px){
+  body .hero .hero-inner{grid-template-columns:minmax(0,1fr) minmax(440px,560px)!important;align-items:start;justify-items:stretch;text-align:left;max-width:1200px}
+  body .hero .hero-text{align-items:flex-start;padding-top:24px!important}
+  body .hero .hero-text h1.offer-title{align-items:flex-start}
+  body .hero .hero-text .hero-sub{margin-left:0}
+  body .hero .hero-btns,body .hero .hero-proof{justify-content:flex-start}
+  .offer-title .offer-amount{font-size:clamp(6rem,10vw,9rem)}
+  .offer-title .offer-line{font-size:clamp(2rem,3.2vw,3rem)}
+}
+/* Téléphone : tout le titre centré */
+@media(max-width:999px){body .hero .hero-text,body .hero .hero-text h1.offer-title,body .hero .hero-text .hero-sub{text-align:center!important}}
+/* Cibles tactiles d’au moins 44 px */
+body .hero .hero-proof a,body .hero .console-foot a{display:inline-flex;align-items:center;min-height:44px}
+/* Contour visible au clavier */
+.model-gen:focus-visible,.model-variant:focus-visible,.quality-choice:focus-visible,body .hero .hero-btns a:focus-visible,body .hero .hero-btns button:focus-visible,.price-guarantee a:focus-visible,.price-guarantee summary:focus-visible,.conversion-dock a:focus-visible,.conversion-dock button:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+/* Vert WhatsApp plus foncé : texte blanc lisible (contraste 4,5 minimum) */
+.conversion-dock a[href*="wa.me"],body .hero .console-actions a#hero-whatsapp{background:#0f7a3d!important;color:#fff!important}
