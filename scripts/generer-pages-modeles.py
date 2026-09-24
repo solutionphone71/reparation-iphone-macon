@@ -176,7 +176,7 @@ def tete(titre, description, chemin, jsonld, og_image='iphone-generations-lineup
 <meta property="og:image" content="{SITE}/{og_image}">
 <meta name="theme-color" content="#1d1d1f">
 {blocs}
-<link rel="stylesheet" href="modele.css?v=1">
+<link rel="stylesheet" href="modele.css?v=2">
 <script src="/menu-commun.js?v=1" data-site="iphone"></script>
 </head>
 <body>
@@ -393,7 +393,7 @@ def page_modele(m, releve, tous, date_fr):
     h += pied()
     h += dock(msg, devis_lien(m, 'ecran', email=True))
     h += SCRIPT_PRIX
-    h += '<script src="evan-cross-widget.js?v=6" defer></script>\n'
+    h += '<script src="evan-cross-widget.js?v=7" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 
@@ -448,7 +448,7 @@ def page_reparation(pg, modeles):
     h += '</ul></section>\n</div>\n</main>\n'
     h += pied()
     h += dock(msg, 'index.html?panne=' + panne + '&email=1#devis')
-    h += '<script src="evan-cross-widget.js?v=6" defer></script>\n'
+    h += '<script src="evan-cross-widget.js?v=7" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 

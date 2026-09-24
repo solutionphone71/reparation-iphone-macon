@@ -71,6 +71,7 @@ table.prix thead th:last-child{text-align:right}
 .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:8px;margin:12px 0 0;padding:0;list-style:none}
 .links a{display:flex;align-items:center;min-height:48px;padding:8px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none;font-weight:550;font-size:15px}
 .links a:hover{border-color:var(--ink)}
+.block .links{padding:0}
 .steps{counter-reset:s;list-style:none;padding:0!important}
 .steps li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:12px}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
