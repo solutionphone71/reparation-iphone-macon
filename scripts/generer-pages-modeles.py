@@ -177,7 +177,7 @@ def tete(titre, description, chemin, jsonld, og_image='iphone-generations-lineup
 <meta name="theme-color" content="#1d1d1f">
 {blocs}
 <link rel="stylesheet" href="modele.css?v=3">
-<script src="/menu-commun.js?v=1" data-site="iphone"></script>
+<script src="/menu-commun.js?v=2" data-site="iphone"></script>
 </head>
 <body>
 <nav aria-label="Navigation (secours)">
@@ -205,7 +205,7 @@ def jsonld_fil(elements):
 
 def preuves():
     return ('<ul class="proof">'
-            '<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Solution+Phone+21+rue+Gambetta+Macon" target="_blank" rel="noopener">'
+            '<li><a href="https://g.page/r/CbyQ_wiFpddjEBM" target="_blank" rel="noopener">'
             + typo('Note Google 4,7/5 · plus de 700 avis') + '</a></li>'
             '<li>' + typo('Généralement en moins d’une heure si la pièce est en stock') + '</li>'
             '<li>' + typo('Réparations garanties 6 mois') + '</li>'
