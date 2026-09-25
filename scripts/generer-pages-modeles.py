@@ -177,7 +177,7 @@ def tete(titre, description, chemin, jsonld, og_image='iphone-generations-lineup
 <meta name="theme-color" content="#1d1d1f">
 {blocs}
 <link rel="stylesheet" href="modele.css?v=3">
-<script src="/menu-commun.js?v=3" data-site="iphone"></script>
+<script src="/menu-commun.js?v=4" data-site="iphone"></script>
 </head>
 <body>
 <nav aria-label="Navigation (secours)">
