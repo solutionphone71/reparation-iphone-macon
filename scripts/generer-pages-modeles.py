@@ -253,6 +253,9 @@ SCRIPT_PRIX = r'''<script>
 /* Rafraîchit les prix écrits dans la page avec la base de l'atelier (prix finaux, 25 € déjà déduits). */
 (function(){
   var box=document.getElementById('prix');if(!box||!window.fetch)return;
+  var screen=box.querySelector('table[data-type="ecran"]');
+  var rows=window.SolutionPhoneApprovedIphoneScreens;
+  var valid=Array.isArray(rows)&&rows.length===25&&new Set(rows.map(function(r){return r&&r.modele;})).size===25&&rows.every(function(r){return r&&typeof r.modele==='string'&&/^[\p{L}\p{N} .+()/\-]+$/u.test(r.modele)&&Array.isArray(r.prix)&&r.prix.length===5&&r.prix.some(function(p){return typeof p==='number'&&p>0;})&&r.prix.every(function(p){return p===null||(typeof p==='number'&&Number.isFinite(p)&&p>0&&p<=100000&&p===Math.round(p*100)/100);});});
   var lcd=box.getAttribute('data-lcd')==='1';
   var QE=[['Compatible','Le choix économique pour un usage courant.'],['LTPS Prime','Un écran LCD haut de gamme, lumineux et réactif.'],['Soft OLED','Un écran OLED souple : noirs profonds, rendu proche de l’origine.'],['ReLife','Un écran Apple d’origine reconditionné.']];
   var QB=[['Compatible','La solution économique.'],['Compatible reconnue par l’iPhone','Une batterie compatible conçue pour être reconnue par l’iPhone.'],['Originale Apple','Une batterie d’origine Apple, selon disponibilité.']];
@@ -261,15 +264,18 @@ SCRIPT_PRIX = r'''<script>
   function opts(type,p){p=(p||[]).map(n);
     if(type==='ecran'){var c=[p[0],p[1]].filter(Boolean).sort(function(a,b){return a-b})[0]||0;var v=[c,p[2]||0,lcd?0:(p[3]||0),p[4]||0];return QE.map(function(q,i){return [q[0],q[1],v[i]]}).filter(function(o){return o[2]>0})}
     return QB.map(function(q,i){return [q[0],q[1],p[i]||0]}).filter(function(o){return o[2]>0})}
+  function render(tab,row){var o=opts(tab.getAttribute('data-type'),row&&row.prix);tab.querySelector('tbody').innerHTML=o.length?o.map(function(x){return '<tr><th scope="row"><b>'+x[0]+'</b><span>'+x[1]+'</span></th><td>'+x[2]+' €</td></tr>'}).join(''):'<tr><td colspan="2">Sur devis — contactez l’équipe.</td></tr>';return !!o.length;}
+  var liveScreen=false;
+  if(screen){var wanted=norm(screen.getAttribute('data-ligne'));var found=valid&&rows.filter(function(r){return norm(r.modele)===wanted})[0];liveScreen=render(screen,found);}
   fetch('https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/public-catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
-    if(!d||!d.prices)return;var ok=false;
-    box.querySelectorAll('table[data-ligne]').forEach(function(tab){
-      var type=tab.getAttribute('data-type'),rows=(type==='ecran'?d.prices.screens:d.prices.batteries)||[],want=norm(tab.getAttribute('data-ligne'));
-      var row=rows.filter(function(r){return norm(r.modele)===want})[0];if(!row)return;
-      var o=opts(type,row.prix);if(!o.length)return;
+    if(!d||!d.prices)return;var ok=liveScreen;
+    box.querySelectorAll('table[data-type="batterie"]').forEach(function(tab){
+      var want=norm(tab.getAttribute('data-ligne'));
+      var row=(d.prices.batteries||[]).filter(function(r){return norm(r.modele)===want})[0];if(!row)return;
+      var o=opts('batterie',row.prix);if(!o.length)return;
       tab.querySelector('tbody').innerHTML=o.map(function(x){return '<tr><th scope="row"><b>'+x[0]+'</b><span>'+x[1]+'</span></th><td>'+x[2]+' €</td></tr>'}).join('');ok=true;
     });
-    if(ok){var el=document.getElementById('prix-date');if(el)el.textContent='Prix vérifiés en direct le '+new Date().toLocaleDateString('fr-FR');}
+    if(ok){var el=document.getElementById('prix-date');if(el)el.textContent='Tarifs affichés le '+new Date().toLocaleDateString('fr-FR');}
   }).catch(function(){});
 })();
 </script>
@@ -302,8 +308,7 @@ def page_modele(m, releve, tous, date_fr):
 
     # JSON-LD
     offres = []
-    for k, lab, expl, v in o_ecran:
-        offres.append({'@type': 'Offer', 'name': 'Remplacement écran %s – qualité %s' % (nom, lab), 'price': str(v), 'priceCurrency': 'EUR', 'url': url + '#prix'})
+    # Les anciennes offres écran V1 ne doivent pas contredire l'aperçu approuvé V2.
     for k, lab, expl, v in o_batt:
         offres.append({'@type': 'Offer', 'name': 'Remplacement batterie %s – qualité %s' % (nom, lab), 'price': str(v), 'priceCurrency': 'EUR', 'url': url + '#prix'})
     service = {'@context': 'https://schema.org', '@type': 'Service', 'name': 'Réparation %s à Mâcon' % nom,
@@ -330,18 +335,15 @@ def page_modele(m, releve, tous, date_fr):
 
     # Prix
     h += f'<section class="block" id="prix" data-lcd="{1 if lcd else 0}" aria-labelledby="h-prix">'
-    h += f'<div class="prix-head"><h2 id="h-prix">{t("Prix de réparation " + nom)}</h2><span class="prix-date" id="prix-date">{t("Prix au " + date_fr)}</span></div>'
+    h += f'<div class="prix-head"><h2 id="h-prix">{t("Prix de réparation " + nom)}</h2><span class="prix-date" id="prix-date">Tarifs écran vérifiés au 12/11/2026</span></div>'
     h += '<p class="prix-note">' + typo('Prix finaux, pièce et main-d’œuvre comprises, <strong>25 € déjà déduits</strong>. La disponibilité de la pièce est confirmée avant l’intervention.') + '</p>'
     tabs = []
-    if o_ecran:
-        tabs.append(table_prix('Écran ' + nom, 'ecran', r_ecran['modele'], o_ecran))
+    tabs.append(table_prix('Écran ' + nom, 'ecran', m.get('ligne_ecran') or nom, []))
     if o_batt:
         tabs.append(table_prix('Batterie ' + nom, 'batterie', r_batt['modele'], o_batt))
     if tabs:
         h += '<div class="tables">' + ''.join(tabs) + '</div>'
     manque = []
-    if not o_ecran:
-        manque.append('l’écran')
     if not o_batt:
         manque.append('la batterie')
     if manque:
@@ -392,6 +394,7 @@ def page_modele(m, releve, tous, date_fr):
     h += '</div>\n</main>\n'
     h += pied()
     h += dock(msg, devis_lien(m, 'ecran', email=True))
+    h += '<script src="apple-screens-20261112-v2.js"></script>\n'
     h += SCRIPT_PRIX
     h += '<script src="evan-cross-widget.js?v=7" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'

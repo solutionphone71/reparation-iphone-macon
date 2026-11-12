@@ -954,6 +954,7 @@ footer .foot-links a:hover{color:var(--blue)}
   <button type="button" onclick="focusEmailQuote()" aria-label="Demander un devis par e-mail">E-mail</button>
 </div>
 
+<script src="apple-screens-20261112-v2.js"></script>
 <script>
 // ═══ LIVE CLOCK ON IPHONE ═══
 function updateClock(){
@@ -1087,10 +1088,15 @@ var SU='https://kdvxcnjfrmvlnrymfyug.supabase.co';
 var PUBLIC_CATALOG=SU+'/functions/v1/public-catalog';
 var priceSyncCount=0;
 function markPriceSynced(){priceSyncCount++;PRICE_STATE='ready';var el=document.getElementById('price-sync-status');if(el)el.textContent='Tarifs atelier à jour';}
-function markPriceFallback(){PRICE_STATE='error';var el=document.getElementById('price-sync-status');if(el&&!priceSyncCount)el.textContent='Prix confirmés par l’équipe';['pe','pb'].forEach(function(id){var t=document.getElementById(id);if(t&&!priceSyncCount)t.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3)">Tarifs momentanément indisponibles : demandez votre prix sur WhatsApp ou par e-mail.</div>';});if(typeof window.updateHeroPrice==='function')window.updateHeroPrice();}
+function markPriceFallback(){if(!priceSyncCount){PRICE_STATE='error';var el=document.getElementById('price-sync-status');if(el)el.textContent='Prix confirmés par l’équipe';}var t=document.getElementById('pb');if(t)t.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3)">Tarifs batterie momentanément indisponibles : demandez votre prix sur WhatsApp ou par e-mail.</div>';if(typeof window.updateHeroPrice==='function')window.updateHeroPrice();}
 var HERO_PRICE_ROWS={ecran:[],batterie:[]},PRICE_STATE='loading';
 function setHeroPriceRows(rows,type){if(Array.isArray(rows)&&rows.length)HERO_PRICE_ROWS[type]=rows;if(typeof window.updateHeroPrice==='function')window.updateHeroPrice();}
-fetch(PUBLIC_CATALOG+'?resource=prices').then(function(response){if(!response.ok)throw new Error('catalogue indisponible');return response.json();}).then(function(catalogue){var prices=catalogue.prices||{},screens=prices.screens||[],batteries=prices.batteries||[];if(screens.length){bET(screens);setHeroPriceRows(screens,'ecran');markPriceSynced();}if(batteries.length){bBT(batteries);setHeroPriceRows(batteries,'batterie');markPriceSynced();}if(!screens.length&&!batteries.length)markPriceFallback();}).catch(markPriceFallback);
+function approvedScreens(){var rows=window.SolutionPhoneApprovedIphoneScreens;
+  return Array.isArray(rows)&&rows.length===25&&new Set(rows.map(function(r){return r&&r.modele;})).size===25&&rows.every(function(r){return r&&typeof r.modele==='string'&&/^[\p{L}\p{N} .+()/\-]+$/u.test(r.modele)&&Array.isArray(r.prix)&&r.prix.length===5&&r.prix.some(function(p){return typeof p==='number'&&p>0;})&&r.prix.every(function(p){return p===null||(typeof p==='number'&&Number.isFinite(p)&&p>0&&p<=100000&&p===Math.round(p*100)/100);});})?rows:null;}
+var publishedScreens=approvedScreens();
+if(publishedScreens){bET(publishedScreens);setHeroPriceRows(publishedScreens,'ecran');markPriceSynced();}
+else{var screenBox=document.getElementById('pe');if(screenBox)screenBox.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3)">Tarifs écran momentanément indisponibles : demandez votre prix sur WhatsApp ou par e-mail.</div>';}
+fetch(PUBLIC_CATALOG+'?resource=prices').then(function(response){if(!response.ok)throw new Error('catalogue indisponible');return response.json();}).then(function(catalogue){var batteries=(catalogue.prices||{}).batteries||[];if(batteries.length){bBT(batteries);setHeroPriceRows(batteries,'batterie');markPriceSynced();}else markPriceFallback();}).catch(markPriceFallback);
 
 // ═══ PARALLAX ON MOUSE (hero only) ═══
 document.querySelector('.hero').addEventListener('mousemove',function(e){
