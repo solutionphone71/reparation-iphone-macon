@@ -956,6 +956,7 @@ footer .foot-links a:hover{color:var(--blue)}
 </div>
 
 <script src="apple-screens-20261112-v3.js"></script>
+<script src="/quote-attempt.fcade1faf080.js"></script>
 <script>
 // ═══ LIVE CLOCK ON IPHONE ═══
 function updateClock(){
@@ -1033,7 +1034,8 @@ document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',
 var IPHONE_BRAIN_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/evan-brain';
 var IPHONE_BRAIN_KEY='sb_publishable_3Mub3jSj8wUC8mfFtAuhdA_P4Ljnnhb';
 var QUOTE_REQUEST_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/quote-request';
-var quoteRequestTokens={hero:null,secondary:null};
+var PUBLIC_QUOTE_SOURCE='v1'; // Bascule explicite des devis uniquement.
+var V2_QUOTE_REQUEST_URL='https://vps-8066c206.vps.ovh.net/api/public/quote-request';
 var iphoneTrackingToken='';
 try{iphoneTrackingToken=sessionStorage.getItem('iphone_tracking_token')||''}catch(e){}
 function trackIphoneEvent(event,metadata){
@@ -1043,14 +1045,27 @@ function trackIphoneEvent(event,metadata){
     .catch(function(){});
 }
 function quoteErrorMessage(error){
+  if(error&&error.code==='quote_payload_changed')return 'Cette demande a déjà été tentée avec d’autres informations. Son résultat reste à vérifier : contactez la boutique avant de refaire un devis.';
+  if(error&&error.code==='quote_attempt_needs_review')return 'Cette tentative de devis doit être vérifiée par la boutique avant tout nouvel envoi.';
+  if(error&&error.code==='quote_storage_unavailable')return 'Le suivi sécurisé du devis est indisponible sur cet appareil. Impossible de confirmer une tentative précédente : contactez la boutique avant de réessayer.';
+  if(error&&error.code==='quote_in_flight')return 'Un envoi de ce devis est déjà en cours. Attendez son résultat.';
+  if(error&&error.code==='quote_receipt_unconfirmed')return 'Résultat de l’envoi non confirmé. Vérifiez auprès de la boutique avant de réessayer pour éviter un doublon.';
   if(error&&error.status===429)return 'Plusieurs demandes ont déjà été envoyées récemment. Réessayez dans 15 minutes ou utilisez WhatsApp.';
-  if(error&&error.status>=400&&error.status<500)return 'Vérifiez les informations indiquées puis réessayez.';
-  return 'L’envoi n’a pas abouti. Utilisez WhatsApp ou appelez le 03 85 33 06 89.';
+  if(error&&error.status>=400&&error.status<500)return 'La demande n’a pas été confirmée. Vérifiez les informations et contactez la boutique avant un nouvel essai.';
+  return 'Résultat de l’envoi non confirmé. Contactez la boutique au 03 85 33 06 89 avant de réessayer.';
 }
 function sendQuoteRequest(data,slot){
-  var token=quoteRequestTokens[slot]||(quoteRequestTokens[slot]=crypto.randomUUID());
-  return fetch(QUOTE_REQUEST_URL,{method:'POST',headers:{apikey:IPHONE_BRAIN_KEY,Authorization:'Bearer '+IPHONE_BRAIN_KEY,'Content-Type':'application/json'},body:JSON.stringify({name:data.name,email:data.email,phone:data.phone||'',request:data.request,form_type:'main_quote',page:location.pathname,client_token:token,website:data.website||''})})
-    .then(function(response){return response.json().catch(function(){return null;}).then(function(payload){if(response.ok&&payload&&payload.received){quoteRequestTokens[slot]=null;return payload;}var error=new Error(payload&&payload.error||'quote_failed');error.status=response.status;throw error;});});
+  if(!window.SolutionPhoneQuoteAttempts){var unavailable=new Error('quote_storage_unavailable');unavailable.code='quote_storage_unavailable';return Promise.reject(unavailable);}
+  var page=location.pathname.toLowerCase().replace(/[^a-z0-9_/-]/g,'_');
+  var payload={name:data.name,email:data.email,phone:data.phone||'',request:data.request,form_type:'main_quote',page:location.pathname,website:data.website||''};
+  return Promise.resolve().then(function(){return window.SolutionPhoneQuoteAttempts.open().submit({slot:'/iphone'+page+'/'+slot,defaultReceiver:PUBLIC_QUOTE_SOURCE,payload:payload,send:async function(attempt){
+    var receiver=attempt.receiver;
+    if(receiver!=='v1'&&receiver!=='v2')throw new Error('invalid_quote_receiver');
+    var response=await fetch(receiver==='v2'?V2_QUOTE_REQUEST_URL:QUOTE_REQUEST_URL,{method:'POST',headers:receiver==='v2'?{'Content-Type':'application/json'}:{apikey:IPHONE_BRAIN_KEY,Authorization:'Bearer '+IPHONE_BRAIN_KEY,'Content-Type':'application/json'},body:JSON.stringify(Object.assign({},attempt.payload,{client_token:attempt.clientToken}))});
+    var receipt=await response.json().catch(function(){return null;});
+    if(!response.ok||!receipt||receipt.received!==true){var error=new Error(receipt&&receipt.error||'quote_failed');error.status=response.status;throw error;}
+    return receipt;
+  }});});
 }
 function trackQuoteSuccess(reference,source,model,repair){
   window.dataLayer=window.dataLayer||[];
