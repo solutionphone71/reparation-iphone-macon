@@ -1031,15 +1031,15 @@ setInterval(function(){cr=(cr+1)%ts;upRv();},5000);
 document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('op');});});
 
 // ═══ DEVIS FORM ═══
-var IPHONE_BRAIN_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/evan-brain';
-var IPHONE_BRAIN_KEY='sb_publishable_3Mub3jSj8wUC8mfFtAuhdA_P4Ljnnhb';
-var QUOTE_REQUEST_URL='https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/quote-request';
-var PUBLIC_QUOTE_SOURCE='v1'; // Bascule explicite des devis uniquement.
+var IPHONE_BRAIN_URL='https://vps-8066c206.vps.ovh.net/api/public/evan-brain';
+var IPHONE_BRAIN_KEY='';
+var QUOTE_REQUEST_URL='https://vps-8066c206.vps.ovh.net/api/public/quote-request';
+var PUBLIC_QUOTE_SOURCE='v2'; // Bascule souveraine vers Solution Phone V2 OVH.
 var V2_QUOTE_REQUEST_URL='https://vps-8066c206.vps.ovh.net/api/public/quote-request';
 var iphoneTrackingToken='';
 try{iphoneTrackingToken=sessionStorage.getItem('iphone_tracking_token')||''}catch(e){}
 function trackIphoneEvent(event,metadata){
-  fetch(IPHONE_BRAIN_URL,{method:'POST',headers:{apikey:IPHONE_BRAIN_KEY,Authorization:'Bearer '+IPHONE_BRAIN_KEY,'Content-Type':'application/json'},body:JSON.stringify({event:event,conversation_token:iphoneTrackingToken||undefined,event_metadata:metadata||{},context:{page:location.pathname,consent_to_store:false}})})
+  fetch(IPHONE_BRAIN_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event:event,conversation_token:iphoneTrackingToken||undefined,event_metadata:metadata||{},context:{page:location.pathname,consent_to_store:false}})})
     .then(function(response){return response.ok?response.json():null})
     .then(function(data){if(data&&data.conversation_token){iphoneTrackingToken=data.conversation_token;try{sessionStorage.setItem('iphone_tracking_token',iphoneTrackingToken)}catch(e){}}})
     .catch(function(){});
@@ -1100,8 +1100,7 @@ function bBT(d){var H=['Compatible','Reconnue par l’iPhone','Originale Apple']
 // Pas de tarifs de secours : seuls les prix de la base de l’atelier sont affichés.
 
 // Catalogue public filtré : aucun accès direct aux tables internes de l'application.
-var SU='https://kdvxcnjfrmvlnrymfyug.supabase.co';
-var PUBLIC_CATALOG=SU+'/functions/v1/public-catalog';
+var PUBLIC_CATALOG='https://vps-8066c206.vps.ovh.net/api/public/catalog';
 var priceSyncCount=0;
 function markPriceSynced(){priceSyncCount++;PRICE_STATE='ready';var el=document.getElementById('price-sync-status');if(el)el.textContent='Tarifs atelier à jour';}
 function markPriceFallback(){if(!priceSyncCount){PRICE_STATE='error';var el=document.getElementById('price-sync-status');if(el)el.textContent='Prix confirmés par l’équipe';}var t=document.getElementById('pb');if(t)t.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3)">Tarifs batterie momentanément indisponibles : demandez votre prix sur WhatsApp ou par e-mail.</div>';if(typeof window.updateHeroPrice==='function')window.updateHeroPrice();}

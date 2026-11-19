@@ -26,7 +26,7 @@ import sys
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRIPTS = os.path.join(RACINE, 'scripts')
 SITE = 'https://reparation-iphone-macon.fr'
-URL_PRIX = 'https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/public-catalog?resource=prices'
+URL_PRIX = 'https://vps-8066c206.vps.ovh.net/api/public/catalog?resource=prices'
 WA = 'https://wa.me/33783921884'
 TEL = 'tel:+33385330689'
 TEL_TXT = '03 85 33 06 89'
@@ -267,7 +267,7 @@ SCRIPT_PRIX = r'''<script>
   function render(tab,row){var o=opts(tab.getAttribute('data-type'),row&&row.prix);tab.querySelector('tbody').innerHTML=o.length?o.map(function(x){return '<tr><th scope="row"><b>'+x[0]+'</b><span>'+x[1]+'</span></th><td>'+x[2]+' €</td></tr>'}).join(''):'<tr><td colspan="2">Sur devis — contactez l’équipe.</td></tr>';return !!o.length;}
   var liveScreen=false;
   if(screen){var wanted=norm(screen.getAttribute('data-ligne'));var found=valid&&rows.filter(function(r){return norm(r.modele)===wanted})[0];liveScreen=render(screen,found);}
-  fetch('https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/public-catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
+  fetch('https://vps-8066c206.vps.ovh.net/api/public/catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
     if(!d||!d.prices)return;var ok=liveScreen;
     box.querySelectorAll('table[data-type="batterie"]').forEach(function(tab){
       var want=norm(tab.getAttribute('data-ligne'));

@@ -68,7 +68,7 @@
   function render(tab,row){var o=opts(tab.getAttribute('data-type'),row&&row.prix);tab.querySelector('tbody').innerHTML=o.length?o.map(function(x){return '<tr><th scope="row"><b>'+x[0]+'</b><span>'+x[1]+'</span></th><td>'+x[2]+' €</td></tr>'}).join(''):'<tr><td colspan="2">Sur devis — contactez l’équipe.</td></tr>';return !!o.length;}
   var liveScreen=false;
   if(screen){var wanted=norm(screen.getAttribute('data-ligne'));var found=valid&&rows.filter(function(r){var model=norm(r.modele);return model===wanted||(model==='16/16 plus'&&(wanted==='16'||wanted==='16 plus'))})[0];liveScreen=render(screen,found);}
-  fetch('https://kdvxcnjfrmvlnrymfyug.supabase.co/functions/v1/public-catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
+  fetch('https://vps-8066c206.vps.ovh.net/api/public/catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
     if(!d||!d.prices)return;var ok=liveScreen;
     box.querySelectorAll('table[data-type="batterie"]').forEach(function(tab){
       var want=norm(tab.getAttribute('data-ligne'));
