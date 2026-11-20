@@ -1111,7 +1111,7 @@ function approvedScreens(){var rows=window.SolutionPhoneApprovedIphoneScreens;
 var publishedScreens=approvedScreens();
 if(publishedScreens){bET(publishedScreens);setHeroPriceRows(publishedScreens,'ecran');markPriceSynced();}
 else{var screenBox=document.getElementById('pe');if(screenBox)screenBox.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3)">Tarifs écran momentanément indisponibles : demandez votre prix sur WhatsApp ou par e-mail.</div>';}
-fetch(PUBLIC_CATALOG+'?resource=prices').then(function(response){if(!response.ok)throw new Error('catalogue indisponible');return response.json();}).then(function(catalogue){var batteries=(catalogue.prices||{}).batteries||[];if(batteries.length){bBT(batteries);setHeroPriceRows(batteries,'batterie');markPriceSynced();}else markPriceFallback();}).catch(markPriceFallback);
+fetch(PUBLIC_CATALOG+'?resource=prices').then(function(response){if(!response.ok)throw new Error('catalogue indisponible');return response.json();}).then(function(catalogue){var screensLive=(catalogue.prices||{}).screens||[];if(screensLive.length){bET(screensLive);setHeroPriceRows(screensLive,'ecran');markPriceSynced();}var batteries=(catalogue.prices||{}).batteries||[];if(batteries.length){bBT(batteries);setHeroPriceRows(batteries,'batterie');markPriceSynced();}else markPriceFallback();}).catch(markPriceFallback);
 
 // ═══ PARALLAX ON MOUSE (hero only) ═══
 document.querySelector('.hero').addEventListener('mousemove',function(e){

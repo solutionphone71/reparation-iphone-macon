@@ -70,6 +70,7 @@
   if(screen){var wanted=norm(screen.getAttribute('data-ligne'));var found=valid&&rows.filter(function(r){var model=norm(r.modele);return model===wanted||(model==='16/16 plus'&&(wanted==='16'||wanted==='16 plus'))})[0];liveScreen=render(screen,found);}
   fetch('https://vps-8066c206.vps.ovh.net/api/public/catalog?resource=prices').then(function(r){return r.ok?r.json():null}).then(function(d){
     if(!d||!d.prices)return;var ok=liveScreen;
+    if(screen&&Array.isArray(d.prices.screens)&&d.prices.screens.length){var w=norm(screen.getAttribute('data-ligne'));var sRow=d.prices.screens.filter(function(r){var m=norm(r.modele);return m===w||m.split('/').map(norm).indexOf(w)>=0||(m==='15/15 plus'&&(w==='15'||w==='15 plus'))||(m==='14/14 plus'&&(w==='14'||w==='14 plus'))||(m==='16/16 plus'&&(w==='16'||w==='16 plus'))})[0];if(sRow&&render(screen,sRow))ok=true;}
     box.querySelectorAll('table[data-type="batterie"]').forEach(function(tab){
       var want=norm(tab.getAttribute('data-ligne'));
       var row=(d.prices.batteries||[]).filter(function(r){return norm(r.modele)===want})[0];if(!row)return;
