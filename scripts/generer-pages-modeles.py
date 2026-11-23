@@ -396,7 +396,7 @@ def page_modele(m, releve, tous, date_fr):
     h += dock(msg, devis_lien(m, 'ecran', email=True))
     h += '<script src="apple-screens-20261112-v2.js"></script>\n'
     h += SCRIPT_PRIX
-    h += '<script src="evan-cross-widget.js?v=7" defer></script>\n'
+    h += '<script src="jason-cross-widget.js?v=1" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 
@@ -451,7 +451,7 @@ def page_reparation(pg, modeles):
     h += '</ul></section>\n</div>\n</main>\n'
     h += pied()
     h += dock(msg, 'index.html?panne=' + panne + '&email=1#devis')
-    h += '<script src="evan-cross-widget.js?v=7" defer></script>\n'
+    h += '<script src="jason-cross-widget.js?v=1" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 

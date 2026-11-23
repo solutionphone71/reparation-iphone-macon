@@ -1031,7 +1031,8 @@ setInterval(function(){cr=(cr+1)%ts;upRv();},5000);
 document.querySelectorAll('.fq').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('op');});});
 
 // ═══ DEVIS FORM ═══
-var IPHONE_BRAIN_URL='https://vps-8066c206.vps.ovh.net/api/public/evan-brain';
+var JASON_BRAIN_URL='https://vps-8066c206.vps.ovh.net/api/public/jason-brain';
+var IPHONE_BRAIN_URL=JASON_BRAIN_URL;
 var IPHONE_BRAIN_KEY='';
 var QUOTE_REQUEST_URL='https://vps-8066c206.vps.ovh.net/api/public/quote-request';
 var PUBLIC_QUOTE_SOURCE='v2'; // Bascule souveraine vers Solution Phone V2 OVH.
@@ -1229,7 +1230,7 @@ function focusEmailQuote(){var model=document.getElementById('hero-model'),toggl
 <script>document.addEventListener('click',function(event){var link=event.target.closest('a[href*="wa.me"]');if(link)trackIphoneEvent('whatsapp_clicked',{source:link.id||link.className||'iphone_link'})})</script>
 <script>document.addEventListener('click',function(event){var link=event.target.closest('a[href^="tel:"]');if(link)trackIphoneEvent('phone_clicked',{source:link.className||'iphone_link'})})</script>
 
-<script src="evan-cross-widget.js?v=7"></script>
+<script src="jason-cross-widget.js?v=1"></script>
 <script src="qualirepar-priority.js?v=2"></script>
 <script>document.querySelectorAll('[data-android-site]').forEach(function(link){link.href=location.hostname==='localhost'?'http://localhost:4175/reparation-samsung.html':'https://solution-phone.fr/reparation-samsung.html'})</script>
 <script src="plan-acces.js?v=1" defer></script>
