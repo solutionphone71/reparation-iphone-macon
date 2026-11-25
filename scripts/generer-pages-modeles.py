@@ -79,6 +79,18 @@ def norm(s):
 
 
 # ---------------------------------------------------------------- prix
+def relever_ecrans_approuves():
+    """Lit les tarifs écrans approuvés dans apple-screens-20261112-v2.js pour enrichir title/meta SEO."""
+    chemin = os.path.join(RACINE, 'apple-screens-20261112-v2.js')
+    try:
+        with open(chemin, encoding='utf-8') as f:
+            brut = f.read()
+        m = re.search(r'window\.SolutionPhoneApprovedIphoneScreens\s*=\s*(\[.*\])\s*;', brut, re.S)
+        return json.loads(m.group(1)) if m else []
+    except Exception:
+        return []
+
+
 def relever_prix(utiliser_cache):
     cache = os.path.join(SCRIPTS, 'prix-cache.json')
     if not utiliser_cache:
@@ -290,20 +302,83 @@ def table_prix(titre, type_, nom_ligne, options):
 
 
 # ---------------------------------------------------------------- page modèle
-def page_modele(m, releve, tous, date_fr):
+def page_modele(m, releve, ecrans_approuves, tous, date_fr):
     nom = m['nom']
+    nom_t = m.get('nom_titre', nom)
     chemin = m['slug'] + '.html'
     url = SITE + '/' + chemin
     lcd = bool(m.get('lcd'))
-    r_ecran = ligne(releve['screens'], m.get('ligne_ecran'))
+    r_ecran_app = ligne(ecrans_approuves, m.get('ligne_ecran') or nom)
     r_batt = ligne(releve['batteries'], m.get('ligne_batterie'))
-    o_ecran = options_ecran(r_ecran, lcd)
+    o_ecran_app = options_ecran(r_ecran_app, lcd)
     o_batt = options_batterie(r_batt)
-    titre = 'Réparation %s à Mâcon | Solution Phone' % m.get('nom_titre', nom)
+    min_ecran = min([v for _, _, _, v in o_ecran_app], default=0)
+    min_batt = min([v for _, _, _, v in o_batt], default=0)
+
+    candidats_titre = []
+    if min_ecran:
+        candidats_titre = [
+            f'Réparation {nom_t} Mâcon : Écran dès {min_ecran} €, Sans RDV',
+            f'Réparation {nom_t} Mâcon : Écran dès {min_ecran} € | Sans RDV',
+            f'Réparation {nom_t} Mâcon · Écran dès {min_ecran} €',
+        ]
+    elif min_batt:
+        candidats_titre = [
+            f'Réparation {nom_t} Mâcon : Batterie dès {min_batt} €, Sans RDV',
+            f'Réparation {nom_t} Mâcon · Batterie dès {min_batt} €',
+        ]
+    candidats_titre += [
+        f'Réparation {nom_t} Mâcon : Écran, Batterie & Sans RDV',
+        f'Réparation {nom_t} Mâcon · Devis & Sans RDV',
+        f'Réparation {nom_t} à Mâcon | Solution Phone',
+    ]
+    titre = next(c for c in candidats_titre if len(c) <= 60)
     assert len(titre) <= 60, titre
-    meta = typo(m.get('meta') or ('Réparation %s à Mâcon : écran, batterie, charge et appareil photo. '
-                                  'Prix finaux, 25 € déjà déduits, garantie 6 mois, sans rendez-vous.' % nom))
-    assert len(meta) <= 160, (m['slug'], len(meta))
+
+    if m.get('meta'):
+        meta = typo(m['meta'])
+    else:
+        candidats_meta = []
+        if min_ecran and min_batt:
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon (21 rue Gambetta) : écran dès {min_ecran} €, batterie dès {min_batt} € '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon : écran dès {min_ecran} €, batterie dès {min_batt} € '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+        elif min_ecran:
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon (21 rue Gambetta) : écran dès {min_ecran} €, batterie et charge '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon : écran dès {min_ecran} €, batterie et charge '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+        elif min_batt:
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon (21 rue Gambetta) : batterie dès {min_batt} €, écran et charge '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+            candidats_meta.append(
+                f'Réparation {nom} à Mâcon : batterie dès {min_batt} €, écran et charge '
+                f'(25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+            )
+        candidats_meta.append(
+            f'Réparation {nom} à Mâcon (21 rue Gambetta) : écran, batterie et charge. Prix finaux '
+            f'(25 € déduits, labellisé QualiRépar), sans RDV, garantie 6 mois.'
+        )
+        candidats_meta.append(
+            f'Réparation {nom} à Mâcon : écran, batterie et charge. Prix finaux '
+            f'(25 € déduits, labellisé QualiRépar), sans RDV au 21 rue Gambetta, garantie 6 mois.'
+        )
+        candidats_meta.append(
+            f'Réparation {nom} à Mâcon : écran, batterie et charge (25 € déduits, labellisé QualiRépar). Sans RDV, garantie 6 mois.'
+        )
+        meta = next(typo(c) for c in candidats_meta if 70 <= len(typo(c)) <= 160)
+    assert 70 <= len(meta) <= 160, (m['slug'], len(meta), meta)
     eyebrow = m.get('eyebrow') or '%s · %s' % (nom, m['annee'])
 
     # JSON-LD
@@ -352,7 +427,7 @@ def page_modele(m, releve, tous, date_fr):
               typo('pour %s de votre %s : nous vérifions la pièce disponible et vous répondons avec le prix final, 25 € déjà déduits.' % (quoi, e(nom))) + '</p>')
     if m.get('note_prix'):
         h += '<p class="prix-note" style="margin-top:12px">' + p_html(m['note_prix']) + '</p>'
-    h += f'<div class="btns prix-cta"><a class="btn btn-main" href="{e(devis_lien(m))}">Voir mon prix / devis</a><a class="btn" href="{e(devis_lien(m, "batterie"))}">Devis batterie</a></div>'
+    h += f'<div class="btns prix-cta"><a class="btn btn-main" href="{e(devis_lien(m))}">Voir mon prix / devis</a><a class="btn" href="{e(devis_lien(m, "ecran", email=True))}" data-open-iphone-quote data-quote-prefill="{e("Devis " + nom + " — écran / batterie : merci de m’indiquer la disponibilité et le tarif.")}">Devis rapide par e-mail</a></div>'
     h += '</section>\n'
 
     # Textes propres au modèle
@@ -396,7 +471,9 @@ def page_modele(m, releve, tous, date_fr):
     h += dock(msg, devis_lien(m, 'ecran', email=True))
     h += '<script src="apple-screens-20261112-v2.js"></script>\n'
     h += SCRIPT_PRIX
-    h += '<script src="jason-cross-widget.js?v=1" defer></script>\n'
+    h += '<script src="quote-attempt.fcade1faf080.js" defer></script>\n'
+    h += '<script src="devis-modal.js?v=1" defer></script>\n'
+    h += '<script src="jason-cross-widget.js?v=4" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 
@@ -451,7 +528,9 @@ def page_reparation(pg, modeles):
     h += '</ul></section>\n</div>\n</main>\n'
     h += pied()
     h += dock(msg, 'index.html?panne=' + panne + '&email=1#devis')
-    h += '<script src="jason-cross-widget.js?v=1" defer></script>\n'
+    h += '<script src="quote-attempt.fcade1faf080.js" defer></script>\n'
+    h += '<script src="devis-modal.js?v=1" defer></script>\n'
+    h += '<script src="jason-cross-widget.js?v=4" defer></script>\n'
     h += MC_FOOTER + '\n</body>\n</html>\n'
     return h
 
@@ -485,6 +564,7 @@ def main():
     global MC_FOOTER
     MC_FOOTER = lire_mc_footer()
     releve = relever_prix('--cache' in sys.argv)
+    ecrans_approuves = relever_ecrans_approuves()
     d = datetime.date.fromisoformat(releve['date'])
     date_fr = d.strftime('%d/%m/%Y')
     with open(os.path.join(SCRIPTS, 'modeles.json'), encoding='utf-8') as f:
@@ -494,7 +574,7 @@ def main():
     ecrits = []
     for m in modeles:
         with open(os.path.join(RACINE, m['slug'] + '.html'), 'w', encoding='utf-8') as f:
-            f.write(page_modele(m, releve, modeles, date_fr))
+            f.write(page_modele(m, releve, ecrans_approuves, modeles, date_fr))
         ecrits.append(m['slug'] + '.html')
     for pg in pages:
         with open(os.path.join(RACINE, pg['slug'] + '.html'), 'w', encoding='utf-8') as f:

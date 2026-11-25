@@ -1,20 +1,24 @@
 # Solution Phone – Réparation iPhone à Mâcon
 
-> Atelier de réparation de smartphones au 21 rue Gambetta, 71000 Mâcon, depuis 2014. Réparateur labellisé QualiRépar. Réparation d’iPhone sans rendez-vous : écran, batterie, connecteur de charge, Face ID, vitre arrière, désoxydation.
+> Atelier de réparation de smartphones au 21 rue Gambetta, 71000 Mâcon (centre-ville), depuis 2014. Réparateur labellisé QualiRépar. Réparation d’iPhone sans rendez-vous : écran, batterie, connecteur de charge, Face ID, vitre arrière, désoxydation.
 
-## Infos pratiques
+## Infos pratiques & Accès
 - Adresse : 21 rue Gambetta, 71000 Mâcon (3 boutiques côte à côte : Solution Phone, Solution Accessoires, Solution Informatique)
+- Stationnement à 2 min à pied : Parking Lamartine, Parking Saint-Pierre / Hôtel de Ville, Quais de Saône
+- Zone desservie (15–25 min) : Mâcon, Charnay-lès-Mâcon, Sancé, Crèches-sur-Saône, Prissé, Hurigny, Cluny, Tournus (71) · Saint-Laurent-sur-Saône, Replonges, Feillens, Bâgé-Dommartin, Pont-de-Veyle (Ain 01) · Belleville-en-Beaujolais, Romanèche-Thorins (69)
 - Horaires Solution Phone : lundi 9h15–12h15 et 14h–19h ; du mardi au samedi 9h15–19h ; fermé le dimanche
 - Téléphone : 03 85 33 06 89 · WhatsApp : 07 83 92 18 84 · E-mail : contact@solution-phone.fr
-- Paiement : carte, espèces (1 000 € maximum), Apple Pay, virement
+- Paiement : carte, espèces (1 000 € maximum), Apple Pay, virement (pas de chèque, pas de paiement en plusieurs fois)
 
-## Faits clés
-- Prix affichés = prix finaux. 25 € déjà déduits de nos tarifs de réparation de smartphone : grâce au Bonus Réparation QualiRépar quand la réparation est éligible, offerts par Solution Phone sinon.
-- Réparation généralement en moins d’une heure si la pièce est en stock.
+## Faits clés & Tarifs vérifiés (Novembre 2026)
+- Prix affichés = prix finaux TTC, pièce et main-d’œuvre comprises. 25 € déjà déduits de nos tarifs de réparation de smartphone : grâce au Bonus Réparation QualiRépar quand la réparation est éligible, offerts par Solution Phone sinon.
+- Réparation généralement en moins d’une heure si la pièce est en stock, sans rendez-vous.
 - Réparations garanties 6 mois.
-- Note Google : 4,7/5, plus de 700 avis.
+- Note Google : 4,7/5, plus de 700 avis vérifiés.
 - Qualités d’écran : Compatible (économique), LTPS Prime (LCD haut de gamme), Soft OLED (OLED souple), ReLife (écran Apple d’origine reconditionné).
-- Exemple : écran d’iPhone 13 de 45 à 115 € selon la qualité (prix finaux, septembre 2026).
+- Exemples de tarifs écrans finaux (25 € déjà déduits) : iPhone 11 dès 30 € (ReLife 70 €) · iPhone 12 / 12 Pro dès 40 € · iPhone 13 & iPhone 14 dès 45 € (Soft OLED 90 €, ReLife 115 €) · iPhone 15 dès 50 € (Soft OLED 90 €) · iPhone 16 dès 65 € (Soft OLED 105 €) · iPhone 17 dès 65 €.
+- Nettoyage de connecteur de charge encrassé : 10 €.
+- Suivi de réparation en direct 24h/24 et diagnostic par photo via le bouton « Demandez à Sébastien » sur le site.
 
 ## Pages principales
 - [Accueil et calculateur de prix](https://reparation-iphone-macon.fr/)
@@ -62,6 +66,6 @@
 - [Réparation iPhone SE (2020 et 2022)](https://reparation-iphone-macon.fr/iphone-se.html)
 - [Réparation iPhone 8 et 8 Plus](https://reparation-iphone-macon.fr/iphone-8.html)
 
-## Autres sites
-- [Solution Phone (tous smartphones, reconditionnés)](https://solution-phone.fr/)
-- [Solution Accessoires](https://solution-accessoires.fr/)
+## Autres sites Solution Phone au 21 rue Gambetta, Mâcon
+- [Solution Phone (tous smartphones, reconditionnés en stock, PS5/Switch, trottinettes, rachat cash)](https://solution-phone.fr/)
+- [Solution Accessoires (coques, verres trempés, Hydrogel, rachat d’appareils)](https://solution-accessoires.fr/)
