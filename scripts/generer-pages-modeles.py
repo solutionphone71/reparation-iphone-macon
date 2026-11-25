@@ -171,6 +171,7 @@ def tete(titre, description, chemin, jsonld, og_image='iphone-generations-lineup
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>if(location.host&&location.host.indexOf("www.")===0){{location.replace(location.protocol+"//"+location.host.substring(4)+location.pathname+location.search+location.hash);}}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(titre)}</title>
 <meta name="description" content="{e(description)}">
@@ -188,8 +189,10 @@ def tete(titre, description, chemin, jsonld, og_image='iphone-generations-lineup
 <meta property="og:image" content="{SITE}/{og_image}">
 <meta name="theme-color" content="#1d1d1f">
 {blocs}
+<script src="/consent-tracking.js?v=3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-3QP90K1TLM");</script>
 <link rel="stylesheet" href="modele.css?v=3">
-<script src="/menu-commun.js?v=4" data-site="iphone"></script>
+<script src="/menu-commun.js?v=5" data-site="iphone"></script>
 </head>
 <body>
 <nav aria-label="Navigation (secours)">
@@ -249,7 +252,8 @@ def pied():
             '<p>' + typo('Lundi 9h15–12h15 et 14h–19h · du mardi au samedi 9h15–19h · fermé le dimanche') + '</p>'
             '<p class="legal">© 2014–2026 Solution Phone · '
             '<a href="https://solution-phone.fr/cgv.html">Mentions légales &amp; CGV</a>'
-            '<a href="https://solution-phone.fr/politique-confidentialite.html">Confidentialité</a></p>'
+            '<a href="https://solution-phone.fr/politique-confidentialite.html">Confidentialité</a>'
+            '<a href="#" data-sp-consent-manage>Gérer mes cookies</a></p>'
             '</div></footer>\n')
 
 
